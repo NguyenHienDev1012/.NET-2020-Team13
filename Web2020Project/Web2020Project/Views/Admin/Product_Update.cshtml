@@ -1,0 +1,201 @@
+﻿
+@{
+    ViewBag.Title = "Product Update";
+    Layout = "~/Views/Shared/Admin/_FramesFull.cshtml";
+}
+ <div id="page-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-bar page-header">
+                        <ul class="page-breadcrumb">
+                            <li>
+                                <i class="fa fa-home"></i>
+                                <a href="/Admin/Index_Admin">Home</a>
+                                <i class="fa fa-angle-right"></i>
+                            </li>
+                            <li>
+                                <a href="#">Danh mục</a>
+                                <i class="fa fa-angle-right"></i>
+                            </li>
+                            <li>
+                                <a href="/Admin/Product_Manage">Quản lý sản phẩm</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading  d-flex">
+                            <div>
+                                <i class="fa  fa-pencil-square-o fa-fw"></i>
+                                Cập nhật sản phẩm
+                            </div>
+                        </div>
+@* <!--                        <%--> *@
+@* <!--                            ChiTietSanPham ctsp = (ChiTietSanPham) request.getAttribute("ctsp");--> *@
+@* <!--                            assert ctsp != null;--> *@
+@* <!--                        %>--> *@
+                        <div class="panel-body">
+                            <div id="update" class="like-form">
+                                <form id="form-validate" class="form-style"
+                                      action="#">
+                                    <input type="hidden" name="action" value="xulysua">
+                                    <input type="hidden" name="id-product"
+                                           value="#">
+                                    <ul class="row">
+                                        <li class="row">
+                                            <div class="col-sm-4 col-xs-6">
+                                                <input type="text" id="name-product" name="name-product"
+                                                       value="#">
+                                                <label for="name-product">Tên sản phẩm<span>*</span></label>
+                                            </div>
+                                            <div class="col-sm-4 col-xs-6">
+                                                <select id="type" name="type">
+                                                    @* <%if (ctsp.getSanPham().getLoai() == 0) {%> *@
+                                                    <option value="0">Sản phẩm Mới</option>
+                                                    <option value="1">Sản phẩm Hot</option>
+                                                    <option value="2">Sản phẩm khuyến mãi</option>
+                                                    @* <%} else if (ctsp.getSanPham().getLoai() == 1) {%> *@
+                                                    @* <option value="1">Sản phẩm Hot</option> *@
+                                                    @* <option value="2">Sản phẩm khuyến mãi</option> *@
+                                                    @* <option value="0">Sản phẩm Mới</option> *@
+                                                    @* <%} else {%> *@
+                                                    @* <option value="2">Sản phẩm khuyến mãi</option> *@
+                                                    @* <option value="1">Sản phẩm Hot</option> *@
+                                                    @* <option value="0">Sản phẩm Mới</option> *@
+                                                    @* <%}%> *@
+                                                </select>
+                                                <label for="type" class="level-span">Loại</label>
+                                            </div>
+                                            <div class="col-sm-4 col-xs-6">
+                                                <select id="producer" name="producer">
+@* <!--                                                    <%try {%>--> *@
+@* <!--                                                    <%List<NhaCungCap> ds_ncc = ProducerDAO.findAll();%>--> *@
+@* <!--                                                    <%if (ds_ncc != null) {%>--> *@
+@* <!--                                                    <%for (NhaCungCap ncc : ds_ncc) {%>--> *@
+@* <!--                                                    <%if (ncc.getTenNhaCungCap().equals(ctsp.getSanPham().getNhaCungCap())) {%>--> *@
+                                                    <option value="#"
+                                                            selected="selected">
+                                                    @* </option> *@
+                                                    @* $1$ <%} else {%> #1# *@
+                                                    @* $1$ <option value="#"><div id=""></div> #1# *@
+                                                    @* </option> *@
+                                                    @* <%}%> *@
+                                                    @* <%}%> *@
+                                                    @* <%}%> *@
+                                                    @* <%} catch (SQLException e) {%> *@
+                                                    @* <%}%> *@
+                                                </select>
+                                                <label for="producer" class="level-span">Nhà cung
+                                                    cấp<span>*</span></label>
+                                            </div>
+@* <!--                                            <label for="producer" class="level-span">Nhà cung--> *@
+@* <!--                                                cấp<span>*</span></label>--> *@
+                                        <li class="row">
+                                            <div class="col-sm-3 col-xs-6">
+                                                <input type="number" id="sale-price" name="sale-price"
+                                                       value="#">
+                                                <label for="sale-price">Giá đã giảm</label>
+                                            </div>
+                                            <div class="col-sm-3 col-xs-6">
+                                                <input type="number" id="price" name="price"
+                                                       value="#">
+                                                <label for="price">Giá bán</label>
+                                            </div>
+                                            <div class="col-sm-2 col-xs-6">
+                                                <input type="number" id="count-product" name="count-product"
+                                                       value="<#">
+                                                <label for="count-product">Số lượng<span>*</span></label>
+                                            </div>
+                                            <div class="col-sm-2 col-xs-6">
+                                                <input type="text" id="link-img" name="link-img"
+                                                       value="#">
+                                                <label for="link-img">Hình ảnh</label>
+                                            </div>
+                                            <div class="col-sm-2 col-xs-6">
+                                                <select id="status" name="status">
+                                                    @* <%if (ctsp.getSanPham().getTrangTHai() == 0) {%> *@
+                                                    <option value="0">Ẩn</option>
+                                                    <option value="1">Gần hết hàng</option>
+                                                    <option value="2">Mở bán</option>
+                                                    @* <%} else if (ctsp.getSanPham().getTrangTHai() == 1) {%> *@
+                                                    @* <option value="1">Gần hết hàng</option> *@
+                                                    @* <option value="0">Ẩn</option> *@
+                                                    @* <option value="2">Mở bán</option> *@
+                                                    @* <%} else {%> *@
+                                                    @* <option value="2">Mở bán</option> *@
+                                                    @* <option value="1">Gần hết hàng</option> *@
+                                                    @* <option value="0">Ẩn</option> *@
+                                                    @* <%}%> *@
+                                                </select>
+                                                <label for="status" class="level-span">Trạng thái</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul class="row">
+                                        <h3 class="col-sm-12"
+                                            style="text-align: center;margin-bottom: 20px;color: #215862;font-weight: 600">
+                                            Chi tiết sản phẩm</h3>
+                                        <li class="row">
+                                            <div class="col-sm-12 col-xs-6">
+                                                <input type="text" id="gift" name="gift"
+                                                       value="#">
+                                                <label for="gift">Quà tặng</label>
+                                            </div>
+                                        </li>
+                                        <li class="row">
+                                            <div class="col-sm-6 col-xs-6">
+                                                <input type="text" id="screen" name="screen"
+                                                       value="#">
+                                                <label for="screen">Màn hình</label>
+                                            </div>
+                                            <div class="col-sm-6 col-xs-6">
+                                                <input type="text" id="hdh" name="hdh"
+                                                       value="#">
+                                                <label for="hdh">Hệ điều hành</label>
+                                            </div>
+                                        </li>
+                                        <li class="row">
+                                            <div class="col-sm-6 col-xs-6">
+                                                <input type="text" id="cpu" name="cpu"
+                                                       value="#">
+                                                <label for="cpu">CPU</label>
+                                            </div>
+                                            <div class="col-sm-6 col-xs-6">
+                                                <input type="text" id="ram" name="ram"
+                                                       value="#">
+                                                <label for="ram">RAM</label>
+                                            </div>
+                                        </li>
+                                        <li class="row">
+                                            <div class="col-sm-6 col-xs-6">
+                                                <input type="text" id="camera" name="camera"
+                                                       value="#">
+                                                <label for="camera">CAMERA</label>
+                                            </div>
+                                            <div class="col-sm-6 col-xs-6">
+                                                <input type="text" id="pin" name="pin"
+                                                       value="#">
+                                                <label for="pin">PIN</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="btn-submit">
+                                        <a href="/Admin/Product_Manage" class="btn default btn-xs black go-to-back">Trở
+                                            lại</a>
+                                        <button type="submit" id="update-btn"><i class="fa fa-pencil-square-o fa-fw"
+                                                                                 aria-hidden="true"></i>Cập nhật
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
