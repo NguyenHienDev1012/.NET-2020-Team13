@@ -1,0 +1,111 @@
+﻿
+
+@{
+    ViewBag.Title = "News Update";
+    Layout = "~/Views/Shared/Admin/_FramesFull.cshtml";
+}
+
+<div id="page-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-bar page-header">
+                        <ul class="page-breadcrumb">
+                            <li>
+                                <i class="fa fa-home"></i>
+                                <a href="/Admin/Index_Admin">Home</a>
+                                <i class="fa fa-angle-right"></i>
+                            </li>
+                            <li>
+                                <a href="#">Danh mục</a>
+                                <i class="fa fa-angle-right"></i>
+                            </li>
+                            <li>
+                                <a href="/Admin/News_Manage">Quản lý tin tức</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading  d-flex">
+                            <div>
+                                <i class="fa  fa-newspaper-o fa-fw"></i>
+                                Cập nhật tin tức
+                            </div>
+                        </div>
+                      
+                        <div class="panel-body">
+                            <div id="update" class="like-form">
+                                <form id="form-validate" class="form-style"
+                                      action="#" method="POST"
+                                      enctype="multipart/form-data">
+                                    <input type="hidden" name="action" value="xulysua">
+                                    <input type="hidden" name="id" value="<%=tinTuc.getMaTinTuc()%>">
+                                    <ul class="row">
+                                        <li class="row">
+                                            <div class="col-sm-12 col-xs-6">
+                                                <input type="text" id="title" name="title"
+                                                       value="Tiêu đề">
+                                                <label for="title">Tiêu đề<span>*</span></label>
+                                            </div>
+                                        </li>
+                                        <li class="row">
+                                            <div class="col-sm-12 col-xs-6">
+                                                                <textarea id="description" name="description"
+                                                                          placeholder="Nhập nội dung..." maxlength="190"
+                                                                          required>Mô tả...</textarea>
+                                                <label for="description" class="mg-area">Mô tả</label>
+                                            </div>
+                                        </li>
+                                        <li class="row">
+                                            <div class="col-sm-4 col-xs-6">
+                                                <select id="type" name="type">
+                                                    <option value="0">Tin tức mới</option>
+                                                    <option value="1">Tin tức KM</option>
+                                              <!--   
+                                                    <option value="1">Tin tức KM</option>
+                                                    <option value="0">Tin tức mới</option>
+                                                 -->
+                                                </select>
+                                                <label for="type" class="level-span">Type</label>
+                                            </div>
+                                            <input type="hidden" name="change-img" value="">
+                                            <div class="col-sm-4 col-xs-6">
+                                                <input type="file" id="link-img"
+                                                       name="link-img" accept="image/jpeg,image/png">
+                                                <label for="link-img">Ảnh mô tả</label>
+                                            </div>
+                                            <div class="col-sm-4 col-xs-6">
+                                                <input type="date" id="date-post"
+                                                       name="date-post"
+                                                       value="06/10/2020">
+                                                <label for="date-post" class="level-span">Ngày
+                                                    viết</label>
+                                            </div>
+                                        </li>
+                                        <li class="row">
+                                            <div class="col-sm-12 col-xs-6">
+                                                <textarea id="content"
+                                                          name="content">Nôi dung...</textarea>
+                                                <label for="content" class="mg-area">Nội dung</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="btn-submit">
+                                        <a href="/Admin/News_Manage" class="btn default btn-xs black go-to-back">Trở
+                                            lại</a>
+                                        <button type="submit" id="update-btn"><i class="fa fa-pencil-square-o fa-fw"
+                                                                                 aria-hidden="true"></i>Cập nhật
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>

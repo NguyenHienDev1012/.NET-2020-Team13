@@ -1,0 +1,134 @@
+.modal-content > * {
+    font-family: "Montserrat", sans-serif;
+    outline: none!important;
+
+}
+
+.like-form{
+    font-family: "Montserrat", sans-serif;
+    position: relative;
+}
+
+.modal-content .modal-title {
+    color: #0a535d;
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+
+}
+
+.like-form .form-style {
+    padding: 10px 0;
+}
+
+.like-form .form-style ul li {
+    width: 100%;
+    list-style-type: none !important;
+    margin-bottom: 35px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #0a535d;
+}
+
+.like-form .form-style ul li div {
+    position: relative;
+}
+
+/*.like-form .form-style ul li div:focus-within label {*/
+/*    top: -18px !important;*/
+
+/*}*/
+
+.like-form .form-style ul li div label {
+    transition: all .3s ease;
+    position: absolute;
+    left: 15px;
+    /*top: 0;*/
+    top: -18px;
+}
+
+/*#update.like-form .form-style ul li div label {*/
+/*    top: -18px !important;*/
+/*}*/
+
+.like-form .form-style input, select {
+    width: 100%;
+    outline: none;
+    background: transparent;
+    border: none;
+    color: black;
+    border-bottom: 1px solid #afafaf;
+    position: relative;
+    margin: 0 !important;
+
+}
+
+.like-form .form-style ul li > div:before {
+    content: "";
+    width: 0%;
+    z-index: 99;
+    height: 2px;
+    position: absolute;
+    background-image: linear-gradient(to right, #138b7f, #27adb6, #afff2a);
+    bottom: -1px;
+    left: 15px;
+    transition: all .3s ease-in;
+}
+
+.like-form .form-style ul li div:focus-within:before {
+    width: calc(100% - 30px);
+}
+
+.like-form .form-style input:focus {
+    border-bottom: 1px solid #0a535d;
+}
+
+.like-form .form-style .btn-submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.like-form .form-style .btn-submit button {
+    outline: none!important;
+    border: none;
+    background: #26818a;
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 5px 15px;
+    border-radius: 30px;
+    transition: all .3s ease;
+}
+
+.like-form .form-style .btn-submit button:hover {
+    background: #2ba4ad;
+
+}
+
+.level-span, .mg-area {
+    top: -18px !important;
+}
+
+.hidden-arrow {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.like-form textarea {
+    width: 100%;
+    max-width: 100%;
+    height: 150px;
+    border-radius: 3px;
+    padding: 10px;
+    margin-top: 5px;
+}
+.like-form .go-to-back{
+    position: absolute;
+    bottom: 15px;
+    left: 25px;
+}
+.form-style .row label span{
+    color: #ff0000cf;
+}

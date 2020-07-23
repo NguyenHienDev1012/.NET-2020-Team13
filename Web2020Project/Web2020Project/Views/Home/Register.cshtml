@@ -1,0 +1,50 @@
+﻿
+@Model ThanhVien
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_HeaderHome.cshtml";
+}
+
+<section id="body">
+    <div id="login-atm">
+        <div class="login box-shadow-form">
+            <div class="title-form" data-aos="zoom-out-down" data-aos-duration="800"><h1>Đăng Ký</h1></div>
+            <form id="form-validate" class="form-style" action="">
+                <label for="usr-name">Tài khoản*
+                    <!--                    <%if (usr_exist != null) {%>-->
+                    <!--                    <span style="color: red;font-size: 15px;margin-left: 5px;">#></span>-->
+                    <!--                    <%}%>-->
+                </label>
+                <input type="text" id="usr-name" name="usr-name"
+                       value="#">
+                <label for="password">Mật khẩu*</label>
+                <input type="text" id="password" name="password" value="#">
+                <label for="c-password">Xác nhận mật khẩu*</label>
+                <input type="text" id="c-password" name="c-password" value="#">
+                <label for="full-name">Họ tên*</label>
+                <input type="text" id="full-name" name="full-name"
+                       value="#">
+                <label for="gender">Giới tính</label>
+                <select id="gender" name="gender">
+                    <option value="Nam">Nam</option>
+                    <option value="Nữ">Nữ</option>
+                </select>
+                <label for="email">Email*
+                    <!--                    <%if (email_exist != null) {%>-->
+                    <!--                    <span style="color: red;font-size: 15px;margin-left: 5px;"><%=email_exist%></span>-->
+                    <!--                    <%}%>-->
+                </label>
+                <input type="text" id="email" name="email"
+                       value="#">
+                <label for="sdt">Số điện thoại*</label>
+                <input type="number" id="sdt" name="sdt"
+                       value="123131">
+                <label for="address">Địa chỉ*</label>
+                <input type="text" id="address" name="address"
+                       value="#">
+                <button id="confirm-btn" type="submit">TẠO TÀI KHOẢN</button>
+            </form>
+        </div>
+    </div>
+    <script src="/Content/assets/js/validation-form/vali-form.js"></script>
+</section>
