@@ -121,6 +121,15 @@
         <Compile Include="Global.asax.cs">
             <DependentUpon>Global.asax</DependentUpon>
         </Compile>
+        <Compile Include="Models\MODEL\BinhLuan.cs" />
+        <Compile Include="Models\MODEL\ChiTietSanPham.cs" />
+        <Compile Include="Models\MODEL\GioHang_DB.cs" />
+        <Compile Include="Models\MODEL\NhaCungCap.cs" />
+        <Compile Include="Models\MODEL\SanPham.cs" />
+        <Compile Include="Models\MODEL\ThanhVien.cs" />
+        <Compile Include="Models\MODEL\ThongSoKyThuat.cs" />
+        <Compile Include="Models\MODEL\TinTuc.cs" />
+        <Compile Include="Models\Utils\MD5.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
@@ -569,7 +578,6 @@
     </ItemGroup>
     <ItemGroup>
         <Folder Include="App_Data" />
-        <Folder Include="Models" />
     </ItemGroup>
     <ItemGroup>
         <Content Include="fonts\glyphicons-halflings-regular.woff2" />
