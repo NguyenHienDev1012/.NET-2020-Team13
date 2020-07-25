@@ -119,13 +119,15 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Admin\Controllers\AdminController.cs" />
+        <Compile Include="Admin\Dao\ThanhVienDao.cs" />
         <Compile Include="App_Start\BundleConfig.cs" />
         <Compile Include="App_Start\FilterConfig.cs" />
         <Compile Include="App_Start\RouteConfig.cs" />
-        <Compile Include="Controllers\Admin\AdminController.cs" />
-        <Compile Include="Controllers\HomeController.cs" />
         <Compile Include="Dao\LoginDao.cs" />
         <Compile Include="Dao\ObjectDao.cs" />
+        <Compile Include="FormInput\LoginModel.cs" />
+        <Compile Include="FormInput\ThanhVienModel.cs" />
         <Compile Include="Global.asax.cs">
             <DependentUpon>Global.asax</DependentUpon>
         </Compile>
@@ -133,6 +135,7 @@
         <Compile Include="Model\ThanhVien.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="Utils\MD5.cs" />
+        <Compile Include="website\Controllers\HomeController.cs" />
     </ItemGroup>
     <ItemGroup>
         <Content Include="Content\Admin\css\bootstrap-social.css" />
@@ -579,8 +582,10 @@
         <Content Include="Views\Home\Index.cshtml" />
     </ItemGroup>
     <ItemGroup>
-        <Folder Include="Admin" />
+        <Folder Include="Admin\Model" />
         <Folder Include="App_Data" />
+        <Folder Include="website\Dao" />
+        <Folder Include="website\Model" />
     </ItemGroup>
     <ItemGroup>
         <Content Include="fonts\glyphicons-halflings-regular.woff2" />

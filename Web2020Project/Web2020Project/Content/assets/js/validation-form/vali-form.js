@@ -3,10 +3,10 @@ $(document).ready(function () {
     const reg_sdt = /^[0]{1}[1-9]{1}[0-9]{8,9}$/;
     const reg_usr = /^[a-zA-Z0-9]+$/
     const reg_pass = /^[a-zA-Z0-9!@#$%^&*()_.?\/]{6,}$/;
-    const usr_name = $('#usr-name');
+    const usr_name = $('#usr_name');
     const password = $('#password');
-    const c_password = $('#c-password');
-    const full_name = $('#full-name');
+    const c_password = $('#c_password');
+    const full_name = $('#full_name');
     const email = $('#email');
     const address = $('#address');
     const sdt = $('#sdt');
@@ -108,6 +108,7 @@ $(document).ready(function () {
             notEmpty(address_oder, 'Vui lòng nhập Địa chỉ giao hàng', null);
             flag = false;
         }
+        alert(flag);
         return flag;
     });
 

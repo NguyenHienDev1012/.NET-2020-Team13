@@ -22,7 +22,7 @@ namespace Web2020Project.Dao
             {
                 MySqlCommand mySqlCommand = new MySqlCommand(sql, conn);
                 mySqlCommand.Parameters.AddWithValue("taikhoan", taikhoan);
-                mySqlCommand.Parameters.AddWithValue("matkhau", matkhau);
+                mySqlCommand.Parameters.AddWithValue("matkhau", MD5.convertToMD5(matkhau));
                 
                 reader = mySqlCommand.ExecuteReader();
                     if (reader.HasRows)
@@ -34,7 +34,7 @@ namespace Web2020Project.Dao
                             string hoTen = reader[2].ToString();
                             string gioiTinh = reader[3].ToString();
                             string email = reader[4].ToString();
-                            string soDienThoai = reader.GetInt32(5).ToString();
+                            int soDienThoai = reader.GetInt32(5);
                             string diaChi = reader[6].ToString();
                             int level = Convert.ToInt32(reader.GetDecimal(7));
                             string avatar = reader[8].ToString();

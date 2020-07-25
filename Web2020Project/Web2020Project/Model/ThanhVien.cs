@@ -7,7 +7,7 @@
         private string hoTen;
         private string gioiTinh;
         private string email;
-        private string soDienThoai;
+        private int soDienThoai;
         private string diaChi;
         private int level;
         private string avatar;
@@ -17,7 +17,7 @@
         }
 
         public ThanhVien(string taiKhoan, string matKhau, string hoTen, string gioiTinh, string email,
-            string soDienThoai, string diaChi, int level, string avatar)
+            int soDienThoai, string diaChi, int level, string avatar)
         {
             this.taiKhoan = taiKhoan;
             this.matKhau = matKhau;
@@ -60,7 +60,7 @@
             set => email = value;
         }
 
-        public string SoDienThoai
+        public int SoDienThoai
         {
             get => soDienThoai;
             set => soDienThoai = value;
