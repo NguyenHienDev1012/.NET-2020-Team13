@@ -42,7 +42,13 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+        <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604">
+          <HintPath>D:\SQL_CONNECTOR_NET\v4.8\Google.Protobuf.dll</HintPath>
+        </Reference>
         <Reference Include="Microsoft.CSharp" />
+        <Reference Include="MySql.Data, Version=8.0.21.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d">
+          <HintPath>D:\SQL_CONNECTOR_NET\v4.5.2\MySql.Data.dll</HintPath>
+        </Reference>
         <Reference Include="System" />
         <Reference Include="System.Data" />
         <Reference Include="System.Drawing" />
@@ -113,24 +119,34 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Admin\Controllers\AdminController.cs" />
+        <Compile Include="Admin\Dao\BinhLuanDao.cs" />
+        <Compile Include="Admin\Dao\NhaCungCapDao.cs" />
+        <Compile Include="Admin\Dao\ThanhVienDao.cs" />
+        <Compile Include="Admin\Dao\TinTucDao.cs" />
         <Compile Include="App_Start\BundleConfig.cs" />
         <Compile Include="App_Start\FilterConfig.cs" />
         <Compile Include="App_Start\RouteConfig.cs" />
-        <Compile Include="Controllers\Admin\AdminController.cs" />
-        <Compile Include="Controllers\HomeController.cs" />
+        <Compile Include="Dao\LoginDao.cs" />
+        <Compile Include="Dao\ObjectDao.cs" />
+        <Compile Include="Dao\SanPhamDao.cs" />
+        <Compile Include="FormInput\LoginModel.cs" />
+        <Compile Include="FormInput\ThanhVienModel.cs" />
         <Compile Include="Global.asax.cs">
             <DependentUpon>Global.asax</DependentUpon>
         </Compile>
-        <Compile Include="Models\MODEL\BinhLuan.cs" />
-        <Compile Include="Models\MODEL\ChiTietSanPham.cs" />
-        <Compile Include="Models\MODEL\GioHang_DB.cs" />
-        <Compile Include="Models\MODEL\NhaCungCap.cs" />
-        <Compile Include="Models\MODEL\SanPham.cs" />
-        <Compile Include="Models\MODEL\ThanhVien.cs" />
-        <Compile Include="Models\MODEL\ThongSoKyThuat.cs" />
-        <Compile Include="Models\MODEL\TinTuc.cs" />
-        <Compile Include="Models\Utils\MD5.cs" />
+        <Compile Include="libs\DBConnection.cs" />
+        <Compile Include="Model\BinhLuan.cs" />
+        <Compile Include="Model\ChiTietSanPham.cs" />
+        <Compile Include="Model\GioHang_DB.cs" />
+        <Compile Include="Model\NhaCungCap.cs" />
+        <Compile Include="Model\SanPham.cs" />
+        <Compile Include="Model\ThanhVien.cs" />
+        <Compile Include="Model\ThongSoKyThuat.cs" />
+        <Compile Include="Model\TinTuc.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="Utils\MD5.cs" />
+        <Compile Include="website\Controllers\HomeController.cs" />
     </ItemGroup>
     <ItemGroup>
         <Content Include="Content\Admin\css\bootstrap-social.css" />
@@ -577,7 +593,10 @@
         <Content Include="Views\Home\Index.cshtml" />
     </ItemGroup>
     <ItemGroup>
+        <Folder Include="Admin\Model" />
         <Folder Include="App_Data" />
+        <Folder Include="website\Dao" />
+        <Folder Include="website\Model" />
     </ItemGroup>
     <ItemGroup>
         <Content Include="fonts\glyphicons-halflings-regular.woff2" />

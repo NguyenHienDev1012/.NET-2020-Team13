@@ -1,4 +1,5 @@
-﻿
+﻿@using Web2020Project.Models.MODEL
+@model List<Web2020Project.Models.MODEL.TinTuc>
 
 @{
     ViewBag.Title = "News Manage";
@@ -122,45 +123,56 @@
                                         <th>Tiêu đề</th>
                                         <th>Ngày viết</th>
                                         <th>Loại</th>
-                                        <th class="remove">Sửa</th>
+                                        <th class="remove" style="text-align: center">Sửa</th>
                                         <th class="remove" style="text-align: center">Xóa</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    
+                                      @foreach(TinTuc tt in Model){
                                     <tr class="odd gradeX">
-                                        <td>1
+                                      
+                                        <td>@tt.MaTinTuc
                                         </td>
-                                        <td>Tiêu đề 1
+                                        <td>@tt.TieuDe
                                         </td>
-                                        <td>06/10/2020
-                                        </td>
-                                        <td style="text-align: center; font-weight: 700">
-                                            <span style="color: #31de21">Mới</span>
-                                        </td>
-                                        <td class="center"><a
+                                            <td>@tt.NgayViet
+                                            </td>
+                              
+                                            <td style="text-align: center; font-weight: 700">
+                                                @if(@tt.Loai == 0)
+                                                {
+                                                <span style="color: #31de21">Mới</span>
+                                                }
+                                                else 
+                                                {
+                                                <span style="color: #de8f04">Khuyến mãi</span>
+                                                }
+                                            </td>
+                                        <td class="center">
+                                            <a
                                                 href="#"
                                                 class="btn default btn-xs purple btn-edit">
-                                            <i class="fa fa-edit"></i></a></td>
-                                        <td style="text-align: center">
-                                            <a data-toggle="modal" data-target="#<%=tt.getMaTinTuc()%>cf"
-                                               class="btn default btn-xs black btn-delete"><i class="fa fa-trash-o"></i></a>
-                                            <div id="<%=tt.getMaTinTuc()%>cf" class="modal fade modal-confirm" role="dialog">
-                                                <div class="modal-dialog modal-sm">
-                                                    <!-- Modal content-->
-                                                    <div class="modal-content">
-                                                        <div class="modal-body">
-                                                            <p class="text-content">Xác nhận xóa tin tức</p>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" onclick="return location.href='#'" class="btn-cf">Xác nhận</button>
-                                                            <button type="button" class="tbn-cancle" data-dismiss="modal">Hủy</button>
+                                                <i class="fa fa-edit"></i></a></td>
+                                            <td style="text-align: center">
+                                                <a data-toggle="modal" data-target="#<%=tt.getMaTinTuc()%>cf"
+                                                   class="btn default btn-xs black btn-delete"><i class="fa fa-trash-o"></i></a>
+                                                <div id="<%=tt.getMaTinTuc()%>cf" class="modal fade modal-confirm" role="dialog">
+                                                    <div class="modal-dialog modal-sm">
+                                                        <!-- Modal content-->
+                                                        <div class="modal-content">
+                                                            <div class="modal-body">
+                                                                <p class="text-content">Xác nhận xóa tin tức</p>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" onclick="return location.href='#'" class="btn-cf">Xác nhận</button>
+                                                                <button type="button" class="tbn-cancle" data-dismiss="modal">Hủy</button>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </td>
+                                            </td>
                                     </tr>
+                                      }
                                     </tbody>
                                 </table>
                             </div>

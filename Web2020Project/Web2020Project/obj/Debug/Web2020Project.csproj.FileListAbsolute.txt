@@ -150,3 +150,106 @@ D:\HK6 2019 - 2020\ASP.NET\Web2020Project\Web2020Project\obj\Debug\Web2020Projec
 D:\HK6 2019 - 2020\ASP.NET\Web2020Project\Web2020Project\obj\Debug\Web2020Project.csproj.CopyComplete
 D:\HK6 2019 - 2020\ASP.NET\Web2020Project\Web2020Project\obj\Debug\Web2020Project.dll
 D:\HK6 2019 - 2020\ASP.NET\Web2020Project\Web2020Project\obj\Debug\Web2020Project.pdb
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\Web2020Project.dll.config
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\Web2020Project.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\Web2020Project.pdb
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\csc.exe
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\csc.exe.config
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\csc.rsp
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\csi.exe
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\csi.exe.config
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\csi.rsp
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\System.AppContext.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\System.Console.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\System.IO.Compression.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\System.IO.Pipes.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\System.Security.Claims.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\System.ValueTuple.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\System.Xml.XPath.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\vbc.exe
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\vbc.exe.config
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\vbc.rsp
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\VBCSCompiler.exe
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\Antlr3.Runtime.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\Newtonsoft.Json.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\System.Web.Helpers.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\System.Web.Mvc.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\System.Web.Optimization.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\System.Web.Razor.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\System.Web.WebPages.Deployment.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\System.Web.WebPages.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\System.Web.WebPages.Razor.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\WebGrease.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\System.Web.Helpers.xml
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\System.Web.Mvc.xml
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\System.Web.Optimization.xml
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\System.Web.Razor.xml
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\System.Web.WebPages.xml
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\System.Web.WebPages.Deployment.xml
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\System.Web.WebPages.Razor.xml
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\Newtonsoft.Json.xml
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\Antlr3.Runtime.pdb
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\obj\Debug\Web2020Project.csprojAssemblyReference.cache
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\obj\Debug\Web2020Project.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\obj\Debug\Web2020Project.csproj.CopyComplete
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\obj\Debug\Web2020Project.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\obj\Debug\Web2020Project.pdb
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\MySql.Data.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\Google.Protobuf.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\Zstandard.Net.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\K4os.Compression.LZ4.Streams.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\BouncyCastle.Crypto.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\Ubiety.Dns.Core.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\Renci.SshNet.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\System.Buffers.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\K4os.Compression.LZ4.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\K4os.Hash.xxHash.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\System.Memory.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\System.Numerics.Vectors.dll
+C:\Users\PC\Desktop\.NET-2020-Team13-nghianai\Web2020Project\Web2020Project\bin\MySql.Data.xml
+D:\HK6 2019 - 2020\ASP.NET\Web2020Project\Web2020Project\bin\Google.Protobuf.dll
+D:\HK6 2019 - 2020\ASP.NET\Web2020Project\Web2020Project\bin\Zstandard.Net.dll
+D:\HK6 2019 - 2020\ASP.NET\Web2020Project\Web2020Project\bin\K4os.Compression.LZ4.Streams.dll
+D:\HK6 2019 - 2020\ASP.NET\Web2020Project\Web2020Project\bin\BouncyCastle.Crypto.dll
+D:\HK6 2019 - 2020\ASP.NET\Web2020Project\Web2020Project\bin\Ubiety.Dns.Core.dll
+D:\HK6 2019 - 2020\ASP.NET\Web2020Project\Web2020Project\bin\Renci.SshNet.dll
+D:\HK6 2019 - 2020\ASP.NET\Web2020Project\Web2020Project\bin\System.Buffers.dll
+D:\HK6 2019 - 2020\ASP.NET\Web2020Project\Web2020Project\bin\K4os.Compression.LZ4.dll
+D:\HK6 2019 - 2020\ASP.NET\Web2020Project\Web2020Project\bin\K4os.Hash.xxHash.dll
+D:\HK6 2019 - 2020\ASP.NET\Web2020Project\Web2020Project\bin\System.Memory.dll
+D:\HK6 2019 - 2020\ASP.NET\Web2020Project\Web2020Project\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\HK6 2019 - 2020\ASP.NET\Web2020Project\Web2020Project\bin\System.Numerics.Vectors.dll
+D:\HK6 2019 - 2020\ASP.NET\Web2020Project\Web2020Project\bin\MySql.Data.xml

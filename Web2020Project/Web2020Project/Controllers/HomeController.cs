@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Web2020Project.Dao;
+using Web2020Project.Model;
 
 namespace Web2020Project.Controllers
 {
@@ -10,7 +12,6 @@ namespace Web2020Project.Controllers
     {
         public ActionResult Index()
         {
-            
             return View();
         }
 

@@ -1,4 +1,6 @@
-﻿@{
+﻿@using Web2020Project.Models.MODEL
+@model List<Web2020Project.Models.MODEL.SanPham>
+@{
     ViewBag.Title = "Product Manage";
     Layout = "~/Views/Shared/Admin/_FramesFull.cshtml";
 }
@@ -74,15 +76,7 @@
                                 </div>
                                 <div class="col-sm-4 col-xs-6">
                                     <select id="producer" name="producer">
-                                        @* <!--                                                                    <%try {%>--> *@
-                                        @* <!--                                                                    <%List<NhaCungCap> ds_ncc = ProducerDAO.findAll();%>--> *@
-                                        @* <!--                                                                    <%if (ds_ncc != null) {%>--> *@
-                                        @* <!--                                                                    <%for (NhaCungCap ncc : ds_ncc) {%>--> *@
                                         <option value="#">#</option>
-                                        @* <!--                                                                    <%}%>--> *@
-                                        @* <!--                                                                    <%}%>--> *@
-                                        @* <!--                                                                    <%} catch (SQLException e) {%>--> *@
-                                        @* <!--                                                                    <%}%>--> *@
                                     </select>
                                     <label for="producer" class="level-span">
                                         Nhà cung
@@ -124,6 +118,7 @@
                                     </div>
                                 </li>
                             </ul>
+
                             <ul class="row">
                                 <h3 class="col-sm-12"
                                     style="text-align: center;margin-bottom: 20px;color: #215862;font-weight: 600">
@@ -194,6 +189,7 @@
         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
             <thead>
             <tr>
+
                 <th>STT</th>
                 <th>Tên sản phẩm</th>
                 <th>Nhà cung cấp</th>
@@ -208,85 +204,86 @@
             </tr>
             </thead>
             <tbody>
-            @* <!--                                    <%try {%>--> *@
-            @* <!--                                    <%List<ChiTietSanPham> ds_sp = ProductsDAO.findAllCT();%>--> *@
-            @* <!--                                    <%if (ds_sp != null) {%>--> *@
-            @* <!--                                    <%for (ChiTietSanPham sp : ds_sp) {%>--> *@
-            <tr class="odd gradeX">
-                <td>
-                    Mã sản phẩm
-                    @* <!--                                            <%=sp.getSanPham().getMaSanPham()%>--> *@
-                </td>
-                <td>
-                    Tên Sản Phẩm
-                    <!--                                            <%=sp.getSanPham().getTenSanPham()%>-->
-                </td>
-                <td>
-                    Nhà Cung cấp
-                    <!--                                            <%=sp.getSanPham().getNhaCungCap()%>-->
-                </td>
-                <td>Giảm giá
-                <!--                                            <%=String.format("%, .0f", sp.getSanPham().getGiaDaGiam())%>đ</td>-->
-                <td>giá bán
-                <!--                                            <%=String.format("%, .0f", sp.getSanPham().getGiaBan())%>đ</td>-->
-                <td>
-                    Số lương
-                    <!--                                            <%=sp.getSanPham().getSoLuong()%>-->
-                </td>
-                <td>
-                    <img src=""
-                         alt=""
-                         width="60">
-                </td>
-                <td style="text-align: center; font-size: 17px">
-                    Trạng thái
-                    <!--                                            <%if (sp.getSanPham().getTrangTHai() == 2) {%>-->
-                    <i class="fa fa-check" aria-hidden="true" style="color: #0a7f7f"></i>
-                    @* Trạn thái *@
-                    <!--                                            <%} else if (sp.getSanPham().getTrangTHai() == 1) {%>-->
-                    @* <i class="fa fa-exclamation-circle" aria-hidden="true" *@
-                    @* style="color: #ff8e27"></i> *@
-                    @* <!--                                            <%} else {%>--> *@
-                    @* <i class="fa fa-ban" aria-hidden="true" style="color: #de1d18"></i> *@
-                    <!--                                            <%}%>-->
-                </td>
-                <td style="text-align: center; font-weight: 700">
-                    <!--                                            <%if (sp.getSanPham().getLoai() == 2) {%>-->
-                    <span style="color: #de8f04">Sale</span>
-                    @* <!--                                            <%} else if (sp.getSanPham().getLoai() == 1) {%>--> *@
-                    @* <span style="color: #de1d18">Hot</span> *@
-                    <!--                                            <%} else {%>-->
-                    @* <span style="color: #31de21">New</span> *@
-                    <!--                                            <%}%>-->
-                </td>
-                <td style="text-align: center">
-                    <a
-                        href="#"
-                        class="btn default btn-xs purple btn-edit">
-                        <i class="fa fa-edit"></i>
-                    </a>
-                </td>
-                <td style="text-align: center">
-                    <a data-toggle="modal" data-target="#"
-                       class="btn default btn-xs black btn-delete">
-                        <i class="fa fa-trash-o"></i>
-                    </a>
-                    <div id="#" class="modal fade modal-confirm" role="dialog">
-                        <div class="modal-dialog modal-sm">
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-body">
-                                    <p class="text-content">Xác nhận xóa sản phẩm <em>#</em></p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" onclick="return location.href='#'">Xác nhận</button>
-                                    <button type="button" class="tbn-cancle" data-dismiss="modal">Hủy</button>
+            @foreach (SanPham sp in Model)
+            {
+                <tr class="odd gradeX">
+                    <td>
+                        @sp.MaSanPham
+                    </td>
+                    <td>
+                        @sp.TenSanPham
+                    </td>
+                    <td>
+                        @sp.NhaCungCap
+                    </td>
+                    <td> @string.Format("{0:0,0đ}", @sp.GiaDaGiam)
+                    <!--                                            <%=String.format("%, .0f", sp.getSanPham().getGiaDaGiam())%>đ</td>-->
+                    <td> @string.Format("{0:0,0đ}", @sp.GiaBan)
+                    <!--                                            <%=String.format("%, .0f", sp.getSanPham().getGiaBan())%>đ</td>-->
+                    <td>
+                        @sp.SoLuong
+                    </td>
+                    <td>
+                        <img src="@sp.HinhAnh"
+                             alt="@sp.TenSanPham"
+                             width="60">
+                    </td>
+                    <td style="text-align: center; font-size: 17px">
+                        @sp.TrangTHai
+                        @if (@sp.TrangTHai == 2)
+                        {
+                            <i class="fa fa-check" aria-hidden="true" style="color: #0a7f7f"></i>
+                        }
+                        else if(@sp.TrangTHai == 1) {
+                            <i class="fa fa-exclamation-circle" aria-hidden="true"
+                               style="color: #ff8e27">
+                            </i>
+                        }
+                        else{ <i class="fa fa-ban" aria-hidden="true" style="color: #de1d18"></i>}
+                    </td>
+                    <td style="text-align: center; font-weight: 700">
+                        @if (@sp.Loai == 2)
+                        {
+                            <span style="color: #de8f04">Sale</span> 
+                        }
+                        else if (@sp.Loai == 1)
+                        {
+                            <span style="color: #de1d18">Hot</span>
+                        }
+                        else
+                        {
+                            <span style="color: #31de21">New</span>
+                        }
+                    </td>
+                    <td style="text-align: center">
+                        <a
+                            href="#"
+                            class="btn default btn-xs purple btn-edit">
+                            <i class="fa fa-edit"></i>
+                        </a>
+                    </td>
+                    <td style="text-align: center">
+                        <a data-toggle="modal" data-target="#"
+                           class="btn default btn-xs black btn-delete">
+                            <i class="fa fa-trash-o"></i>
+                        </a>
+                        <div id="#" class="modal fade modal-confirm" role="dialog">
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <p class="text-content">Xác nhận xóa sản phẩm <em>#</em></p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" onclick="return location.href='#'">Xác nhận</button>
+                                        <button type="button" class="tbn-cancle" data-dismiss="modal">Hủy</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </td>
-            </tr>
+                    </td>
+                </tr>
+            }
+
 
             </tbody>
         </table>
@@ -297,3 +294,10 @@
 </div>
 </div>
 </div>
+<script>
+    $(document).ready(function () {
+        $('#dataTables-example').DataTable({
+            responsive: true
+        });
+    });
+</script>
