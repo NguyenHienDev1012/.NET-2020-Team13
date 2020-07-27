@@ -1,0 +1,100 @@
+﻿@{
+    ViewBag.Title = "Account Update";
+    Layout = "~/Views/Shared/Admin/_FramesFull.cshtml";
+}
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="page-bar page-header">
+                    <ul class="page-breadcrumb">
+                        <li>
+                            <i class="fa fa-home"></i>
+                            <a href="/Admin/Index_Admin">Home</a>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <a href="#">Danh mục</a>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <a href="/Admin/Account_Manage">Quản lý tài khoản</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading  d-flex">
+                        <div>
+                            <i class="fa  fa-user fa-fw"></i>
+                            Cập nhật thông tin tài khoản
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div id="update" class="like-form">
+                            <form id="form-validate" class="form-style"
+                                  action="#" method="post">
+                                <ul class="row">
+                                    <li class="row">
+                                        <input type="hidden" name="usr-name" value="">
+                                        <div class="col-sm-4 col-xs-6">
+                                            <input type="text" id="full-name" name="full-name"
+                                                   value="">
+                                            <label for="full-name">Họ tên<span>*</span></label>
+                                        </div>
+                                        <div class="col-sm-2 col-xs-6">
+                                            <select id="gender" name="gender">
+                                                <option value="Nam">Nam</option>
+                                                <option value="Nữ">Nữ</option>
+                                            </select>
+                                            <label for="gender" class="level-span">Giới tính</label>
+                                        </div>
+                                        <div class="col-sm-3 col-xs-6">
+                                            <input type="text" id="email" name="email"
+                                                   value="">
+                                            <input type="hidden" name="email-temp" value="">
+                                            <label for="email">Email<span>*</span></label>
+                                        </div>
+                                        <div class="col-sm-3 col-xs-6">
+                                            <input type="number" id="sdt" name="sdt" value="">
+                                            <label for="sdt">Điện thoại<span>*</span></label>
+                                        </div>
+                                    </li>
+                                    <li class="row">
+                                        <div class="col-sm-10 col-xs-6">
+                                            <input type="text" id="address" name="address"
+                                                   value="">
+                                            <label for="address">Địa chỉ</label>
+                                        </div>
+                                        <div class="col-sm-2 col-xs-6">
+                                            <select id="level" name="level">
+                                                <option value="1">Admin</option>
+                                                <option value="0">0 (User)</option>
+                                            </select>
+                                            <label for="level" class="level-span">Level</label>
+                                        </div>
+
+                                    </li>
+                                </ul>
+                                <div class="btn-submit">
+                                    <a href="/Admin/Account_Manage" class="btn default btn-xs black go-to-back">
+                                        Trở
+                                        lại
+                                    </a>
+                                    <button type="submit" id="update-btn">
+                                        <i class="fa fa-pencil-square-o fa-fw"
+                                           aria-hidden="true">
+                                        </i>Cập nhật
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

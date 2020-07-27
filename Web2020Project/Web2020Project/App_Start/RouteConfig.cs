@@ -16,7 +16,7 @@ namespace Web2020Project
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new {controller = "Admin", action = "Index", id = UrlParameter.Optional}
+                defaults: new {controller = "Home", action = "Index", id = UrlParameter.Optional}
             );
         }
     }

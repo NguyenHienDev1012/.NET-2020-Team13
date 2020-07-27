@@ -1,6 +1,6 @@
 ﻿@{
     ViewBag.Title = "Home Page";
-    Layout = "~/Views/Shared/_HeaderHome.cshtml";
+    Layout = "~/Views/Shared/Home/_HeaderHome.cshtml";
 
 }
 <section id="body">
@@ -47,7 +47,7 @@
             <div class="news-text news-bd">
                 <div class="news-text-title space-between">
                     <h6>TIN CÔNG NGHỆ NỔI BẬT</h6>
-                    <a href="news.html">Xem tất cả</a>
+                    <a href="/Home/News">Xem tất cả</a>
                 </div>
                 <div class="news-text-img">
                     <div class="news-text-img-subs space-between">
@@ -57,7 +57,7 @@
                             </a>
                         </div>
                         <div class="text-news">
-                            <a href="news_detail.html">
+                            <a href="/Home/New_Detail">
                                 Mi CC9 Pro sẽ được tích hợp cảm biến vân tay bên dưới màn hình, đồng thời là cảm biến vân tay quang học siêu mỏng đầu tiên trên thế giới.
                             </a>
                         </div>
@@ -70,7 +70,7 @@
                             </a>
                         </div>
                         <div class="text-news">
-                            <a href="news_detail.html">
+                            <a href="/Home/New_Detail">
                                 Chip 3 nanomet sẽ sẵn sàng cho iPhone 2022
                             </a>
                         </div>
@@ -83,7 +83,7 @@
                             </a>
                         </div>
                         <div class="text-news">
-                            <a href="news_detail.html">
+                            <a href="/Home/New_Detail">
                                 Redmi K30 5G lộ ảnh render chính thức trước ngày ra mắt
                             </a>
                         </div>
@@ -109,7 +109,7 @@
 <!--                                        0:new, 1Hot, 2Sale&#45;&#45;%>-->
 <div class="owl-item">
     <div class="item">
-        <a href="product_detail.html">
+        <a href="/Home/Product_Detail">
             <img src="/Content/assets/img/products/iphone/1.jpg" alt=""/>
             <!--                                    <%if (sp.getTenSanPham().length() < 10) {%>-->
             <!--                                    <h3 style="text-align: center"><%=sp.getTenSanPham()%>-->
@@ -136,7 +136,7 @@
 </div>
 <div class="owl-item">
     <div class="item">
-        <a href="product_detail.html">
+        <a href="/Home/Product_Detail">
             <img src="/Content/assets/img/products/iphone/1.jpg" alt=""/>
             <!--                                    <%if (sp.getTenSanPham().length() < 10) {%>-->
             <!--                                    <h3 style="text-align: center"><%=sp.getTenSanPham()%>-->
@@ -163,7 +163,7 @@
 </div>
 <div class="owl-item">
     <div class="item">
-        <a href="product_detail.html">
+        <a href="/Home/Product_Detail">
             <img src="/Content/assets/img/products/iphone/1.jpg" alt=""/>
             <!--                                    <%if (sp.getTenSanPham().length() < 10) {%>-->
             <!--                                    <h3 style="text-align: center"><%=sp.getTenSanPham()%>-->
@@ -190,7 +190,7 @@
 </div>
 <div class="owl-item">
     <div class="item">
-        <a href="product_detail.html">
+        <a href="/Home/Product_Detail">
             <img src="/Content/assets/img/products/iphone/1.jpg" alt=""/>
             <!--                                    <%if (sp.getTenSanPham().length() < 10) {%>-->
             <!--                                    <h3 style="text-align: center"><%=sp.getTenSanPham()%>-->
@@ -217,7 +217,7 @@
 </div>
 <div class="owl-item">
     <div class="item">
-        <a href="product_detail.html">
+        <a href="/Home/Product_Detail">
             <img src="/Content/assets/img/products/iphone/1.jpg" alt=""/>
             <!--                                    <%if (sp.getTenSanPham().length() < 10) {%>-->
             <!--                                    <h3 style="text-align: center"><%=sp.getTenSanPham()%>-->
@@ -244,7 +244,7 @@
 </div>
 <div class="owl-item">
     <div class="item">
-        <a href="product_detail.html">
+        <a href="/Home/Product_Detail">
             <img src="/Content/assets/img/products/iphone/1.jpg" alt=""/>
             <!--                                    <%if (sp.getTenSanPham().length() < 10) {%>-->
             <!--                                    <h3 style="text-align: center"><%=sp.getTenSanPham()%>-->
@@ -271,7 +271,7 @@
 </div>
 <div class="owl-item">
     <div class="item">
-        <a href="product_detail.html">
+        <a href="/Home/Product_Detail">
             <img src="/Content/assets/img/products/iphone/1.jpg" alt=""/>
             <!--                                    <%if (sp.getTenSanPham().length() < 10) {%>-->
             <!--                                    <h3 style="text-align: center"><%=sp.getTenSanPham()%>-->
@@ -298,7 +298,7 @@
 </div>
 <div class="owl-item">
     <div class="item">
-        <a href="product_detail.html">
+        <a href="/Home/Product_Detail">
             <img src="/Content/assets/img/products/iphone/1.jpg" alt=""/>
             <!--                                    <%if (sp.getTenSanPham().length() < 10) {%>-->
             <!--                                    <h3 style="text-align: center"><%=sp.getTenSanPham()%>-->
@@ -335,7 +335,7 @@
 <div>
     <div class="owl-item">
         <div class="item">
-            <a href="product_detail.html">
+            <a href="/Home/Product_Detail">
                 <img src="/Content/assets/img/products/iphone/15.png" alt=""/>
                 <h3>iPhone 11 256GB</h3>
                 <div class="price">
@@ -358,55 +358,7 @@
     </div>
     <div class="owl-item">
         <div class="item">
-            <a href="product_detail.html">
-                <img src="/Content/assets/img/products/iphone/15.png" alt=""/>
-                <h3>iPhone 11 256GB</h3>
-                <div class="price">
-                    <!--                                            <%if (dsss_hot.get(i).getGiaDaGiam() < dsss_hot.get(i).getGiaBan()) {%>-->
-                    <!--                                            <span><%=String.format("%, .0f", dsss_hot.get(i).getGiaBan()) + "đ"%></span>-->
-                    <!--                                            <strong><%=String.format("%, .0f", dsss_hot.get(i).getGiaDaGiam()) + "đ"%>-->
-                    <!--                                            </strong>-->
-                    <!--                                            <%} else {%>-->
-                    <!--                                            <strong><%=String.format("%, .0f", dsss_hot.get(i).getGiaDaGiam()) + "đ"%>-->
-                    <!--                                            </strong>-->
-                    <!--                                            <%}%>-->
-                    <strong>25.000.000d</strong>
-                </div>
-                <!--                                        <%if (dsss_hot.get(i).getGiaDaGiam() < dsss_hot.get(i).getGiaBan()) {%>-->
-                <label class="discount">GIẢM 2.500.000d</label>
-                <!--                                        <%-->
-            </a>
-
-        </div>
-    </div>
-</div>
-<div>
-    <div class="owl-item">
-        <div class="item">
-            <a href="product_detail.html">
-                <img src="/Content/assets/img/products/iphone/15.png" alt=""/>
-                <h3>iPhone 11 256GB</h3>
-                <div class="price">
-                    <!--                                            <%if (dsss_hot.get(i).getGiaDaGiam() < dsss_hot.get(i).getGiaBan()) {%>-->
-                    <!--                                            <span><%=String.format("%, .0f", dsss_hot.get(i).getGiaBan()) + "đ"%></span>-->
-                    <!--                                            <strong><%=String.format("%, .0f", dsss_hot.get(i).getGiaDaGiam()) + "đ"%>-->
-                    <!--                                            </strong>-->
-                    <!--                                            <%} else {%>-->
-                    <!--                                            <strong><%=String.format("%, .0f", dsss_hot.get(i).getGiaDaGiam()) + "đ"%>-->
-                    <!--                                            </strong>-->
-                    <!--                                            <%}%>-->
-                    <strong>25.000.000d</strong>
-                </div>
-                <!--                                        <%if (dsss_hot.get(i).getGiaDaGiam() < dsss_hot.get(i).getGiaBan()) {%>-->
-                <label class="discount">GIẢM 2.500.000d</label>
-                <!--                                        <%-->
-            </a>
-
-        </div>
-    </div>
-    <div class="owl-item">
-        <div class="item">
-            <a href="product_detail.html">
+            <a href="/Home/Product_Detail">
                 <img src="/Content/assets/img/products/iphone/15.png" alt=""/>
                 <h3>iPhone 11 256GB</h3>
                 <div class="price">
@@ -431,7 +383,7 @@
 <div>
     <div class="owl-item">
         <div class="item">
-            <a href="product_detail.html">
+            <a href="/Home/Product_Detail">
                 <img src="/Content/assets/img/products/iphone/15.png" alt=""/>
                 <h3>iPhone 11 256GB</h3>
                 <div class="price">
@@ -454,55 +406,7 @@
     </div>
     <div class="owl-item">
         <div class="item">
-            <a href="product_detail.html">
-                <img src="/Content/assets/img/products/iphone/15.png" alt=""/>
-                <h3>iPhone 11 256GB</h3>
-                <div class="price">
-                    <!--                                            <%if (dsss_hot.get(i).getGiaDaGiam() < dsss_hot.get(i).getGiaBan()) {%>-->
-                    <!--                                            <span><%=String.format("%, .0f", dsss_hot.get(i).getGiaBan()) + "đ"%></span>-->
-                    <!--                                            <strong><%=String.format("%, .0f", dsss_hot.get(i).getGiaDaGiam()) + "đ"%>-->
-                    <!--                                            </strong>-->
-                    <!--                                            <%} else {%>-->
-                    <!--                                            <strong><%=String.format("%, .0f", dsss_hot.get(i).getGiaDaGiam()) + "đ"%>-->
-                    <!--                                            </strong>-->
-                    <!--                                            <%}%>-->
-                    <strong>25.000.000d</strong>
-                </div>
-                <!--                                        <%if (dsss_hot.get(i).getGiaDaGiam() < dsss_hot.get(i).getGiaBan()) {%>-->
-                <label class="discount">GIẢM 2.500.000d</label>
-                <!--                                        <%-->
-            </a>
-
-        </div>
-    </div>
-</div>
-<div>
-    <div class="owl-item">
-        <div class="item">
-            <a href="product_detail.html">
-                <img src="/Content/assets/img/products/iphone/15.png" alt=""/>
-                <h3>iPhone 11 256GB</h3>
-                <div class="price">
-                    <!--                                            <%if (dsss_hot.get(i).getGiaDaGiam() < dsss_hot.get(i).getGiaBan()) {%>-->
-                    <!--                                            <span><%=String.format("%, .0f", dsss_hot.get(i).getGiaBan()) + "đ"%></span>-->
-                    <!--                                            <strong><%=String.format("%, .0f", dsss_hot.get(i).getGiaDaGiam()) + "đ"%>-->
-                    <!--                                            </strong>-->
-                    <!--                                            <%} else {%>-->
-                    <!--                                            <strong><%=String.format("%, .0f", dsss_hot.get(i).getGiaDaGiam()) + "đ"%>-->
-                    <!--                                            </strong>-->
-                    <!--                                            <%}%>-->
-                    <strong>25.000.000d</strong>
-                </div>
-                <!--                                        <%if (dsss_hot.get(i).getGiaDaGiam() < dsss_hot.get(i).getGiaBan()) {%>-->
-                <label class="discount">GIẢM 2.500.000d</label>
-                <!--                                        <%-->
-            </a>
-
-        </div>
-    </div>
-    <div class="owl-item">
-        <div class="item">
-            <a href="product_detail.html">
+            <a href="/Home/Product_Detail">
                 <img src="/Content/assets/img/products/iphone/15.png" alt=""/>
                 <h3>iPhone 11 256GB</h3>
                 <div class="price">
@@ -527,7 +431,7 @@
 <div>
     <div class="owl-item">
         <div class="item">
-            <a href="product_detail.html">
+            <a href="/Home/Product_Detail">
                 <img src="/Content/assets/img/products/iphone/15.png" alt=""/>
                 <h3>iPhone 11 256GB</h3>
                 <div class="price">
@@ -550,55 +454,7 @@
     </div>
     <div class="owl-item">
         <div class="item">
-            <a href="product_detail.html">
-                <img src="/Content/assets/img/products/iphone/15.png" alt=""/>
-                <h3>iPhone 11 256GB</h3>
-                <div class="price">
-                    <!--                                            <%if (dsss_hot.get(i).getGiaDaGiam() < dsss_hot.get(i).getGiaBan()) {%>-->
-                    <!--                                            <span><%=String.format("%, .0f", dsss_hot.get(i).getGiaBan()) + "đ"%></span>-->
-                    <!--                                            <strong><%=String.format("%, .0f", dsss_hot.get(i).getGiaDaGiam()) + "đ"%>-->
-                    <!--                                            </strong>-->
-                    <!--                                            <%} else {%>-->
-                    <!--                                            <strong><%=String.format("%, .0f", dsss_hot.get(i).getGiaDaGiam()) + "đ"%>-->
-                    <!--                                            </strong>-->
-                    <!--                                            <%}%>-->
-                    <strong>25.000.000d</strong>
-                </div>
-                <!--                                        <%if (dsss_hot.get(i).getGiaDaGiam() < dsss_hot.get(i).getGiaBan()) {%>-->
-                <label class="discount">GIẢM 2.500.000d</label>
-                <!--                                        <%-->
-            </a>
-
-        </div>
-    </div>
-</div>
-<div>
-    <div class="owl-item">
-        <div class="item">
-            <a href="product_detail.html">
-                <img src="/Content/assets/img/products/iphone/15.png" alt=""/>
-                <h3>iPhone 11 256GB</h3>
-                <div class="price">
-                    <!--                                            <%if (dsss_hot.get(i).getGiaDaGiam() < dsss_hot.get(i).getGiaBan()) {%>-->
-                    <!--                                            <span><%=String.format("%, .0f", dsss_hot.get(i).getGiaBan()) + "đ"%></span>-->
-                    <!--                                            <strong><%=String.format("%, .0f", dsss_hot.get(i).getGiaDaGiam()) + "đ"%>-->
-                    <!--                                            </strong>-->
-                    <!--                                            <%} else {%>-->
-                    <!--                                            <strong><%=String.format("%, .0f", dsss_hot.get(i).getGiaDaGiam()) + "đ"%>-->
-                    <!--                                            </strong>-->
-                    <!--                                            <%}%>-->
-                    <strong>25.000.000d</strong>
-                </div>
-                <!--                                        <%if (dsss_hot.get(i).getGiaDaGiam() < dsss_hot.get(i).getGiaBan()) {%>-->
-                <label class="discount">GIẢM 2.500.000d</label>
-                <!--                                        <%-->
-            </a>
-
-        </div>
-    </div>
-    <div class="owl-item">
-        <div class="item">
-            <a href="product_detail.html">
+            <a href="/Home/Product_Detail">
                 <img src="/Content/assets/img/products/iphone/15.png" alt=""/>
                 <h3>iPhone 11 256GB</h3>
                 <div class="price">
@@ -623,7 +479,7 @@
 <div>
     <div class="owl-item">
         <div class="item">
-            <a href="product_detail.html">
+            <a href="/Home/Product_Detail">
                 <img src="/Content/assets/img/products/iphone/15.png" alt=""/>
                 <h3>iPhone 11 256GB</h3>
                 <div class="price">
@@ -646,55 +502,7 @@
     </div>
     <div class="owl-item">
         <div class="item">
-            <a href="product_detail.html">
-                <img src="/Content/assets/img/products/iphone/15.png" alt=""/>
-                <h3>iPhone 11 256GB</h3>
-                <div class="price">
-                    <!--                                            <%if (dsss_hot.get(i).getGiaDaGiam() < dsss_hot.get(i).getGiaBan()) {%>-->
-                    <!--                                            <span><%=String.format("%, .0f", dsss_hot.get(i).getGiaBan()) + "đ"%></span>-->
-                    <!--                                            <strong><%=String.format("%, .0f", dsss_hot.get(i).getGiaDaGiam()) + "đ"%>-->
-                    <!--                                            </strong>-->
-                    <!--                                            <%} else {%>-->
-                    <!--                                            <strong><%=String.format("%, .0f", dsss_hot.get(i).getGiaDaGiam()) + "đ"%>-->
-                    <!--                                            </strong>-->
-                    <!--                                            <%}%>-->
-                    <strong>25.000.000d</strong>
-                </div>
-                <!--                                        <%if (dsss_hot.get(i).getGiaDaGiam() < dsss_hot.get(i).getGiaBan()) {%>-->
-                <label class="discount">GIẢM 2.500.000d</label>
-                <!--                                        <%-->
-            </a>
-
-        </div>
-    </div>
-</div>
-<div>
-    <div class="owl-item">
-        <div class="item">
-            <a href="product_detail.html">
-                <img src="/Content/assets/img/products/iphone/15.png" alt=""/>
-                <h3>iPhone 11 256GB</h3>
-                <div class="price">
-                    <!--                                            <%if (dsss_hot.get(i).getGiaDaGiam() < dsss_hot.get(i).getGiaBan()) {%>-->
-                    <!--                                            <span><%=String.format("%, .0f", dsss_hot.get(i).getGiaBan()) + "đ"%></span>-->
-                    <!--                                            <strong><%=String.format("%, .0f", dsss_hot.get(i).getGiaDaGiam()) + "đ"%>-->
-                    <!--                                            </strong>-->
-                    <!--                                            <%} else {%>-->
-                    <!--                                            <strong><%=String.format("%, .0f", dsss_hot.get(i).getGiaDaGiam()) + "đ"%>-->
-                    <!--                                            </strong>-->
-                    <!--                                            <%}%>-->
-                    <strong>25.000.000d</strong>
-                </div>
-                <!--                                        <%if (dsss_hot.get(i).getGiaDaGiam() < dsss_hot.get(i).getGiaBan()) {%>-->
-                <label class="discount">GIẢM 2.500.000d</label>
-                <!--                                        <%-->
-            </a>
-
-        </div>
-    </div>
-    <div class="owl-item">
-        <div class="item">
-            <a href="product_detail.html">
+            <a href="/Home/Product_Detail">
                 <img src="/Content/assets/img/products/iphone/15.png" alt=""/>
                 <h3>iPhone 11 256GB</h3>
                 <div class="price">
@@ -719,7 +527,7 @@
 <div>
     <div class="owl-item">
         <div class="item">
-            <a href="product_detail.html">
+            <a href="/Home/Product_Detail">
                 <img src="/Content/assets/img/products/iphone/15.png" alt=""/>
                 <h3>iPhone 11 256GB</h3>
                 <div class="price">
@@ -742,7 +550,7 @@
     </div>
     <div class="owl-item">
         <div class="item">
-            <a href="product_detail.html">
+            <a href="/Home/Product_Detail">
                 <img src="/Content/assets/img/products/iphone/15.png" alt=""/>
                 <h3>iPhone 11 256GB</h3>
                 <div class="price">
@@ -767,7 +575,7 @@
 <div>
     <div class="owl-item">
         <div class="item">
-            <a href="product_detail.html">
+            <a href="/Home/Product_Detail">
                 <img src="/Content/assets/img/products/iphone/15.png" alt=""/>
                 <h3>iPhone 11 256GB</h3>
                 <div class="price">
@@ -790,7 +598,199 @@
     </div>
     <div class="owl-item">
         <div class="item">
-            <a href="product_detail.html">
+            <a href="/Home/Product_Detail">
+                <img src="/Content/assets/img/products/iphone/15.png" alt=""/>
+                <h3>iPhone 11 256GB</h3>
+                <div class="price">
+                    <!--                                            <%if (dsss_hot.get(i).getGiaDaGiam() < dsss_hot.get(i).getGiaBan()) {%>-->
+                    <!--                                            <span><%=String.format("%, .0f", dsss_hot.get(i).getGiaBan()) + "đ"%></span>-->
+                    <!--                                            <strong><%=String.format("%, .0f", dsss_hot.get(i).getGiaDaGiam()) + "đ"%>-->
+                    <!--                                            </strong>-->
+                    <!--                                            <%} else {%>-->
+                    <!--                                            <strong><%=String.format("%, .0f", dsss_hot.get(i).getGiaDaGiam()) + "đ"%>-->
+                    <!--                                            </strong>-->
+                    <!--                                            <%}%>-->
+                    <strong>25.000.000d</strong>
+                </div>
+                <!--                                        <%if (dsss_hot.get(i).getGiaDaGiam() < dsss_hot.get(i).getGiaBan()) {%>-->
+                <label class="discount">GIẢM 2.500.000d</label>
+                <!--                                        <%-->
+            </a>
+
+        </div>
+    </div>
+</div>
+<div>
+    <div class="owl-item">
+        <div class="item">
+            <a href="/Home/Product_Detail">
+                <img src="/Content/assets/img/products/iphone/15.png" alt=""/>
+                <h3>iPhone 11 256GB</h3>
+                <div class="price">
+                    <!--                                            <%if (dsss_hot.get(i).getGiaDaGiam() < dsss_hot.get(i).getGiaBan()) {%>-->
+                    <!--                                            <span><%=String.format("%, .0f", dsss_hot.get(i).getGiaBan()) + "đ"%></span>-->
+                    <!--                                            <strong><%=String.format("%, .0f", dsss_hot.get(i).getGiaDaGiam()) + "đ"%>-->
+                    <!--                                            </strong>-->
+                    <!--                                            <%} else {%>-->
+                    <!--                                            <strong><%=String.format("%, .0f", dsss_hot.get(i).getGiaDaGiam()) + "đ"%>-->
+                    <!--                                            </strong>-->
+                    <!--                                            <%}%>-->
+                    <strong>25.000.000d</strong>
+                </div>
+                <!--                                        <%if (dsss_hot.get(i).getGiaDaGiam() < dsss_hot.get(i).getGiaBan()) {%>-->
+                <label class="discount">GIẢM 2.500.000d</label>
+                <!--                                        <%-->
+            </a>
+
+        </div>
+    </div>
+    <div class="owl-item">
+        <div class="item">
+            <a href="/Home/Product_Detail">
+                <img src="/Content/assets/img/products/iphone/15.png" alt=""/>
+                <h3>iPhone 11 256GB</h3>
+                <div class="price">
+                    <!--                                            <%if (dsss_hot.get(i).getGiaDaGiam() < dsss_hot.get(i).getGiaBan()) {%>-->
+                    <!--                                            <span><%=String.format("%, .0f", dsss_hot.get(i).getGiaBan()) + "đ"%></span>-->
+                    <!--                                            <strong><%=String.format("%, .0f", dsss_hot.get(i).getGiaDaGiam()) + "đ"%>-->
+                    <!--                                            </strong>-->
+                    <!--                                            <%} else {%>-->
+                    <!--                                            <strong><%=String.format("%, .0f", dsss_hot.get(i).getGiaDaGiam()) + "đ"%>-->
+                    <!--                                            </strong>-->
+                    <!--                                            <%}%>-->
+                    <strong>25.000.000d</strong>
+                </div>
+                <!--                                        <%if (dsss_hot.get(i).getGiaDaGiam() < dsss_hot.get(i).getGiaBan()) {%>-->
+                <label class="discount">GIẢM 2.500.000d</label>
+                <!--                                        <%-->
+            </a>
+
+        </div>
+    </div>
+</div>
+<div>
+    <div class="owl-item">
+        <div class="item">
+            <a href="/Home/Product_Detail">
+                <img src="/Content/assets/img/products/iphone/15.png" alt=""/>
+                <h3>iPhone 11 256GB</h3>
+                <div class="price">
+                    <!--                                            <%if (dsss_hot.get(i).getGiaDaGiam() < dsss_hot.get(i).getGiaBan()) {%>-->
+                    <!--                                            <span><%=String.format("%, .0f", dsss_hot.get(i).getGiaBan()) + "đ"%></span>-->
+                    <!--                                            <strong><%=String.format("%, .0f", dsss_hot.get(i).getGiaDaGiam()) + "đ"%>-->
+                    <!--                                            </strong>-->
+                    <!--                                            <%} else {%>-->
+                    <!--                                            <strong><%=String.format("%, .0f", dsss_hot.get(i).getGiaDaGiam()) + "đ"%>-->
+                    <!--                                            </strong>-->
+                    <!--                                            <%}%>-->
+                    <strong>25.000.000d</strong>
+                </div>
+                <!--                                        <%if (dsss_hot.get(i).getGiaDaGiam() < dsss_hot.get(i).getGiaBan()) {%>-->
+                <label class="discount">GIẢM 2.500.000d</label>
+                <!--                                        <%-->
+            </a>
+
+        </div>
+    </div>
+    <div class="owl-item">
+        <div class="item">
+            <a href="/Home/Product_Detail">
+                <img src="/Content/assets/img/products/iphone/15.png" alt=""/>
+                <h3>iPhone 11 256GB</h3>
+                <div class="price">
+                    <!--                                            <%if (dsss_hot.get(i).getGiaDaGiam() < dsss_hot.get(i).getGiaBan()) {%>-->
+                    <!--                                            <span><%=String.format("%, .0f", dsss_hot.get(i).getGiaBan()) + "đ"%></span>-->
+                    <!--                                            <strong><%=String.format("%, .0f", dsss_hot.get(i).getGiaDaGiam()) + "đ"%>-->
+                    <!--                                            </strong>-->
+                    <!--                                            <%} else {%>-->
+                    <!--                                            <strong><%=String.format("%, .0f", dsss_hot.get(i).getGiaDaGiam()) + "đ"%>-->
+                    <!--                                            </strong>-->
+                    <!--                                            <%}%>-->
+                    <strong>25.000.000d</strong>
+                </div>
+                <!--                                        <%if (dsss_hot.get(i).getGiaDaGiam() < dsss_hot.get(i).getGiaBan()) {%>-->
+                <label class="discount">GIẢM 2.500.000d</label>
+                <!--                                        <%-->
+            </a>
+
+        </div>
+    </div>
+</div>
+<div>
+    <div class="owl-item">
+        <div class="item">
+            <a href="/Home/Product_Detail">
+                <img src="/Content/assets/img/products/iphone/15.png" alt=""/>
+                <h3>iPhone 11 256GB</h3>
+                <div class="price">
+                    <!--                                            <%if (dsss_hot.get(i).getGiaDaGiam() < dsss_hot.get(i).getGiaBan()) {%>-->
+                    <!--                                            <span><%=String.format("%, .0f", dsss_hot.get(i).getGiaBan()) + "đ"%></span>-->
+                    <!--                                            <strong><%=String.format("%, .0f", dsss_hot.get(i).getGiaDaGiam()) + "đ"%>-->
+                    <!--                                            </strong>-->
+                    <!--                                            <%} else {%>-->
+                    <!--                                            <strong><%=String.format("%, .0f", dsss_hot.get(i).getGiaDaGiam()) + "đ"%>-->
+                    <!--                                            </strong>-->
+                    <!--                                            <%}%>-->
+                    <strong>25.000.000d</strong>
+                </div>
+                <!--                                        <%if (dsss_hot.get(i).getGiaDaGiam() < dsss_hot.get(i).getGiaBan()) {%>-->
+                <label class="discount">GIẢM 2.500.000d</label>
+                <!--                                        <%-->
+            </a>
+
+        </div>
+    </div>
+    <div class="owl-item">
+        <div class="item">
+            <a href="/Home/Product_Detail">
+                <img src="/Content/assets/img/products/iphone/15.png" alt=""/>
+                <h3>iPhone 11 256GB</h3>
+                <div class="price">
+                    <!--                                            <%if (dsss_hot.get(i).getGiaDaGiam() < dsss_hot.get(i).getGiaBan()) {%>-->
+                    <!--                                            <span><%=String.format("%, .0f", dsss_hot.get(i).getGiaBan()) + "đ"%></span>-->
+                    <!--                                            <strong><%=String.format("%, .0f", dsss_hot.get(i).getGiaDaGiam()) + "đ"%>-->
+                    <!--                                            </strong>-->
+                    <!--                                            <%} else {%>-->
+                    <!--                                            <strong><%=String.format("%, .0f", dsss_hot.get(i).getGiaDaGiam()) + "đ"%>-->
+                    <!--                                            </strong>-->
+                    <!--                                            <%}%>-->
+                    <strong>25.000.000d</strong>
+                </div>
+                <!--                                        <%if (dsss_hot.get(i).getGiaDaGiam() < dsss_hot.get(i).getGiaBan()) {%>-->
+                <label class="discount">GIẢM 2.500.000d</label>
+                <!--                                        <%-->
+            </a>
+
+        </div>
+    </div>
+</div>
+<div>
+    <div class="owl-item">
+        <div class="item">
+            <a href="/Home/Product_Detail">
+                <img src="/Content/assets/img/products/iphone/15.png" alt=""/>
+                <h3>iPhone 11 256GB</h3>
+                <div class="price">
+                    <!--                                            <%if (dsss_hot.get(i).getGiaDaGiam() < dsss_hot.get(i).getGiaBan()) {%>-->
+                    <!--                                            <span><%=String.format("%, .0f", dsss_hot.get(i).getGiaBan()) + "đ"%></span>-->
+                    <!--                                            <strong><%=String.format("%, .0f", dsss_hot.get(i).getGiaDaGiam()) + "đ"%>-->
+                    <!--                                            </strong>-->
+                    <!--                                            <%} else {%>-->
+                    <!--                                            <strong><%=String.format("%, .0f", dsss_hot.get(i).getGiaDaGiam()) + "đ"%>-->
+                    <!--                                            </strong>-->
+                    <!--                                            <%}%>-->
+                    <strong>25.000.000d</strong>
+                </div>
+                <!--                                        <%if (dsss_hot.get(i).getGiaDaGiam() < dsss_hot.get(i).getGiaBan()) {%>-->
+                <label class="discount">GIẢM 2.500.000d</label>
+                <!--                                        <%-->
+            </a>
+
+        </div>
+    </div>
+    <div class="owl-item">
+        <div class="item">
+            <a href="/Home/Product_Detail">
                 <img src="/Content/assets/img/products/iphone/15.png" alt=""/>
                 <h3>iPhone 11 256GB</h3>
                 <div class="price">
@@ -824,7 +824,7 @@
 <div>
     <div class="owl-item">
         <div class="item">
-            <a href="product_detail.html" tabindex="0">
+            <a href="/Home/Product_Detail" tabindex="0">
                 <img src="/Content/assets/img/products/samsung/44.jpg" alt="">
                 <h3>
                     Samsung Galaxy S10+
@@ -839,7 +839,7 @@
     </div>
     <div class="owl-item">
         <div class="item">
-            <a href="product_detail.html" tabindex="0">
+            <a href="/Home/Product_Detail" tabindex="0">
                 <img src="/Content/assets/img/products/iphone/17.jpg" alt="">
                 <h3>
                     iPhone 11 64GB
@@ -858,7 +858,7 @@
 <div>
     <div class="owl-item">
         <div class="item">
-            <a href="product_detail.html" tabindex="0">
+            <a href="/Home/Product_Detail" tabindex="0">
                 <img src="/Content/assets/img/products/samsung/44.jpg" alt="">
                 <h3>
                     Samsung Galaxy S10+
@@ -873,7 +873,7 @@
     </div>
     <div class="owl-item">
         <div class="item">
-            <a href="product_detail.html" tabindex="0">
+            <a href="/Home/Product_Detail" tabindex="0">
                 <img src="/Content/assets/img/products/iphone/17.jpg" alt="">
                 <h3>
                     iPhone 11 64GB
@@ -892,7 +892,7 @@
 <div>
     <div class="owl-item">
         <div class="item">
-            <a href="product_detail.html" tabindex="0">
+            <a href="/Home/Product_Detail" tabindex="0">
                 <img src="/Content/assets/img/products/samsung/44.jpg" alt="">
                 <h3>
                     Samsung Galaxy S10+
@@ -907,7 +907,7 @@
     </div>
     <div class="owl-item">
         <div class="item">
-            <a href="product_detail.html" tabindex="0">
+            <a href="/Home/Product_Detail" tabindex="0">
                 <img src="/Content/assets/img/products/iphone/17.jpg" alt="">
                 <h3>
                     iPhone 11 64GB
@@ -926,7 +926,7 @@
 <div>
     <div class="owl-item">
         <div class="item">
-            <a href="product_detail.html" tabindex="0">
+            <a href="/Home/Product_Detail" tabindex="0">
                 <img src="/Content/assets/img/products/samsung/44.jpg" alt="">
                 <h3>
                     Samsung Galaxy S10+
@@ -941,7 +941,7 @@
     </div>
     <div class="owl-item">
         <div class="item">
-            <a href="product_detail.html" tabindex="0">
+            <a href="/Home/Product_Detail" tabindex="0">
                 <img src="/Content/assets/img/products/iphone/17.jpg" alt="">
                 <h3>
                     iPhone 11 64GB
@@ -960,7 +960,7 @@
 <div>
     <div class="owl-item">
         <div class="item">
-            <a href="product_detail.html" tabindex="0">
+            <a href="/Home/Product_Detail" tabindex="0">
                 <img src="/Content/assets/img/products/samsung/44.jpg" alt="">
                 <h3>
                     Samsung Galaxy S10+
@@ -975,7 +975,7 @@
     </div>
     <div class="owl-item">
         <div class="item">
-            <a href="product_detail.html" tabindex="0">
+            <a href="/Home/Product_Detail" tabindex="0">
                 <img src="/Content/assets/img/products/iphone/17.jpg" alt="">
                 <h3>
                     iPhone 11 64GB
@@ -994,7 +994,7 @@
 <div>
     <div class="owl-item">
         <div class="item">
-            <a href="product_detail.html" tabindex="0">
+            <a href="/Home/Product_Detail" tabindex="0">
                 <img src="/Content/assets/img/products/samsung/44.jpg" alt="">
                 <h3>
                     Samsung Galaxy S10+
@@ -1009,7 +1009,7 @@
     </div>
     <div class="owl-item">
         <div class="item">
-            <a href="product_detail.html" tabindex="0">
+            <a href="/Home/Product_Detail" tabindex="0">
                 <img src="/Content/assets/img/products/iphone/17.jpg" alt="">
                 <h3>
                     iPhone 11 64GB
@@ -1028,7 +1028,7 @@
 <div>
     <div class="owl-item">
         <div class="item">
-            <a href="product_detail.html" tabindex="0">
+            <a href="/Home/Product_Detail" tabindex="0">
                 <img src="/Content/assets/img/products/samsung/44.jpg" alt="">
                 <h3>
                     Samsung Galaxy S10+
@@ -1043,7 +1043,7 @@
     </div>
     <div class="owl-item">
         <div class="item">
-            <a href="product_detail.html" tabindex="0">
+            <a href="/Home/Product_Detail" tabindex="0">
                 <img src="/Content/assets/img/products/iphone/17.jpg" alt="">
                 <h3>
                     iPhone 11 64GB
@@ -1062,7 +1062,7 @@
 <div>
     <div class="owl-item">
         <div class="item">
-            <a href="product_detail.html" tabindex="0">
+            <a href="/Home/Product_Detail" tabindex="0">
                 <img src="/Content/assets/img/products/samsung/44.jpg" alt="">
                 <h3>
                     Samsung Galaxy S10+
@@ -1077,7 +1077,7 @@
     </div>
     <div class="owl-item">
         <div class="item">
-            <a href="product_detail.html" tabindex="0">
+            <a href="/Home/Product_Detail" tabindex="0">
                 <img src="/Content/assets/img/products/iphone/17.jpg" alt="">
                 <h3>
                     iPhone 11 64GB
@@ -1101,13 +1101,13 @@
 </section>
 
 <!--back-to-top-->
-<div class='back-to-top'>
-    <div>
-        <i class="fa fa-chevron-up" aria-hidden="true"></i>
-    </div>
-</div>
-<!--back-to-top-->
-<!--js--page-->
+@* <div class='back-to-top'> *@
+@*     <div> *@
+@*         <i class="fa fa-chevron-up" aria-hidden="true"></i> *@
+@*     </div> *@
+@* </div> *@
+@* <!--back-to-top--> *@
+@* <!--js--page--> *@
 <link rel="stylesheet" href="/Content/assets/libs/slick/slick.css">
 <link rel="stylesheet" href="/Content/assets/libs/slick/slick-theme.css">
 <script src="/Content/assets/js/slides-banner.js"></script>

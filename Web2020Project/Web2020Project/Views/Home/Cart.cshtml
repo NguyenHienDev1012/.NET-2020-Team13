@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "Cart";
+    Layout = "~/Views/Shared/Home/_HeaderSimple.cshtml";
+}
+<section id="body">
+    <div id="frame-cart">
+        <div class="container d-flex">
+            <div id="info-product">
+                <div class="title-top space-between">
+                    <div class="title-ic">
+                        <span><i class="fa fa-shopping-cart"></i>Giỏ hàng của bạn(có</span>
+                        <span id="count-pro">0 sản phẩm)</span>
+                    </div>
+                    <a href="/Home/Index">Tiếp tục mua hàng</a>
+                </div>
+                <div class="contain-product">
+                    <ul>
+                        <li class="item-cart">
+                            <div class="d-flex">
+                                <div class="img-pro"><a
+                                                         href="/Home/Product">
+                                        <img src="/Content/assets/img/products/huawei/231.png" alt="hinh-minh-hoa"/>
+                                    </a>
+                                </div>
+                                <div class="tit-cou">
+                                    <h5>Huawei XXX</h5>
+                                    <div class="d-flex align-i-center">
+                                        <span class="count">Số lượng:</span>
+                                        <div class="frame-num d-flex">
+                                            <button class="subject">-</button>
+                                            <input type="number" class="number-pro" value="1"
+                                                   min="1" required>
+                                            <button class="plus">+</button>
+                                            <input type="hidden" class="msp"
+                                                   value="code C#">
+                                        </div>
+                                        <span class="upgrade"><i class="fa fa-upload" aria-hidden="true"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="price-pro flex-direction-col">
+                                <div class="flex-direction-col">
+                                    <span class="price">20.000.000d</span>
+                                    <span>(Giá đã bao gồm VAT)</span>
+                                </div>
+                                <input type="hidden" class="msp-trash" value="getmsp">
+                                <input type="hidden" class="tensp-trash" value="getmsp">
+                                <span class="trash"><i class="fa fa-trash" aria-hidden="true"></i></span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="payment space-between">
+                    <div class="total d-flex align-i-center">
+                        <h5>TỔNG CỘNG</h5>
+                        <span id="total">20.000.000d</span>
+                    </div>
+                    <!--                    <button onclick="return location.href='thanhtoan'" id="btn-submit">ĐẶT HÀNG</button>-->
+                    <button data-toggle="modal" data-target="#checkout" id="btn-submit">ĐẶT HÀNG</button>
+                    <div id="checkout" class="modal fade modal-confirm" role="dialog">
+                        <div class="modal-dialog modal-sm">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <p class="text-content">Đăng nhập để thực hiện đặt hàng!</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" onclick="return location.href='/Home/Login'" class="btn-cf">Đăng nhập</button>
+                                    <button type="button" class="tbn-cancle" data-dismiss="modal">Hủy</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="info-user">
+                <div class="title-top title-ic">
+                    <span>Thông tin nhận hàng</span>
+                </div>
+                <div class="form-info form-cart">
+                    <form id="form-validate" class="form-style" action="#">
+                        <div>
+                            <span>Họ và Tên:</span>
+                            <input type="text" id="full-name" name="full-name" value="Name XXX"
+                                   disabled>
+                        </div>
+                        <div>
+                            <span>Số điện thoại:</span>
+                            <input name="sdt" id="sdt" type="number" value="xxx.xxx.xxx" disabled>
+                        </div>
+                        <div>
+                            <span>Địa chỉ Email:</span>
+                            <input type="text" id="email" name="email" value="xxx@gmail.com" disabled>
+                        </div>
+                        <div>
+                            <span>Địa chỉ:</span>
+                            <input type="text" id="address-oder" name="address-oder" value="xxxxxxxxxxxxxxxxxx"
+                                   disabled>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/Content/assets/js/cart.js"></script>
+</section>

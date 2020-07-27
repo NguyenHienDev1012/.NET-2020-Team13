@@ -6,7 +6,7 @@
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
         <SchemaVersion>2.0</SchemaVersion>
-        <ProjectGuid>{B7ECB048-62DB-4EE3-B6A9-5E8A06BE2D4E}</ProjectGuid>
+        <ProjectGuid>{30BA376C-8D84-4DB9-AC6D-32BFD99A95EA}</ProjectGuid>
         <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
         <OutputType>Library</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -43,6 +43,9 @@
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="Microsoft.CSharp" />
+        <Reference Include="MySql.Data, Version=8.0.21.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d">
+          <HintPath>..\..\..\File\Libs\mysql-connector-net-8.0.21-noinstall\v4.8\MySql.Data.dll</HintPath>
+        </Reference>
         <Reference Include="System" />
         <Reference Include="System.Data" />
         <Reference Include="System.Drawing" />
@@ -113,15 +116,44 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Admin\Controllers\AdminController.cs" />
+        <Compile Include="Admin\Dao\ThanhVienDao.cs" />
         <Compile Include="App_Start\BundleConfig.cs" />
         <Compile Include="App_Start\FilterConfig.cs" />
         <Compile Include="App_Start\RouteConfig.cs" />
-        <Compile Include="Controllers\Admin\AdminController.cs" />
-        <Compile Include="Controllers\HomeController.cs" />
+        <Compile Include="DAO\LoginDao.cs" />
+        <Compile Include="DAO\ObjectDao.cs" />
+        <Compile Include="FormInput\LoginModel.cs" />
+        <Compile Include="FormInput\ThanhVienModel.cs" />
         <Compile Include="Global.asax.cs">
             <DependentUpon>Global.asax</DependentUpon>
         </Compile>
+        <Compile Include="Models\BinhLuan.cs" />
+        <Compile Include="Models\ChiTietSanPham.cs" />
+        <Compile Include="Models\GioHang_DB.cs" />
+        <Compile Include="Models\NhaCungCap.cs" />
+        <Compile Include="Models\SanPham.cs" />
+        <Compile Include="Models\ThanhVien.cs" />
+        <Compile Include="Models\ThongSoKyThuat.cs" />
+        <Compile Include="Models\TinTuc.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="Utils\DBConnection.cs" />
+        <Compile Include="Utils\MD5.cs" />
+        <Compile Include="Utils\ReleaseResources.cs" />
+        <Compile Include="Website\Controllers\HomeController.cs" />
+        <Compile Include="Website\Dao\CartDAO.cs" />
+        <Compile Include="Website\Dao\CategoryDAO.cs" />
+        <Compile Include="Website\Dao\CommentDAO.cs" />
+        <Compile Include="Website\Dao\NewsDAO.cs" />
+        <Compile Include="Website\Dao\ProductDAO.cs" />
+        <Compile Include="Website\Dao\SearchDAO.cs" />
+        <Compile Include="Website\Dao\UpdateUserDAO.cs" />
+        <Compile Include="Website\Model\Constants.cs" />
+        <Compile Include="Website\Model\GioHang.cs" />
+        <Compile Include="Website\Model\GooglePojo.cs" />
+        <Compile Include="Website\Model\GoogleUtils.cs" />
+        <Compile Include="Website\Model\Item.cs" />
+        <Compile Include="Website\Model\RestFB.cs" />
     </ItemGroup>
     <ItemGroup>
         <Content Include="Content\Admin\css\bootstrap-social.css" />
@@ -522,11 +554,38 @@
         <Content Include="Scripts\jquery.validate.unobtrusive.js" />
         <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
         <Content Include="Scripts\modernizr-2.8.3.js" />
-        <Content Include="Views\Admin\Index.cshtml" />
+        <Content Include="Views\Admin\Account_Manage.cshtml" />
+        <Content Include="Views\Admin\Account_Update.cshtml" />
+        <Content Include="Views\Admin\Comment_Manage.cshtml" />
+        <Content Include="Views\Admin\Comment_Update.cshtml" />
+        <Content Include="Views\Admin\Index_Admin.cshtml" />
+        <Content Include="Views\Admin\Member.cshtml" />
+        <Content Include="Views\Admin\Member_Update.cshtml" />
+        <Content Include="Views\Admin\News_Manage.cshtml" />
+        <Content Include="Views\Admin\News_Update.cshtml" />
+        <Content Include="Views\Admin\Order_Manage.cshtml" />
+        <Content Include="Views\Admin\Producer.cshtml" />
+        <Content Include="Views\Admin\Producer_Update.cshtml" />
+        <Content Include="Views\Admin\Product_Manage.cshtml" />
+        <Content Include="Views\Admin\Product_Update.cshtml" />
+        <Content Include="Views\Admin\Revenue.cshtml" />
+        <Content Include="Views\Home\Cart.cshtml" />
+        <Content Include="Views\Home\Error404.cshtml" />
+        <Content Include="Views\Home\Guarentee.cshtml" />
+        <Content Include="Views\Home\Login.cshtml" />
+        <Content Include="Views\Home\News.cshtml" />
+        <Content Include="Views\Home\New_Detail.cshtml" />
+        <Content Include="Views\Home\Product.cshtml" />
+        <Content Include="Views\Home\Product_Detail.cshtml" />
+        <Content Include="Views\Home\Profile_User.cshtml" />
+        <Content Include="Views\Home\Question.cshtml" />
+        <Content Include="Views\Home\Register.cshtml" />
+        <Content Include="Views\Home\Reset_Password.cshtml" />
         <Content Include="Views\Shared\Admin\_Frames.cshtml" />
-        <Content Include="Views\Shared\_Header.cshtml" />
-        <Content Include="Views\Shared\_HeaderHome.cshtml" />
-        <Content Include="Views\Shared\_HeaderSimple.cshtml" />
+        <Content Include="Views\Shared\Admin\_FramesFull.cshtml" />
+        <Content Include="Views\Shared\Home\_Header.cshtml" />
+        <Content Include="Views\Shared\Home\_HeaderHome.cshtml" />
+        <Content Include="Views\Shared\Home\_HeaderSimple.cshtml" />
         <Content Include="Web.config" />
         <Content Include="Web.Debug.config">
             <DependentUpon>Web.config</DependentUpon>
@@ -538,13 +597,7 @@
         <Content Include="Views\_ViewStart.cshtml" />
         <Content Include="Views\Shared\Error.cshtml" />
         <Content Include="Views\Shared\_Layout.cshtml" />
-        <Content Include="Views\Home\About.cshtml" />
-        <Content Include="Views\Home\Contact.cshtml" />
         <Content Include="Views\Home\Index.cshtml" />
-    </ItemGroup>
-    <ItemGroup>
-        <Folder Include="App_Data" />
-        <Folder Include="Models" />
     </ItemGroup>
     <ItemGroup>
         <Content Include="fonts\glyphicons-halflings-regular.woff2" />
