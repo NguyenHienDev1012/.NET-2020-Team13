@@ -1,11 +1,11 @@
 $(document).ready(function () {
-    const usr_name = $('#usr-name');
+    const userName = $('#userName');
     const password = $('#password');
     let flag = true;
     $('#form-login').submit(function () {
         flag = true;
-        if (usr_name.val() === '') {
-            notEmpty(usr_name, 'Vui lòng nhập tài khoản');
+        if (userName.val() === '') {
+            notEmpty(userName, 'Vui lòng nhập tài khoản');
             flag = false;
         }
         if (password.val() === '') {

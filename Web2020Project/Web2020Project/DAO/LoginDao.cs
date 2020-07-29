@@ -10,44 +10,29 @@ namespace Web2020Project.Dao
 {
     public class LoginDao
     {
-        private static MySqlDataReader reader = null;
-  
-
-        public static ThanhVien checkLogin(string taikhoan, string matkhau)
+        public static Member checkLogin(string userName, string password)
         {
-            string sql = "select * from thanhvien where taikhoan= @taikhoan and matkhau= @matkhau";
-            MySqlConnection conn = DBConnection.getConnection();
-            conn.Open();
+            MySqlDataReader reader = null;
+            MySqlConnection connection = null;
+            MySqlCommand cmd = null;
+            string sql = "SELECT * FROM THANHVIEN WHERE TAIKHOAN= @taikhoan AND MATKHAU= @matkhau";
             try
             {
-                MySqlCommand mySqlCommand = new MySqlCommand(sql, conn);
-                mySqlCommand.Parameters.AddWithValue("taikhoan", taikhoan);
-                mySqlCommand.Parameters.AddWithValue("matkhau", MD5.ConvertToMD5(matkhau));
-                
-                reader = mySqlCommand.ExecuteReader();
-                    if (reader.HasRows)
+                connection = DBConnection.getConnection();
+                connection.Open();
+                cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("taikhoan", userName);
+                cmd.Parameters.AddWithValue("matkhau", MD5.ConvertToMD5(password));
+                reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    if (reader.Read())
                     {
-                        while (reader.Read())
-                        {
-                            string taiKhoan = reader[0].ToString();
-                            string matKhau = reader[1].ToString();
-                            string hoTen = reader[2].ToString();
-                            string gioiTinh = reader[3].ToString();
-                            string email = reader[4].ToString();
-                            int soDienThoai = reader.GetInt32(5);
-                            string diaChi = reader[6].ToString();
-                            int level = Convert.ToInt32(reader.GetDecimal(7));
-                            string avatar = reader[8].ToString();
-                            ThanhVien thanhvien = new ThanhVien(taikhoan, matkhau, hoTen, gioiTinh, email, "",
-                                                   diaChi, level, avatar);
-                            return thanhvien;
-                        }
+                        return new Member().GetMember(reader);
                     }
-                    else
-                    {
-                        return null;
-                    }
-                
+                }
+
+                return null;
             }
             catch (Exception e)
             {
@@ -56,11 +41,8 @@ namespace Web2020Project.Dao
             }
             finally
             {
-                if(reader!=null) reader.Close();
-                if(conn != null) conn.Close();
+                ReleaseResources.Release(connection, reader, cmd);
             }
-
-            return null;
         }
     }
-    }
+}

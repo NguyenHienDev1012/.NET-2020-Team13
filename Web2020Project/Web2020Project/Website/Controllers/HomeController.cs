@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Web2020Project.Admin.Dao;
 using Web2020Project.Dao;
 using Web2020Project.FormInteract;
 using Web2020Project.Model;
 using Web2020Project.Utils;
+using Web2020Project.Website.Dao;
 
 namespace Web2020Project.Controllers
 {
     public class HomeController : Controller
     {
-        ThanhVienDao thanhVienDao= new ThanhVienDao();
+        MemberDAO memberDao= new MemberDAO();
         public ActionResult Index()
         {
             return View();
@@ -46,7 +46,7 @@ namespace Web2020Project.Controllers
         public ActionResult Login(LoginModel loginmodel)
         {
              
-            ThanhVien thanhvien = LoginDao.checkLogin(loginmodel.Usrname, loginmodel.Password);
+            Member thanhvien = LoginDao.checkLogin(loginmodel.Usrname, loginmodel.Password);
             if (thanhvien != null)
             {
                 return RedirectToAction("Index", "Home");
@@ -64,11 +64,9 @@ namespace Web2020Project.Controllers
         }
 
         [HttpPost]
-        public ActionResult Register(ThanhVienModel thanhVienModel)
+        public ActionResult Register(MemberModel memberModel)
         {
-            ThanhVien thanhvien= new ThanhVien(thanhVienModel.UsrName, thanhVienModel.Password, thanhVienModel.FullName, thanhVienModel.Gender, 
-                thanhVienModel.Email, "", thanhVienModel.Address, 0,  "" );
-            bool isOK = thanhVienDao.add(thanhVienModel);
+            bool isOK = false;
             if (isOK)
             {
                 return RedirectToAction("Index", "Home");

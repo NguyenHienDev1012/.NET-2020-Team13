@@ -10,12 +10,12 @@ namespace Web2020Project.Website.Dao
 {
     public class SearchDAO
     {
-        public static List<SanPham> Search(String input)
+        public static List<Product> Search(String input)
         {
             MySqlConnection connection = null;
             MySqlCommand cmd = null;
             MySqlDataReader reader = null;
-            List<SanPham> sanPhams = new List<SanPham>();
+            List<Product> products = new List<Product>();
             try
             {
                 string sql = "SELECT * FROM SANPHAM WHERE TRANGTHAI>0 AND TENSANPHAM LIKE " + "'%" + input +
@@ -28,11 +28,11 @@ namespace Web2020Project.Website.Dao
                 {
                     while (reader.Read())
                     {
-                        sanPhams.Add(new SanPham().GetSanPham(reader));
+                        products.Add(new Product().GetProduct(reader));
                     }
                 }
 
-                return sanPhams.Count != 0 ? sanPhams : null;
+                return products.Count != 0 ? products : null;
             }
             catch (SqlException e)
             {
@@ -45,12 +45,12 @@ namespace Web2020Project.Website.Dao
             }
         }
 
-        public static List<ChiTietSanPham> SearchKey(String key)
+        public static List<ProductDetail> SearchKey(String key)
         {
             MySqlConnection connection = null;
             MySqlCommand cmd = null;
             MySqlDataReader reader = null;
-            List<ChiTietSanPham> chiTietSanPhams = new List<ChiTietSanPham>();
+            List<ProductDetail> productDetails = new List<ProductDetail>();
             try
             {
                 string sql =
@@ -64,11 +64,11 @@ namespace Web2020Project.Website.Dao
                 {
                     while (reader.Read())
                     {
-                        chiTietSanPhams.Add(new ChiTietSanPham().GetChiTietSanPham(reader));
+                        productDetails.Add(new ProductDetail().GetProductDetail(reader));
                     }
                 }
 
-                return chiTietSanPhams.Count != 0 ? chiTietSanPhams : null;
+                return productDetails.Count != 0 ? productDetails : null;
             }
             catch (SqlException e)
             {

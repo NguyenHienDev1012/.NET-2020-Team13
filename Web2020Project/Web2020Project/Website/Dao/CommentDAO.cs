@@ -10,7 +10,7 @@ namespace Web2020Project.Website.Dao
 {
     public class CommentDAO
     {
-        public static bool InsertCMT(BinhLuan binhLuan)
+        public static bool InsertCMT(Comment comment)
         {
             MySqlConnection connection = null;
             MySqlCommand cmd = null;
@@ -21,10 +21,10 @@ namespace Web2020Project.Website.Dao
                 connection = DBConnection.getConnection();
                 connection.Open();
                 cmd = new MySqlCommand(sql, connection);
-                cmd.Parameters.AddWithValue("@ten", binhLuan.HoTen);
-                cmd.Parameters.AddWithValue("@noidung", binhLuan.NoiDung);
-                cmd.Parameters.AddWithValue("@ma_sp", binhLuan.MaSanPham);
-                cmd.Parameters.AddWithValue("@sp", binhLuan.SanPham);
+                cmd.Parameters.AddWithValue("@ten", comment.Name);
+                cmd.Parameters.AddWithValue("@noidung", comment.Content);
+                cmd.Parameters.AddWithValue("@ma_sp", comment.ProductId);
+                cmd.Parameters.AddWithValue("@sp", comment.Product);
                 return cmd.ExecuteNonQuery() > 0;
             }
             catch (SqlException e)
@@ -38,29 +38,29 @@ namespace Web2020Project.Website.Dao
             }
         }
 
-        public static List<BinhLuan> LoadCMT(int masanpham)
+        public static List<Comment> LoadCMT(int productID)
         {
             MySqlConnection connection = null;
             MySqlCommand cmd = null;
             MySqlDataReader reader = null;
-            List<BinhLuan> binhLuans = new List<BinhLuan>();
+            List<Comment> comments = new List<Comment>();
             try
             {
                 string sql = "SELECT HOTEN,SANPHAM,NOIDUNG,NGAYBINHLUAN FROM BINHLUAN WHERE MASANPHAM=@msp";
                 connection = DBConnection.getConnection();
                 connection.Open();
                 cmd = new MySqlCommand(sql, connection);
-                cmd.Parameters.AddWithValue("@msp", masanpham);
+                cmd.Parameters.AddWithValue("@msp", productID);
                 reader = cmd.ExecuteReader();
                 if (reader.HasRows)
                 {
                     while (reader.Read())
                     {
-                        binhLuans.Add(new BinhLuan().GetBinhLuan(reader));
+                        comments.Add(new Comment().GetComment(reader));
                     }
                 }
 
-                return binhLuans.Count != 0 ? binhLuans : null;
+                return comments.Count != 0 ? comments : null;
             }
             catch (SqlException e)
             {

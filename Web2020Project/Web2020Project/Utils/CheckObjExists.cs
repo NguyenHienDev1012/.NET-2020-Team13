@@ -1,42 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Text;
 using MySql.Data.MySqlClient;
 using Web2020Project.libs;
-using Web2020Project.Model;
-using Web2020Project.Utils;
 
-namespace Web2020Project.Website.Dao
+namespace Web2020Project.Utils
 {
-    public class NewsDAO
+    public class CheckObjExists
     {
-        public static List<News> loadNews()
+        public static bool IsExist(string table, string primaryK, string value)
         {
             MySqlConnection connection = null;
             MySqlCommand cmd = null;
             MySqlDataReader reader = null;
-            List<News> newses = new List<News>();
+            StringBuilder str_builder;
             try
             {
-                string sql = "SELECT * FROM TINTUC";
                 connection = DBConnection.getConnection();
                 connection.Open();
+                str_builder = new StringBuilder("SELECT 1 FROM ");
+                str_builder.Append(table).Append(" WHERE ");
+                str_builder.Append(primaryK).Append("=@value");
+                string sql = str_builder.ToString();
                 cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@value", value);
                 reader = cmd.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        newses.Add(new News().GetNews(reader));
-                    }
-                }
-
-                return newses.Count != 0 ? newses : null;
+                return reader.Read();
             }
             catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
-                return null;
+                return false;
             }
             finally
             {

@@ -9,7 +9,7 @@ namespace Web2020Project.Website.Dao
 {
     public class ProductDAO
     {
-        public static SanPham getProductID(int msp)
+        public static Product getProductID(int productID)
         {
             MySqlConnection connection = null;
             MySqlCommand cmd = null;
@@ -21,18 +21,18 @@ namespace Web2020Project.Website.Dao
                 connection = DBConnection.getConnection();
                 connection.Open();
                 cmd = new MySqlCommand(sql, connection);
-                cmd.Parameters.AddWithValue("@msp", msp);
+                cmd.Parameters.AddWithValue("@msp", productID);
                 reader = cmd.ExecuteReader();
                 if (reader.HasRows)
                 {
                     if (reader.Read())
                     {
-                        SanPham sanPham = new SanPham();
-                        sanPham.MaSanPham = reader.GetInt16("masanpham");
-                        sanPham.TenSanPham = reader.GetString("tensanpham");
-                        sanPham.GiaDaGiam = reader.GetDouble("giadagiam");
-                        sanPham.HinhAnh = reader.GetString("hinhanh");
-                        return sanPham;
+                        Product product = new Product();
+                        product.ProductId= reader.GetInt16("masanpham");
+                        product.ProductName = reader.GetString("tensanpham");
+                        product.SalePrice = reader.GetDouble("giadagiam");
+                        product.Picture = reader.GetString("hinhanh");
+                        return product;
                     }
                 }
 

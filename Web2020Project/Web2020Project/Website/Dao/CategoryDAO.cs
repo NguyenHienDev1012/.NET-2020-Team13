@@ -12,29 +12,29 @@ namespace Web2020Project.Website.Dao
 {
     public class CategoryDAO
     {
-        public static List<SanPham> findCateByType(int loai)
+        public static List<Product> findCateByKind(int kind)
         {
             MySqlDataReader reader = null;
             MySqlConnection connection = null;
             MySqlCommand cmd = null;
-            List<SanPham> danhSachSanPham = new List<SanPham>();
+            List<Product> products = new List<Product>();
             try
             {
                 connection = DBConnection.getConnection();
                 connection.Open();
                 string sql = "SELECT * FROM SANPHAM WHERE LOAISANPHAM=@loai_sp AND TRANGTHAI>0";
                 cmd = new MySqlCommand(sql, connection);
-                cmd.Parameters.AddWithValue("@loai_sp", loai);
+                cmd.Parameters.AddWithValue("@loai_sp", kind);
                 reader = cmd.ExecuteReader();
                 if (reader.HasRows)
                 {
                     while (reader.Read())
                     {
-                        danhSachSanPham.Add(new SanPham().GetSanPham(reader));
+                        products.Add(new Product().GetProduct(reader));
                     }
                 }
 
-                return danhSachSanPham.Count != 0 ? danhSachSanPham : null;
+                return products.Count != 0 ? products : null;
             }
             catch (SqlException e)
             {
@@ -46,30 +46,30 @@ namespace Web2020Project.Website.Dao
             }
         }
 
-        public static List<SanPham> findCateByTypeAndPrice(int loai, double gia)
+        public static List<Product> findCateByKindAndPrice(int kind, double salePrice)
         {
             MySqlDataReader reader = null;
             MySqlConnection connection = null;
             MySqlCommand cmd = null;
-            List<SanPham> danhSachSanPham = new List<SanPham>();
+            List<Product> products = new List<Product>();
             try
             {
                 string sql = "SELECT * FROM SANPHAM WHERE LOAISANPHAM=@loai_sp AND TRANGTHAI>0 AND GIADAGIAM>@gia";
                 connection = DBConnection.getConnection();
                 connection.Open();
                 cmd = new MySqlCommand(sql, connection);
-                cmd.Parameters.AddWithValue("@loai_sp", loai);
-                cmd.Parameters.AddWithValue("@gia", gia);
+                cmd.Parameters.AddWithValue("@loai_sp", kind);
+                cmd.Parameters.AddWithValue("@gia", salePrice);
                 reader = cmd.ExecuteReader();
                 if (reader.HasRows)
                 {
                     if (reader.Read())
                     {
-                        danhSachSanPham.Add(new SanPham().GetSanPham(reader));
+                        products.Add(new Product().GetProduct(reader));
                     }
                 }
 
-                return danhSachSanPham.Count != 0 ? danhSachSanPham : null;
+                return products.Count != 0 ? products : null;
             }
             catch (SqlException e)
             {
@@ -81,7 +81,7 @@ namespace Web2020Project.Website.Dao
             }
         }
 
-        public static MySqlDataReader findCateByTypeAndGift(int loai)
+        public static MySqlDataReader findCateByKindAndGift(int kind)
         {
             MySqlDataReader reader = null;
             MySqlConnection connection = null;
@@ -93,7 +93,7 @@ namespace Web2020Project.Website.Dao
                 connection = DBConnection.getConnection();
                 connection.Open();
                 cmd = new MySqlCommand(sql, connection);
-                cmd.Parameters.AddWithValue("@loai", loai);
+                cmd.Parameters.AddWithValue("@loai", kind);
                 reader = cmd.ExecuteReader();
                 return reader;
             }
@@ -108,12 +108,12 @@ namespace Web2020Project.Website.Dao
             }
         }
 
-        public static List<ChiTietSanPham> findCateByProducer(String id_producer, String sort, int page)
+        public static List<ProductDetail> findCateByProducer(String id_producer, String sort, int page)
         {
             MySqlDataReader reader = null;
             MySqlConnection connection = null;
             MySqlCommand cmd = null;
-            List<ChiTietSanPham> ds_ctsp = new List<ChiTietSanPham>();
+            List<ProductDetail> productDetails = new List<ProductDetail>();
             String sql;
             StringBuilder str_builder = new StringBuilder(
                 "SELECT * FROM SANPHAM AS SP JOIN CHITIETSANPHAM AS CT on SP.MASANPHAM=CT.MASANPHAM WHERE SP.TRANTHAI>0  AND SP.NHACUNGCAP=");
@@ -144,11 +144,11 @@ namespace Web2020Project.Website.Dao
                 {
                     while (reader.Read())
                     {
-                        ds_ctsp.Add(new ChiTietSanPham().GetChiTietSanPham(reader));
+                        productDetails.Add(new ProductDetail().GetProductDetail(reader));
                     }
                 }
 
-                return ds_ctsp;
+                return productDetails;
             }
             catch (SqlException e)
             {
@@ -161,7 +161,7 @@ namespace Web2020Project.Website.Dao
             }
         }
 
-        public static ChiTietSanPham getDetailPrByID(int msp)
+        public static ProductDetail getPrDetailByID(int productID)
         {
             MySqlDataReader reader = null;
             MySqlConnection connection = null;
@@ -173,13 +173,13 @@ namespace Web2020Project.Website.Dao
                 connection = DBConnection.getConnection();
                 connection.Open();
                 cmd = new MySqlCommand(sql, connection);
-                cmd.Parameters.AddWithValue("@msp", msp);
+                cmd.Parameters.AddWithValue("@msp", productID);
                 reader = cmd.ExecuteReader();
                 if (reader.HasRows)
                 {
                     if (reader.Read())
                     {
-                        return new ChiTietSanPham().GetChiTietSanPham(reader);
+                        return new ProductDetail().GetProductDetail(reader);
                     }
                 }
 
@@ -196,7 +196,7 @@ namespace Web2020Project.Website.Dao
             }
         }
 
-        public static int countOfCate(String nhacungcap)
+        public static int countOfCate(String producer)
         {
             MySqlDataReader reader = null;
             MySqlConnection connection = null;
@@ -207,7 +207,7 @@ namespace Web2020Project.Website.Dao
                 connection = DBConnection.getConnection();
                 connection.Open();
                 cmd = new MySqlCommand(sql, connection);
-                cmd.Parameters.AddWithValue("@nhacungcap", nhacungcap);
+                cmd.Parameters.AddWithValue("@nhacungcap", producer);
                 reader = cmd.ExecuteReader();
                 if (reader.HasRows)
                 {

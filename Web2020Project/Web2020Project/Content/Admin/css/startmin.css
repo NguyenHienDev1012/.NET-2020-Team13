@@ -34,9 +34,9 @@ body {
     transform: translateX(-50%);
     padding: 5px 15px;
     animation: ani-dialog;
-    animation-duration: 5s;
+    animation-duration: 3s;
     animation-iteration-count: 1;
-    opacity: 1;
+    opacity: 0;
 }
 
 @keyframes ani-dialog {

@@ -5,45 +5,45 @@ namespace Web2020Project.Website.Model
 {
     public class Item
     {
-        private String id;
-        private SanPham sanPham;
-        private int soLuong;
-        private double gia;
+        private String itemID;
+        private Product product;
+        private int amount;
+        private double price;
 
         public Item()
         {
         }
 
-        public Item(string id, SanPham sanPham, int soLuong, double gia)
+        public Item(string itemId, Product product, int amount, double price)
         {
-            this.id = id;
-            this.sanPham = sanPham;
-            this.soLuong = soLuong;
-            this.gia = gia;
+            itemID = itemId;
+            this.product = product;
+            this.amount = amount;
+            this.price = price;
         }
 
-        public string Id
+        public string ItemId
         {
-            get => id;
-            set => id = value;
+            get => itemID;
+            set => itemID = value;
         }
 
-        public SanPham SanPham
+        public Product Product
         {
-            get => sanPham;
-            set => sanPham = value;
+            get => product;
+            set => product = value;
         }
 
-        public int SoLuong
+        public int Amount
         {
-            get => soLuong;
-            set => soLuong = value;
+            get => amount;
+            set => amount = value;
         }
 
-        public double Gia
+        public double Price
         {
-            get => gia;
-            set => gia = value;
+            get => price;
+            set => price = value;
         }
     }
 }

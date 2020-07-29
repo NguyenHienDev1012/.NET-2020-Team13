@@ -10,7 +10,7 @@ namespace Web2020Project.libs
         {
             string host = "localhost";
             int port = 3306;
-            string database = "project_net_2020";
+            string database = "websellphone";
             string username = "root";
             string password = "";
             string connString = "Server=" + host + ";Database=" + database + ";port=" + port + ";User Id=" + username + ";password=" + password;

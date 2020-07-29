@@ -1,70 +1,155 @@
-﻿﻿using System.Web.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using System.Web.Mvc;
+using Web2020Project.Model;
+using Web2020Project.Utils;
+using Web2020Project.Website.Dao;
 
 namespace Web2020Project.Controllers.Admin
 {
     public class AdminController : Controller
     {
+        public const string USER_TABLE = "THANHVIEN";
+        public const string USER_AC = "TAIKHOAN";
+        public const string USER_EMAIL = "EMAIL";
+
         // GET
         public ActionResult Index_Admin()
         {
             return View();
         }
+
+        #region Account
+
         public ActionResult Account_Manage()
         {
-            return View();
+            List<Member> members = MemberDAO.LoadMember();
+            return View(members);
         }
-        public ActionResult Account_Update()
+
+        [ActionName("Account_Delete")] // Này phải đặt tên chớ nó trùng tên method(dòng 23), Xóa member thâu
+        public ActionResult Account_Manage(string userName)
         {
-            return View();
+            if (RemoveObj.Remove(USER_TABLE, USER_AC, userName, false))
+            {
+                Session.Add("dia-log", "sucXóa Thành Công");
+            }
+
+            return RedirectToAction("Account_Manage");
         }
+
+        [HttpGet] //Phần này dùng để lấy ra đối tượng member để gán giá trị trong form update member nè
+        public ActionResult Account_Update(string userName)
+        {
+            Member member = MemberDAO.GetMember(userName);
+            return View(member);
+        }
+
+        [HttpPost] //Phần này thêm, sửa thành viên nè
+        public ActionResult Account_Manage(Member member)
+        {
+            if (ModelState.IsValid)
+            {
+                string action = Request["action"];
+                if (action.Equals("edit"))
+                {
+                    string email_temp = Request["email_temp"];
+                    if (!email_temp.Equals(member.Email) &&
+                        CheckObjExists.IsExist(USER_TABLE, USER_EMAIL, member.Email))
+                    {
+                        Session.Add("dia-log", "errThất Bại! Email " + member.Email + " đã tồn tại.");
+                    }
+                    else if (MemberDAO.EditMember(member))
+                    {
+                        Session.Add("dia-log", "sucSửa Thành Công");
+                    }
+                }
+                else if (action.Equals("add"))
+                {
+                    if (!CheckObjExists.IsExist(USER_TABLE, USER_AC, member.UserName) &&
+                        !CheckObjExists.IsExist(USER_TABLE, USER_EMAIL, member.Email))
+                    {
+                        if (MemberDAO.AddMember(member))
+                        {
+                            Session.Add("dia-log", "sucThêm mới tài khoản thành Công");
+                        }
+                    }
+                    else
+                    {
+                        Session.Add("member", member);
+                        if (CheckObjExists.IsExist(USER_TABLE, USER_AC, member.UserName))
+                        {
+                            Session.Add("dia-log", "errThất Bại! Tài khoản " + member.UserName + " đã tồn tại.");
+                        }
+                        else
+                            Session.Add("dia-log", "errThất Bại! Email " + member.Email + " đã tồn tại.");
+                    }
+                }
+            }
+
+            return RedirectToAction("Account_Manage");
+        }
+
+        #endregion
+
         public ActionResult Comment_Manage()
         {
             return View();
         }
+
         public ActionResult Comment_Update()
         {
             return View();
         }
+
         public ActionResult Member()
         {
             return View();
         }
+
         public ActionResult Member_Update()
         {
             return View();
         }
+
         public ActionResult News_Manage()
         {
             return View();
         }
+
         public ActionResult News_Update()
         {
             return View();
         }
+
         public ActionResult Order_Manage()
         {
             return View();
         }
+
         public ActionResult Producer()
         {
             return View();
         }
+
         public ActionResult Producer_Update()
         {
             return View();
         }
+
         public ActionResult Product_Manage()
         {
             return View();
         }
+
         public ActionResult Product_Update()
         {
             return View();
-        } public ActionResult Revenue()
+        }
+
+        public ActionResult Revenue()
         {
             return View();
         }
-        
-        
     }
 }

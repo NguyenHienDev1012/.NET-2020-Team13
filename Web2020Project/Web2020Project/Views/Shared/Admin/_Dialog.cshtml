@@ -1,0 +1,13 @@
+﻿@{ string dia_log = Session["dia-log"] as string;}
+@if (dia_log != null)
+{
+    if (dia_log.Substring(0, 3).Equals("suc"))
+    {
+        <span class="dia-log" style="border: 1px solid #4fc38b;color: #0a6966;background: rgba(12,183,166,0.11)">@dia_log.Substring(3)</span> 
+    }
+    else
+    {
+        <span class="dia-log" style="border: 1px solid #b50000;color: #e30000;background: rgba(207,0,0,0.11)">@dia_log.Substring(3)</span> 
+    }
+    Session.Remove("dia-log");
+}
