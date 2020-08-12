@@ -1,0 +1,65 @@
+.btn-submit {
+    display: flex;
+    justify-content: center;
+}
+
+.modal-title {
+    text-align: center;
+    font-size: 16px;
+}
+
+.succ-email {
+    text-align: center;
+    font-weight: 700;
+    color: #1b777b;
+}
+
+#forget-pass {
+    position: relative;
+}
+
+#forget-pass ul li > div {
+    margin-bottom: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#forget-pass #err-mail {
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 24px;
+    color: #bf0404;
+    font-size: 15px;
+}
+
+#forget-pass ul li input {
+    padding: 3px 10px;
+    margin-top: 10px;
+    font-size: 15px;
+    font-family: Poppins, sans-serif;
+    border: 1px solid darkgrey;
+    border-radius: 3px;
+    width: 60%;
+}
+
+input[type=text]:focus, textarea:focus {
+    box-shadow: 0 0 3px rgb(36, 214, 200);
+    border: 1px solid rgba(36, 214, 200, 1) !important;
+}
+
+.update-btn {
+    border: none;
+    padding: 3px 10px;
+    border-radius: 20px;
+    color: white;
+    font-size: 15px;
+    background: #004545;
+    font-weight: 600;
+}
+
+.update-btn:hover {
+    background: #009c9c;
+}

@@ -1,0 +1,189 @@
+﻿
+@{
+    ViewBag.Title = "Profile User";
+    Layout = "~/Views/Shared/Home/_Header.cshtml";
+}
+
+<section id="body">
+    <div class="container">
+        <div id="user-profile">
+            <div class="avatar-name-user">
+                <div class="avatar-user" data-aos="zoom-in-right">
+                    <img src="/Content/assets/img/common/avatar-user/avatar-admin.jpg" height="288" width="400" alt="avatar"/></div>
+                <div class="user-info-name" data-aos="fade-left">
+                    <span>Tài khoản của</span>
+                    <span class="user-text">#</span>
+                </div>
+            </div>
+            <div class="info-address">
+                <div class="info-user" data-aos="fade-right">
+                    <span><i class="fa fa-user fa-fw"></i>Thông tin tài khoản</span>
+                    <div id="update-info" class="like-form">
+                        <h3 style="margin-bottom: 0">THÔNG TIN TÀI KHOẢN</h3>
+<!--                        <%String successInfo = (String) request.getAttribute("success-update");-->
+<!--                            String errInfo = (String) request.getAttribute("err-update");-->
+<!--                        %>-->
+<!--                        <%if (successInfo != null) {%>-->
+                        <div class="justify-align-center">
+                            <span class="update-infoDB" style="color: #0a7f7f">#</span>
+                        </div>
+<!--                        <%} else if (errInfo != null) {%>-->
+<!--                        <div class="justify-align-center">-->
+<!--                            <span class="update-infoDB">#</span>-->
+<!--                        </div>-->
+<!--                        <%}%>-->
+                        <form id="form-validate" class="form-infoUser form-style" action="#">
+                            <div>
+                                <span>Họ và Tên*</span>
+                                <input type="text" id="name" name="name" value="#">
+                            </div>
+                            <div>
+                                <span>Địa chỉ Email*</span>
+                                <input type="text" id="email" name="email" value="#">
+                                <input type="hidden" name="email-temp" value="#">
+                            </div>
+                            <div id="Giới tính">
+                                <span>Giới tính</span>
+                                <select id="gender" name="gender">
+<!--                                    <%if(thanhVien.getGioiTinh()==null){%>-->
+                                    <option value="Nam">Nam</option>
+                                    <option value="Nữ">Nữ</option>
+<!--                                    <%}else if(thanhVien.getGioiTinh().equals("Nữ")){%>-->
+<!--                                    <option value="Nữ">Nữ</option>-->
+<!--                                    <option value="Nam">Nam</option>-->
+<!--                                    <%}else{%>-->
+<!--                                    <option value="Nam">Nam</option>-->
+<!--                                    <option value="Nữ">Nữ</option>-->
+<!--                                    <%}%>-->
+<!--<%&#45;&#45;                                    <%if (thanhVien.getGioiTinh().equals("Nữ")) {%>&#45;&#45;%>-->
+<!--<%&#45;&#45;                                    <option value="Nữ">Nữ</option>&#45;&#45;%>-->
+<!--<%&#45;&#45;                                    <option value="Nam">Nam</option>&#45;&#45;%>-->
+<!--<%&#45;&#45;                                    <%} else {%>&#45;&#45;%>-->
+<!--<%&#45;&#45;                                    <option value="Nam">Nam</option>&#45;&#45;%>-->
+<!--<%&#45;&#45;                                    <option value="Nữ">Nữ</option>&#45;&#45;%>-->
+<!--<%&#45;&#45;                                    <%}%>&#45;&#45;%>-->
+                                </select>
+                            </div>
+                            <div>
+                                <span>Số điện thoại*</span>
+                                <input id="phone" name="phone" type="number"
+                                       value="#">
+                            </div>
+                            <div>
+                                <span>Địa chỉ*</span>
+                                <input type="text" id="address" name="address" value="#">
+                            </div>
+                            <button class="update-btn">CẬP NHẬT</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="address-user" data-aos="fade-right">
+                    <span><i class="fa fa-address-book-o" aria-hidden="true"></i>Sổ địa chỉ</span>
+                    <div id="book-address" class="like-form">
+                        <h3>SỔ ĐỊA CHỈ</h3>
+                        <div class="add-address">
+                            <a><i class="fa fa-plus-circle" aria-hidden="true"></i>Thêm địa chỉ</a>
+                        </div>
+
+                        <div class="content-add">
+                            <div class="default-add">
+                                <ul>
+                                    <li>
+                                        <span class="user-text">#</span>
+                                        <div class="action">
+                                            <span><i class="fa fa-check-circle" aria-hidden="true"></i>Mặc định</span>
+                                            <span><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>Địa chỉ:</span>
+                                        <span class="address">#</span>
+                                    </li>
+                                    <li>
+                                        <span>Số điện thoại:</span>
+                                        <span class="phone">#</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="">
+                                <ul>
+                                    <li>
+                                        <span class="user-text">#</span>
+                                        <div class="action">
+                                            <span><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+                                            <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>Địa chỉ:</span>
+                                        <span class="address">Địa chỉ 2</span>
+                                    </li>
+                                    <li>
+                                        <span>Số điện thoại:</span>
+                                        <span class="phone">0xx-xxx-xxxx</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="">
+                                <ul>
+                                    <li>
+                                        <span class="user-text">#</span>
+                                        <div class="action">
+                                            <span><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+                                            <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>Địa chỉ:</span>
+                                        <span class="address">Địa chỉ 3</span>
+                                    </li>
+                                    <li>
+                                        <span>Số điện thoại:</span>
+                                        <span class="phone">0xx-xxx-xxxx</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!--                <% String sucess = (String) request.getAttribute("success-changePass");-->
+<!--                    String erro = (String) request.getAttribute("err-changePass");-->
+<!--                %>-->
+                <div class="change-pass-user" data-aos="fade-right">
+                    <span><i class="fa fa-lock" aria-hidden="true"></i>Thay đổi mật khẩu</span>
+                    <div id="change-pass" class="like-form">
+                        <h3>ĐỔI MẬT KHẨU</h3>
+<!--                        <%if (sucess != null) {%>-->
+                        <div class="justify-align-center">
+                            <span class="changePass-nf" style="color: #0a7f7f">#</span>
+                        </div>
+<!--                        <%} else if (erro != null) {%>-->
+                        <div class="justify-align-center">
+                            <span class="changePass-nf">#</span>
+                        </div>
+                        <%}%>
+                        <form id="form-change-pass" class="form-style"
+                              action="">
+                            <div>
+                                <span>Mật khẩu hiện tại*</span>
+                                <input type="password" id="current-pass" name="current-pass" value="">
+                            </div>
+                            <div>
+                                <span>Mật khẩu mới*</span>
+                                <input type="text" id="new-pass" name="new-pass" value="">
+                            </div>
+                            <div id="c-pass">
+                                <span>Xác nhận mật khẩu*</span>
+                                <input type="text" id="c-new-pass" name="c-new-pass">
+                            </div>
+                            <button type="submit" class="update-btn">CẬP NHẬT</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/Content/assets/js/profile-user.js"></script>
+    <script src="/Content/assets/validation-form/vali-form.js"></script>
+    <script src="/Content/assets/validation-form/vali-chang-pass.js"></script>
+</section>
