@@ -130,19 +130,45 @@ namespace Web2020Project.Controllers
         }
         public ActionResult Product_Detail(string id)
         {
-            
             int idProduct = Convert.ToInt32(id);
             Console.WriteLine(idProduct);
             ProductDetail p_detail = CategoryDAO.getPrDetailByID(idProduct);
             List<Comment> comments = CommentDAO.LoadCMT(idProduct);
-            Console.WriteLine(comments[0].Content);
             Session.Add("listcomments",comments);
-            // ListModelProductDetail listModelProductDetail= new ListModelProductDetail();
-            // listModelProductDetail.Listproductdetail = p_detail;
-            // listModelProductDetail.comments = comments;
-            
             return View(p_detail);
         }
+
+        [HttpPost]
+        public ActionResult CommentUser()
+        {
+            Comment comment = new Comment();
+            string content = Request["content"];
+            comment.Content = content;
+            comment.Name = Request["name"];
+            comment.ProductId = Convert.ToInt32(Request["productID"]);
+            comment.Product = Request["product"];
+            if (comment.Content != null && comment.Name != null && comment.ProductId != null && comment.Product != null)
+
+            {
+                bool result = CommentDAO.InsertCMT(comment);
+                if (result)
+                {
+                    ProductDetail p_detail = CategoryDAO.getPrDetailByID(comment.ProductId);
+                    List<Comment> comments = CommentDAO.LoadCMT(comment.ProductId);
+                    Session.Add("listcomments",comments);
+                    return View("Product_Detail",Product_Detail("p_detail"));
+                    
+                }
+                else
+                {
+                    return RedirectToAction("Register", "Home");
+                }
+            }
+
+             return RedirectToAction("Register", "Home");
+        }
+       
+            
         public ActionResult Profile_User()
         {
             return View();

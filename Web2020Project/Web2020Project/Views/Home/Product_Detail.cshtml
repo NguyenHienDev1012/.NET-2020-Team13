@@ -33,8 +33,8 @@
                             @if (@Model.Product.SalePrice < Model.Product.Price)
                             {
                                 <strong>
-                                    @string.Format("{0:0,0}", Model.Product.SalePrice) + "đ"
-                                    <span style="margin-right: 5px;font-size: 13px;">#</span>
+                                    @string.Format("{0:0,0}", Model.Product.SalePrice)  đ
+                                    <span style="margin-right: 5px;font-size: 13px;"> @string.Format("{0:0,0}", Model.Product.Price)  đ</span>
                                 </strong>
                             }
                             else
@@ -82,61 +82,72 @@
                     </div>
                     <div class="rating cmt-cus">
                         @{
-                            var cmts = Session["listcomments"] as List<Comment>;
-
-                            foreach (var c in cmts)
+                            if (Session["listcomments"] != null)
                             {
-                                <ul>
+                                var cmts = Session["listcomments"] as List<Comment>;
 
-                                    <h6>Có @cmts.Count bình luận</h6>
-                                    <li class="cus">
-                                        <h6>@c.Name</h6>
-                                        <span class="date">@c.CommentDate</span>
-                                        <p>@c.Content</p>
-                                    </li>
-                                </ul>
-                            }
+                                foreach (var c in cmts)
+                                {
+                                    <ul>
+
+                                        <h6>Có @cmts.Count bình luận</h6>
+                                        <li class="cus">
+                                            <h6>@c.Name</h6>
+                                            <span class="date">@c.CommentDate</span>
+                                            <p>@c.Content</p>
+                                        </li>
+                                    </ul>
+                                }
+                            }else{
+                         <h6>Chưa có bình luận</h6>
                         }
                         }
 
                     </div>
                     <h5>Bình luận</h5>
-                    <form id="cmt-post"
-                          action="#"
-                          method="post">
-                        <textarea id="cmt" name="cmt" placeholder="Mời bạn để lại bình luận..."></textarea>
-                        <div class="justify-center btn-detail">
-                            <!--                            <%if (thanhVien != null) {%>-->
-                            <button type="submit" id="post">
-                                Gửi bình luận
-                                <i class="fa fa-paper-plane"
-                                   aria-hidden="true">
-                                </i>
-                            </button>
-                            <!--                            <%} else {%>-->
-                            <!--                            <button data-toggle="modal" data-target="#modal-cmt" type="button" id="post">Gửi bình luận<i class="fa fa-paper-plane" aria-hidden="true"></i></button>-->
-                            <div id="modal-cmt" class="modal fade modal-confirm" role="dialog">
-                                <div class="modal-dialog modal-sm">
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-body">
-                                            <p class="text-content">Đăng nhập để tiếp tục bình luận!</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <!--                                            <%getServletConfig().getServletContext().setAttribute("follow-login", "chi-tiet-san-pham?"+request.getQueryString());%>-->
-                                            <button type="button" onclick="return location.href='#'" class="btn-cf">
-                                                Đăng
-                                                nhập
-                                            </button>
-                                            <button type="button" class="tbn-cancle" data-dismiss="modal">Hủy</button>
+                    @{
+                        Member member = new Member();
+                    }
+                        @if (Session["memberLogin"] != null)
+                        {
+                            member = Session["memberLogin"] as Member;
+                        }
+                    
+                        <form id="cmt-post" action="/Home/CommentUser"
+                              method="post">
+                               <input type="hidden" name="name" value="@member.Name" />
+                               <input type="hidden" name="productID" value="@Model.Product.ProductId" />
+                                <input type="hidden" name="product" value="@Model.Product.ProductName" />
+                                
+                            <textarea id="content" name="content" placeholder="Mời bạn để lại bình luận..."></textarea>
+                            <div class="justify-center btn-detail">
+                                
+                                @if (member.Name != null)
+                                {
+                                    <button type="submit" id="post">Gửi bình luận<i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                                }
+                                else
+                                {
+                                    <button data-toggle="modal" data-target="#modal-cmt" type="button" id="post">Gửi bình luận<i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                                    <div id="modal-cmt" class="modal fade modal-confirm" role="dialog">
+                                        <div class="modal-dialog modal-sm">
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <p class="text-content">Đăng nhập để tiếp tục bình luận!</p>
+                                                </div>
+                                                <div class="modal-footer">
+
+                                                    <button type="button" onclick="return location.href=''" class="btn-cf">Đăng nhập</button>
+                                                    <button type="button" class="tbn-cancle" data-dismiss="modal">Hủy</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                }
                             </div>
-                            <!--                            <%}%>-->
-                        </div>
-                    </form>
-
+                        </form>
+                    
                 </div>
                 <div style="width: 38%">
                     <div class="rating space-between rt-pro">
