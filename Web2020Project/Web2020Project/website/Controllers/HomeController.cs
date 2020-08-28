@@ -14,11 +14,24 @@ namespace Web2020Project.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            List<News> listNews = NewsDAO.loadNews();
+            List<Product> listProduct_new = CategoryDAO.findCateByKind(0);
+            List<Product> listProduct_hot = CategoryDAO.findCateByKind(1);
+            List<Product> listProduct_sale = CategoryDAO.findCateByKind(2);
+            
+            MyViewModel myViewModel= new MyViewModel();
+            myViewModel.listNews = listNews;
+            myViewModel.listProduct_new = listProduct_new;
+            myViewModel.listProduct_sale = listProduct_sale;
+            myViewModel.listProduct_hot = listProduct_hot;
+            
+            return View(myViewModel);
         }
+ 
 
         public ActionResult News()
         {
+            
             return View();
         }
 
@@ -79,7 +92,7 @@ namespace Web2020Project.Controllers
                     }
                     else
                     {
-                        Session.Add("EmailExists","Email "+member.Email+" đã tồn tại");
+                        Session.Add("EmailExists",member.Email+" đã tồn tại");
                     }
                     Session.Add("memberRegister", member);
                     return RedirectToAction("Register");
