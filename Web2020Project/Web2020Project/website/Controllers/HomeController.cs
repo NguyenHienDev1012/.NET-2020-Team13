@@ -8,6 +8,7 @@ using Web2020Project.Model;
 using Web2020Project.Utils;
 using Web2020Project.Website.Dao;
 
+
 namespace Web2020Project.Controllers
 {
     public class HomeController : Controller
@@ -127,9 +128,20 @@ namespace Web2020Project.Controllers
         {
             return View();
         }
-        public ActionResult Product_Detail()
+        public ActionResult Product_Detail(string id)
         {
-            return View();
+            
+            int idProduct = Convert.ToInt32(id);
+            Console.WriteLine(idProduct);
+            ProductDetail p_detail = CategoryDAO.getPrDetailByID(idProduct);
+            List<Comment> comments = CommentDAO.LoadCMT(idProduct);
+            Console.WriteLine(comments[0].Content);
+            Session.Add("listcomments",comments);
+            // ListModelProductDetail listModelProductDetail= new ListModelProductDetail();
+            // listModelProductDetail.Listproductdetail = p_detail;
+            // listModelProductDetail.comments = comments;
+            
+            return View(p_detail);
         }
         public ActionResult Profile_User()
         {

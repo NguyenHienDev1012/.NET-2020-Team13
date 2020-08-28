@@ -96,7 +96,7 @@
  {
 <div class="owl-item">
     <div class="item">
-        <a href="/Home/Product_Detail">
+        <a href="/Home/Product_Detail?id=@sp.ProductId">
             <img src="/Content/@sp.Picture" alt=""/>
               @if (sp.ProductName.Length < 20) {
                   <h3 style="text-align: center">@sp.ProductName</h3>
@@ -132,7 +132,7 @@
                 <div>
                     <div class="owl-item">
                         <div class="item">
-                            <a href="/Home/Product_Detail">
+                            <a href="/Home/Product_Detail?id=@Model.listProduct_hot[i].ProductId">
                                 <img src="/Content/@Model.listProduct_hot[i].Picture" alt=""/>
                                 <h3>@Model.listProduct_hot[i].ProductName</h3>
 
@@ -160,7 +160,7 @@
                     
                     <div class="owl-item">
                                             <div class="item">
-                                                <a href="/Home/Product_Detail">
+                                                <a href="/Home/Product_Detail?id=@Model.listProduct_hot[i].ProductId">
                                                     <img src="/Content/@Model.listProduct_hot[i].Picture" alt=""/>
                                                     <h3>@Model.listProduct_hot[i].ProductName</h3>
                     
@@ -199,7 +199,7 @@
                         <div>
                             <div class="owl-item">
                                 <div class="item">
-                                    <a href="/Home/Product_Detail">
+                                    <a href="/Home/Product_Detail?id=@Model.listProduct_sale[i].ProductId">
                                         <img src="/Content/@Model.listProduct_sale[i].Picture" alt=""/>
                                         <h3>@Model.listProduct_hot[i].ProductName</h3>
         
@@ -227,7 +227,7 @@
                             
                             <div class="owl-item">
                                                     <div class="item">
-                                                        <a href="/Home/Product_Detail">
+                                                        <a href="/Home/Product_Detail?id=@Model.listProduct_sale[i].ProductId">
                                                             <img src="/Content/@Model.listProduct_sale[i].Picture" alt=""/>
                                                             <h3>@Model.listProduct_sale[i].ProductName</h3>
                             

@@ -1,4 +1,5 @@
-﻿
+﻿@using Web2020Project.Model
+
 @{
     ViewBag.Title = "Product Detail";
     Layout = "~/Views/Shared/Home/_Header.cshtml";
@@ -7,39 +8,40 @@
     <div id="products">
         <div class="container">
             <div id="frame-detail" class="d-flex">
-                <!--                <%-->
-                <!--                    ChiTietSanPham ctsp = (ChiTietSanPham) request.getAttribute("ctsp");-->
-                <!--                    assert ctsp != null;-->
-                <!--                %>-->
+
                 <div class="img-products">
-                    <img src="#" alt=""/>
+                    <img src="/Content/@Model.Product.Picture" alt="image"/>
                 </div>
                 <div class="detail-products">
                     <div class="title-top">
-                        <h3>#
+                        <h3>
+                            @Model.Product.ProductName
                         </h3>
                         <div class="d-flex">
                             <div class="text-producer d-flex">
                                 <span>Thương hiệu: </span>
-                                <span id="producer">#</span>
+                                <span id="producer">@Model.Product.Producer</span>
                             </div>
                             <div class="id-products d-flex">
                                 <span>Mã sản phẩm: </span>
-                                <span id="id-pro">#</span>
+                                <span id="id-pro">@Model.Product.ProductId</span>
                             </div>
                         </div>
                     </div>
                     <div class="price">
                         <div class="align-i-center">
-                            <!--                            <%if (ctsp.getSanPham().getGiaDaGiam() < ctsp.getSanPham().getGiaBan()) {%>-->
-                            <strong>
-                                <!--                                <%=String.format("%, .0f", ctsp.getSanPham().getGiaDaGiam()) + "đ"%>-->
-                                <span style="margin-right: 5px;font-size: 13px;">#</span>
-                            </strong>
-                            <!--                            <%} else {%>-->
-                            <!--                            <strong>#-->
-                            <!--                            </strong>-->
-                            <!--                            <%}%>-->
+                            @if (@Model.Product.SalePrice < Model.Product.Price)
+                            {
+                                <strong>
+                                    @string.Format("{0:0,0}", Model.Product.SalePrice) + "đ"
+                                    <span style="margin-right: 5px;font-size: 13px;">#</span>
+                                </strong>
+                            }
+                            else
+                            {
+                                <strong>
+                                </strong>
+                            }
                         </div>
                         <span class="vat">(Đã bao gồm VAT)</span>
                     </div>
@@ -48,7 +50,7 @@
                         <a href="/Home/Guarentee">(Quy định bảo hành)</a>
                     </div>
                     <div class="add-to-cart d-flex">
-                        <input type="hidden" class="msp-ajax" value="#">
+                        <input type="hidden" class="msp-ajax" value="@Model.Product.ProductId">
                         <button class="btn_buynow buy-ajax">THÊM VÀO GIỎ HÀNG</button>
                     </div>
                 </div>
@@ -59,41 +61,44 @@
                         <div>
                             <h4>THÔNG SỐ KỸ THUẬT</h4>
                             <ul>
-                                <li><b>Màn hình</b>:
-                                    <!--                                    <%=ctsp.getThongSoKyThuat().getManHinh()%>-->
+                                <li>
+                                    <b>Màn hình</b>: @Model.Technical.Camera
                                 </li>
                                 <li>
-                                    <b>CPU</b>: #
+                                    <b>CPU</b>: @Model.Technical.Cpu
                                 </li>
-                                <li><b>RAM</b>: #
+                                <li>
+                                    <b>RAM</b>: @Model.Technical.Ram
                                 </li>
-                                <li><b>Camera</b>: #
+                                <li>
+                                    <b>Camera</b>:@Model.Technical.Camera
                                 </li>
-                                <li><b>PIN</b>: #
+                                <li>
+                                    <b>PIN</b>: @Model.Technical.Pin
                                 </li>
                             </ul>
                         </div>
 
                     </div>
                     <div class="rating cmt-cus">
-                        <!--                        <%try {%>-->
-                        <!--                        <%List<BinhLuan> bls = CommentDAO.loadCmt(ctsp.getSanPham().getMaSanPham());%>-->
-                        <!--                        <ul>-->
-                        <!--                            <%if (bls != null) {%>-->
-                        <!--                            <h6>Có <%=bls.size()%> bình luận</h6>-->
-                        <!--                            <%for (BinhLuan bl : bls) {%>-->
-                        <!--                            <li class="cus">-->
-                        <!--                                <h6><%=bl.getHoTen()%></h6>-->
-                        <!--                                <span class="date"><%=bl.getNgayBinhLuan()%></span>-->
-                        <!--                                <p><%=bl.getNoiDung()%></p>-->
-                        <!--                            </li>-->
-                        <!--                            <%}%>-->
-                        <!--                            <%}else{%>-->
-                        <!--                            <h6>Chưa có bình luận</h6>-->
-                        <!--                            <%}%>-->
-                        <!--                        </ul>-->
-                        <!--                        <%} catch (SQLException e) {%>-->
-                        <!--                        <%}%>-->
+                        @{
+                            var cmts = Session["listcomments"] as List<Comment>;
+
+                            foreach (var c in cmts)
+                            {
+                                <ul>
+
+                                    <h6>Có @cmts.Count bình luận</h6>
+                                    <li class="cus">
+                                        <h6>@c.Name</h6>
+                                        <span class="date">@c.CommentDate</span>
+                                        <p>@c.Content</p>
+                                    </li>
+                                </ul>
+                            }
+                        }
+                        }
+
                     </div>
                     <h5>Bình luận</h5>
                     <form id="cmt-post"
@@ -102,8 +107,12 @@
                         <textarea id="cmt" name="cmt" placeholder="Mời bạn để lại bình luận..."></textarea>
                         <div class="justify-center btn-detail">
                             <!--                            <%if (thanhVien != null) {%>-->
-                            <button type="submit" id="post">Gửi bình luận<i class="fa fa-paper-plane"
-                                                                            aria-hidden="true"></i></button>
+                            <button type="submit" id="post">
+                                Gửi bình luận
+                                <i class="fa fa-paper-plane"
+                                   aria-hidden="true">
+                                </i>
+                            </button>
                             <!--                            <%} else {%>-->
                             <!--                            <button data-toggle="modal" data-target="#modal-cmt" type="button" id="post">Gửi bình luận<i class="fa fa-paper-plane" aria-hidden="true"></i></button>-->
                             <div id="modal-cmt" class="modal fade modal-confirm" role="dialog">
@@ -115,7 +124,8 @@
                                         </div>
                                         <div class="modal-footer">
                                             <!--                                            <%getServletConfig().getServletContext().setAttribute("follow-login", "chi-tiet-san-pham?"+request.getQueryString());%>-->
-                                            <button type="button" onclick="return location.href='#'" class="btn-cf">Đăng
+                                            <button type="button" onclick="return location.href='#'" class="btn-cf">
+                                                Đăng
                                                 nhập
                                             </button>
                                             <button type="button" class="tbn-cancle" data-dismiss="modal">Hủy</button>
@@ -130,9 +140,12 @@
                 </div>
                 <div style="width: 38%">
                     <div class="rating space-between rt-pro">
-                        <a href="#"><img src="<%=ctsp.getSanPham().getHinhAnh()%>" alt=""/></a>
+                        <a href="#">
+                            <img src="<%=ctsp.getSanPham().getHinhAnh()%>" alt=""/>
+                        </a>
                         <div class="rating-post">
-                            <h6>#
+                            <h6>
+                                #
                             </h6>
                             <h6>Đánh giá</h6>
                             <div id="rating">
@@ -186,4 +199,3 @@
         }
     </script>
 </section>
-
