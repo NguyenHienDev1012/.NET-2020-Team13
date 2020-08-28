@@ -1,7 +1,8 @@
-﻿
+﻿@using Web2020Project.Model
+
 @{
     ViewBag.Title = "Profile User";
-    Layout = "~/Views/Shared/_HeaderHome.cshtml";
+    Layout = "~/Views/Shared/Home/_Header.cshtml";
 }
 
 <section id="body">
@@ -18,13 +19,17 @@
             <div class="info-address">
                 <div class="info-user" data-aos="fade-right">
                     <span><i class="fa fa-user fa-fw"></i>Thông tin tài khoản</span>
+                    @{
+                        Member member= Session["memberLogin"] as Member;
+                    }
                     <div id="update-info" class="like-form">
                         <h3 style="margin-bottom: 0">THÔNG TIN TÀI KHOẢN</h3>
 <!--                        <%String successInfo = (String) request.getAttribute("success-update");-->
 <!--                            String errInfo = (String) request.getAttribute("err-update");-->
 <!--                        %>-->
 <!--                        <%if (successInfo != null) {%>-->
-                        <div class="justify-align-center">
+
+<div class="justify-align-center">
                             <span class="update-infoDB" style="color: #0a7f7f">#</span>
                         </div>
 <!--                        <%} else if (errInfo != null) {%>-->
@@ -35,43 +40,39 @@
                         <form id="form-validate" class="form-infoUser form-style" action="#">
                             <div>
                                 <span>Họ và Tên*</span>
-                                <input type="text" id="full-name" name="full-name" value="#">
+                                <input type="text" id="name" name="name" value="@(member!= null?member.Name: "")">
                             </div>
                             <div>
                                 <span>Địa chỉ Email*</span>
-                                <input type="text" id="email" name="email" value="#">
+                                <input type="text" id="email" name="email" value="@(member!=null?member.Email: "")">
                                 <input type="hidden" name="email-temp" value="#">
                             </div>
                             <div id="Giới tính">
                                 <span>Giới tính</span>
                                 <select id="gender" name="gender">
-<!--                                    <%if(thanhVien.getGioiTinh()==null){%>-->
-                                    <option value="Nam">Nam</option>
-                                    <option value="Nữ">Nữ</option>
-<!--                                    <%}else if(thanhVien.getGioiTinh().equals("Nữ")){%>-->
-<!--                                    <option value="Nữ">Nữ</option>-->
-<!--                                    <option value="Nam">Nam</option>-->
-<!--                                    <%}else{%>-->
-<!--                                    <option value="Nam">Nam</option>-->
-<!--                                    <option value="Nữ">Nữ</option>-->
-<!--                                    <%}%>-->
-<!--<%&#45;&#45;                                    <%if (thanhVien.getGioiTinh().equals("Nữ")) {%>&#45;&#45;%>-->
-<!--<%&#45;&#45;                                    <option value="Nữ">Nữ</option>&#45;&#45;%>-->
-<!--<%&#45;&#45;                                    <option value="Nam">Nam</option>&#45;&#45;%>-->
-<!--<%&#45;&#45;                                    <%} else {%>&#45;&#45;%>-->
-<!--<%&#45;&#45;                                    <option value="Nam">Nam</option>&#45;&#45;%>-->
-<!--<%&#45;&#45;                                    <option value="Nữ">Nữ</option>&#45;&#45;%>-->
-<!--<%&#45;&#45;                                    <%}%>&#45;&#45;%>-->
+                                 @{
+                                                              if (member != null && member.Gender.Equals("Nam"))
+                                                              {
+                                                                  <option value="Nam">Nam</option>
+                                                                  <option value="Nữ">Nữ</option>
+                                                              }
+                                                              else
+                                                              {
+                                                                  <option value="Nữ">Nữ</option>
+                                                                  <option value="Nam">Nam</option>
+                                                              }
+                                                              
+                                                          }
                                 </select>
                             </div>
                             <div>
                                 <span>Số điện thoại*</span>
-                                <input id="sdt" name="sdt" type="number"
-                                       value="#">
+                                <input id="phone" name="phone" type="number"
+                                       value="@(member!=null?member.Phone: "")">
                             </div>
                             <div>
                                 <span>Địa chỉ*</span>
-                                <input type="text" id="address" name="address" value="#">
+                                <input type="text" id="address" name="address" value="@(member!=null?member.Address: "")">
                             </div>
                             <button class="update-btn">CẬP NHẬT</button>
                         </form>
@@ -101,7 +102,7 @@
                                     </li>
                                     <li>
                                         <span>Số điện thoại:</span>
-                                        <span class="sdt">#</span>
+                                        <span class="phone">#</span>
                                     </li>
                                 </ul>
                             </div>
@@ -120,7 +121,7 @@
                                     </li>
                                     <li>
                                         <span>Số điện thoại:</span>
-                                        <span class="sdt">0xx-xxx-xxxx</span>
+                                        <span class="phone">0xx-xxx-xxxx</span>
                                     </li>
                                 </ul>
                             </div>
@@ -139,7 +140,7 @@
                                     </li>
                                     <li>
                                         <span>Số điện thoại:</span>
-                                        <span class="sdt">0xx-xxx-xxxx</span>
+                                        <span class="phone">0xx-xxx-xxxx</span>
                                     </li>
                                 </ul>
                             </div>

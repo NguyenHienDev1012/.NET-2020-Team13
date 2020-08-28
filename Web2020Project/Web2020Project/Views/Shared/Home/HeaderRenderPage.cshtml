@@ -1,0 +1,75 @@
+﻿@using Web2020Project.Model
+@{
+    Member member = Session["memberLogin"] as Member;
+
+}
+<ul class="icon-profile">
+    <li id="hello-user">
+        @if (member != null)
+        {
+            <div class="flex-user">
+                <span>Xin chào</span>
+                <a href="/Home/Profile_User">
+                    <span
+                        class="user-text">
+                    </span>
+                    @member.Name
+                </a>
+            </div>
+            <a href="/Home/Logout">
+                <span
+                    class="exit">
+                    Thoát
+                </span>
+            </a>
+        }
+        else
+        {
+            <div class="flex-user">
+                <span>Xin chào</span>
+            </div>
+        }
+    </li>
+    @if (member != null)
+    {
+        if (member.Level == 1)
+        {
+            <li id="user">
+                <a style="margin-right: 10px" href="/Admin/Index_Admin">
+                    <i
+                        class="fa fa-cog fa-spin ic-level">
+                    </i>
+                </a>
+                <span class="span-level">Admin</span>
+            </li>
+        }
+    }
+    else
+    {
+        <li id="user">
+            <i class="fa fa-user-circle-o" id="user-icon"></i>
+            <ul class="sub-user">
+                <li class="login">
+                    <a href="/Home/Login">Đăng nhập</a><span>/</span>
+                    <a
+                        href="/Home/Register">
+                        Đăng ký
+                    </a>
+                </li>
+                <li>
+                    <span>hoặc</span>
+                </li>
+                <li class="login-with-fb">
+                    <a href="https://www.facebook.com/dialog/oauth?client_id=<%=Constants.FACEBOOK_APP_ID%>&redirect_uri=<%=Constants.FACEBOOK_REDIRECT_URL%>">Đăng nhập bằng</a>
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                </li>
+                <li class="login-with-gg">
+                    <a href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=<%=Constants.GOOGLE_REDIRECT_URI%>&response_type=code
+                       &client_id=<%=Constants.GOOGLE_CLIENT_ID%>&approval_prompt=force">Đăng nhập bằng</a>
+                    <i class="fa fa-google" aria-hidden="true"></i>
+                </li>
+            </ul>
+        </li>
+    }
+    <li style="width: 24px"></li>
+</ul >

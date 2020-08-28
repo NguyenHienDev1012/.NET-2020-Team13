@@ -7,8 +7,14 @@
     <link href="/Content/Admin/css/timeline.css" rel="stylesheet">
     <link href="/Content/Admin/css/startmin.css" rel="stylesheet">
     <link href="/Content/Admin/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <!-- DataTables CSS -->
+    <link href="/Content/Admin/css/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+    <!-- DataTables Responsive CSS -->
+    <link href="/Content/Admin/css/dataTables/dataTables.responsive.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/Content/Admin/css/form-style.css">
 </head>
-<body>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="navbar-header">
         <a class="navbar-brand" href="/Admin/Index_Admin">ATM</a>
@@ -22,7 +28,7 @@
     </button>
 
     <ul class="nav navbar-nav navbar-left navbar-top-links">
-        <li><a href="#"><i class="fa fa-home fa-fw"></i> Website</a></li>
+        <li><a href="/Home/Index"><i class="fa fa-home fa-fw"></i> Website</a></li>
     </ul>
 
     <ul class="nav navbar-right navbar-top-links">
@@ -124,12 +130,14 @@
         Môn Học: Lập Trình .NET - Đồ Án: Website Bán Điện Thoại - Giáo Viên: Phan Đình Long
     </div>
 </div>
-</body>
-<!-- DataTables CSS -->
-<link href="/Content/Admin/css/dataTables/dataTables.bootstrap.css" rel="stylesheet">
-<!-- DataTables Responsive CSS -->
-<link href="/Content/Admin/css/dataTables/dataTables.responsive.css" rel="stylesheet">
 
+<script src="/Content/Admin/js/jquery.min.js"></script>
+<script src="/Content/Admin/js/bootstrap.min.js"></script>
+<script src="/Content/Admin/js/metisMenu.min.js"></script>
+<script src="/Content/Admin/js/raphael.min.js"></script>
+<script src="/Content/Admin/js/startmin.js"></script>
+
+<!-- DataTables JavaScript -->
 <script src="/Content/Admin/js/dataTables/jquery.dataTables.min.js"></script>
 <script src="/Content/Admin/js/dataTables/dataTables.bootstrap.min.js"></script>
 
@@ -140,20 +148,8 @@
         });
     });
 </script>
-<script src="/Content/Admin/js/jquery.min.js"></script>
-<script src="/Content/Admin/js/bootstrap.min.js"></script>
-<script src="/Content/Admin/js/metisMenu.min.js"></script>
-<script src="/Content/Admin/js/raphael.min.js"></script>
-<script src="/Content/Admin/js/startmin.js"></script>
-@* <%@ page language="java" contentType="text/html; charset=UTF-8" *@
-@*          pageEncoding="UTF-8" %> *@
-@* <%String dia_log = (String) request.getServletContext().getAttribute("dia-log"); *@
-@* %> *@
-@* <%if(dia_log!=null){%> *@
-@* <%if(dia_log.substring(0,3).equalsIgnoreCase("suc")){%> *@
-@* <span class="dia-log" style="border: 1px solid #4fc38b;color: #0a6966;background: rgba(12,183,166,0.11)"><%=dia_log.substring(3)%></span> *@
-@* <%}else if(dia_log.substring(0,3).equalsIgnoreCase("err")){%> *@
-@* <span class="dia-log" style="border: 1px solid #b50000;color: #e30000;background: rgba(207,0,0,0.11)"><%=dia_log.substring(3)%></span> *@
-@* <%}}%> *@
-@* <%request.getServletContext().removeAttribute("dia-log");%> *@
+
+<!-- Custom Theme JavaScript -->
+<script src="/Content/Admin/js/form-style.js"></script>
+<script src="/Content/Admin/js/validation-form/vali-form.js"></script>
 </html>

@@ -1,6 +1,6 @@
 ﻿@{
     ViewBag.Title = "Cart";
-    Layout = "~/Views/Shared/_HeaderSimple.cshtml";
+    Layout = "~/Views/Shared/Home/_HeaderSimple.cshtml";
 }
 <section id="body">
     <div id="frame-cart">
@@ -65,7 +65,7 @@
                                     <p class="text-content">Đăng nhập để thực hiện đặt hàng!</p>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" onclick="return location.href='login.html'" class="btn-cf">Đăng nhập</button>
+                                    <button type="button" onclick="return location.href='/Home/Login'" class="btn-cf">Đăng nhập</button>
                                     <button type="button" class="tbn-cancle" data-dismiss="modal">Hủy</button>
                                 </div>
                             </div>
@@ -81,12 +81,12 @@
                     <form id="form-validate" class="form-style" action="#">
                         <div>
                             <span>Họ và Tên:</span>
-                            <input type="text" id="full-name" name="full-name" value="Name XXX"
+                            <input type="text" id="name" name="name" value="Name XXX"
                                    disabled>
                         </div>
                         <div>
                             <span>Số điện thoại:</span>
-                            <input name="sdt" id="sdt" type="number" value="xxx.xxx.xxx" disabled>
+                            <input name="phone" id="phone" type="number" value="xxx.xxx.xxx" disabled>
                         </div>
                         <div>
                             <span>Địa chỉ Email:</span>

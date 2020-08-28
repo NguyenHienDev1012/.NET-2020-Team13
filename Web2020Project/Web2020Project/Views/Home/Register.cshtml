@@ -1,6 +1,7 @@
-﻿@{
+﻿@using Web2020Project.Model
+@{
     ViewBag.Title = "Register";
-    Layout = "~/Views/Shared/_HeaderHome.cshtml";
+    Layout = "~/Views/Shared/Home/_Header.cshtml";
 }
 
 <section id="body">
@@ -9,39 +10,70 @@
             <div class="title-form" data-aos="zoom-out-down" data-aos-duration="800">
                 <h1>Đăng Ký</h1>
             </div>
+            @{
+                string usr_exits = Session["UserExists"] as string;
+                string email_exists = Session["EmailExists"] as string;
+                Member member = Session["memberRegister"] as Member;
+            }
             <form id="form-validate" class="form-style" action="/Home/Register" method="post">
-                <label for="usr_name">
+                @{
+                    if (usr_exits != null)
+                    {
+                        <span style="color: red;font-size: 15px;margin-left: 5px;">@usr_exits</span>
+                    }
+                }
+                <label for="userName">
                     Tài khoản*
                 </label>
-                <input type="text" id="usr_name" name="usr_name"
-                       value="">
+                <input type="text" id="userName" name="userName"
+                       value="@(member!=null?member.UserName:"")">
                 <label for="password">Mật khẩu*</label>
                 <input type="text" id="password" name="password" value="">
                 <label for="c_password">Xác nhận mật khẩu*</label>
                 <input type="text" id="c_password" name="c_password" value="">
-                <label for="full_name">Họ tên*</label>
-                <input type="text" id="full_name" name="full_name"
-                       value="">
+                <label for="name">Họ tên*</label>
+                <input type="text" id="name" name="name"
+                       value="@(member!=null?member.Name:"")">
                 <label for="gender">Giới tính</label>
                 <select id="gender" name="gender">
-                    <option value="Nam">Nam</option>
-                    <option value="Nữ">Nữ</option>
+                    @{
+                        if (member != null && member.Gender.Equals("Nam"))
+                        {
+                            <option value="Nam">Nam</option>
+                            <option value="Nữ">Nữ</option>
+                        }
+                        else
+                        {
+                            <option value="Nữ">Nữ</option>
+                            <option value="Nam">Nam</option>
+                        }
+                        
+                    }
+                   
                 </select>
                 <label for="email">
                     Email*
-                    <!--                    <%if (email_exist != null) {%>-->
-                    <!--                    <span style="color: red;font-size: 15px;margin-left: 5px;"><%=email_exist%></span>-->
-                    <!--                    <%}%>-->
+                    @{
+                        if (email_exists != null)
+                        {
+                            <span style="color: red;font-size: 15px;margin-left: 5px;">@email_exists</span>
+                        }
+                    }
                 </label>
                 <input type="text" id="email" name="email"
-                       value="">
-                <label for="sdt">Số điện thoại*</label>
-                <input type="number" id="sdt" name="sdt"
-                       value="123131">
+                       value="@(member!=null?member.Email:"")">
+                <label for="phone">Số điện thoại*</label>
+                <input type="number" id="phone" name="phone"
+                       value="@(member!=null?member.Phone:"")">
                 <label for="address">Địa chỉ*</label>
                 <input type="text" id="address" name="address"
-                       value="">
-                <button id="confirm-btn"  type="submit">TẠO TÀI KHOẢN</button>
+                       value="@(member!=null?member.Address:"")">
+                <button id="confirm-btn" type="submit">TẠO TÀI KHOẢN</button>
+                @{
+                    Session.Remove("userExists");
+                    Session.Remove("emailExists");
+                    Session.Remove("memberRegister");
+                }
             </form>
         </div>
     </div>

@@ -1,22 +1,28 @@
-﻿
-
-@{
+﻿@{
     ViewBag.Title = "Login";
-    Layout = "~/Views/Shared/_HeaderHome.cshtml";
+    Layout = "~/Views/Shared/Home/_Header.cshtml";
 }
 
 <section id="body">
     <div id="login-atm">
+        @{
+            string err_login = Session["errLogin"] as string;
+        }
         <div class="login box-shadow-form">
-<!--            <% String err = (String) request.getAttribute("err");%>-->
-<!--            <%if (err != null) {%>-->
-<!--            <span class="err-login"><%=err%></span>-->
-<!--            <%}%>-->
-            <div class="title-form" data-aos="zoom-out-down" data-aos-duration="800"><h1>Đăng nhập</h1></div>
+            @{
+                if (err_login != null)
+                {
+                    <span class="err-login"> @err_login</span>
+                    Session.Remove("errLogin");
+                }
+            }
+            <div class="title-form" data-aos="zoom-out-down" data-aos-duration="800">
+                <h1>Đăng nhập</h1>
+            </div>
             <form id="form-login" class="form-style" action="/Home/Login"
                   method="post">
-                <label for="usr-name">Tài khoản</label>
-                <input type="text" id="usrname" name="usrname" placeholder="Tài khoản"
+                <label for="userName">Tài khoản</label>
+                <input type="text" id="userName" name="userName" placeholder="Tài khoản"
                        value="">
                 <label for="password">Mật khẩu</label>
                 <input type="password" id="password" name="password" placeholder="Mật khẩu" value="">
@@ -47,7 +53,8 @@
                 <div class="modal-header">
                     <h4 class="modal-title">Đặt Lại Mật Khẩu</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span style="color: #591410" aria-hidden="true">X</span></button>
+                        <span style="color: #591410" aria-hidden="true">X</span>
+                    </button>
                 </div>
                 <div class="modal-body">
                     <div id="forget-pass">
