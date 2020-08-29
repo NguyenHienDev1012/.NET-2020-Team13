@@ -37,6 +37,14 @@ namespace Web2020Project.Controllers
             List<News> listNews = NewsDAO.loadNews();
             return View(listNews);
         }
+        
+        public ActionResult New_Detail(string idNew)
+        {
+            News news = Web2020Project.Admin.Dao.NewsDAO.FindByID(Convert.ToInt32(idNew));
+            List<News> listNews = NewsDAO.loadNews();
+            Session.Add("listNews", listNews);
+            return View(news);
+        }
 
         public ActionResult Cart()
         {
@@ -121,10 +129,6 @@ namespace Web2020Project.Controllers
             return View();
         }
 
-        public ActionResult New_Detail()
-        {
-            return View();
-        }
 
         public ActionResult Product()
         {

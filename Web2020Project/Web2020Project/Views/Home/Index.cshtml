@@ -14,7 +14,7 @@
             <div id="icon-next" class="icon-flow">
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
             </div>
-            <div class="slides">
+            <div class="slides">Bạn cần tìm gì?
                 <div id="s1" class="slide">
                     <img src="/Content/assets/img/slider/1.png" alt="">
                 </div>
@@ -59,12 +59,12 @@
                         {
                             <div class="news-text-img-subs space-between">
                                 <div class="img-news">
-                                    <a href="">
+                                    <a href="/Home/New_Detail?idNew=@Model.listNews[i].NewsId">
                                         <img src="/Content/@Model.listNews[i].Picture" alt="">
                                     </a>
                                 </div>
                                 <div class="text-news">
-                                    <a href="/Home/New_Detail">
+                                    <a href="/Home/New_Detail?idNew=@Model.listNews[i].NewsId">
                                         @Model.listNews[i].Title 
                                     </a>
                                 </div>
