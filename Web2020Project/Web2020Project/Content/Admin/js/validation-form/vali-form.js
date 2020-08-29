@@ -1,18 +1,18 @@
 $(document).ready(function () {
     const reg_mail = /^[A-Za-z0-9]+[_\.\-]?[A-Za-z0-9]*@[A-Za-z0-9]+[-\.\_]{1}[A-Za-z0-9]+[\.]?[A-Za-z]*[\.]?[A-Za-z]*$/;
-    const reg_sdt = /^0[1-9]{8,9}$/;
+    const reg_phone = /^0[1-9]{8,9}$/;
     const reg_usr = /^[a-zA-Z0-9]+$/
     const reg_pass = /^[a-zA-Z0-9!@#$%^&*()_.?\/]{6,}$/;
-    const usr_name = $('#usr-name');
+    const userName = $('#userName');
     const password = $('#password');
-    const full_name = $('#full-name');
+    const name = $('#name');
     const email = $('#email');
-    const sdt = $('#sdt');
+    const phone = $('#phone');
     const  id = $('#id');
     // producer
-    const id_producer = $('#id-producer'), name_producer = $('#name-producer'), add_producer = $('#add-producer');
+    const id_producer = $('#producerID'), name_producer = $('#producerName'), add_producer = $('#producerAddress');
     //product
-    const id_product = $('#id-product'), name_product = $('#name-product'), count_product = $('#count-product');
+    const id_product = $('#productID'), name_product = $('#productName'), count_product = $('#amount');
     //oder
     const  address_oder = $('#address-oder');
     let flag = true;
@@ -22,12 +22,12 @@ $(document).ready(function () {
             notEmpty(id, 'Vui lòng nhập ID', null);
             flag = false;
         }
-        if (usr_name.val() === '') {
-            notEmpty(usr_name, 'Vui lòng nhập Tài khoản', null);
+        if (userName.val() === '') {
+            notEmpty(userName, 'Vui lòng nhập Tài khoản', null);
             flag = false;
         } else {
-            if (!(reg_usr.test(usr_name.val())) && usr_name.val() !== undefined) {
-                notEmpty(usr_name, 'Vui lòng nhập không dấu', usr_name.val());
+            if (!(reg_usr.test(userName.val())) && userName.val() !== undefined) {
+                notEmpty(userName, 'Vui lòng nhập không dấu', userName.val());
                 flag = false;
             }
         }
@@ -40,8 +40,8 @@ $(document).ready(function () {
                 flag = false;
             }
         }
-        if (full_name.val() === '') {
-            notEmpty(full_name, 'Vui lòng nhập Họ tên', null);
+        if (name.val() === '') {
+            notEmpty(name, 'Vui lòng nhập Họ tên', null);
             flag = false;
         }
         if (email.val() === '') {
@@ -53,12 +53,12 @@ $(document).ready(function () {
                 flag = false;
             }
         }
-        if (sdt.val() === '') {
-            notEmpty(sdt, 'Vui lòng nhập SDT', null);
+        if (phone.val() === '') {
+            notEmpty(phone, 'Vui lòng nhập phone', null);
             flag = false;
         } else {
-            if (!(reg_sdt.test(sdt.val())) && sdt.val() !== undefined) {
-                notEmpty(sdt, 'Sai định dạng SDT', sdt.val());
+            if (!(reg_phone.test(phone.val())) && phone.val() !== undefined) {
+                notEmpty(phone, 'Sai định dạng phone', phone.val());
                 flag = false;
             }
         }

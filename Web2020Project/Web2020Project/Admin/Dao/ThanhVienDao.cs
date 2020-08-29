@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
 using Web2020Project.Dao;
@@ -19,7 +19,7 @@ namespace Web2020Project.Admin.Dao
             {
                 sql =
                     "insert into thanhvien(taikhoan, matkhau, hoten, gioitinh, email, sodienthoai, diachi, level, avatar) values (@taikhoan, @matkhau, @hoten, @gioitinh, @email, @sodienthoai, @diachi, @level, @avatar) ";
-                conn = DBConnection.getDBConnection();
+                conn = DBConnection.getConnection();
                 conn.Open();
                 mySqlCommand = new MySqlCommand(sql, conn);
                 mySqlCommand.Parameters.AddWithValue("taikhoan", thanhVien.TaiKhoan);
@@ -37,6 +37,7 @@ namespace Web2020Project.Admin.Dao
             catch (SqlException e)
             {
                 return false;
+                Console.WriteLine(e);
             }
             finally
             {
