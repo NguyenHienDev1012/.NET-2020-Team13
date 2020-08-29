@@ -85,12 +85,10 @@
                             if (Session["listcomments"] != null)
                             {
                                 var cmts = Session["listcomments"] as List<Comment>;
-
+                                <h6>Có @cmts.Count bình luận</h6>
                                 foreach (var c in cmts)
                                 {
                                     <ul>
-
-                                        <h6>Có @cmts.Count bình luận</h6>
                                         <li class="cus">
                                             <h6>@c.Name</h6>
                                             <span class="date">@c.CommentDate</span>
@@ -104,7 +102,13 @@
                         }
 
                     </div>
-                    <h5>Bình luận</h5>
+                       @{
+                                            string mess = Session["messagecomment"] as string ;
+                       }
+                       
+                    <h5>Bình luận  <span style="color: red">@mess</span> </h5> 
+                     
+                 
                     @{
                         Member member = new Member();
                     }
@@ -138,7 +142,7 @@
                                                 </div>
                                                 <div class="modal-footer">
 
-                                                    <button type="button" onclick="return location.href=''" class="btn-cf">Đăng nhập</button>
+                                                    <button type="button" onclick="return location.href='/Home/Login'" class="btn-cf">Đăng nhập</button>
                                                     <button type="button" class="tbn-cancle" data-dismiss="modal">Hủy</button>
                                                 </div>
                                             </div>
@@ -152,11 +156,11 @@
                 <div style="width: 38%">
                     <div class="rating space-between rt-pro">
                         <a href="#">
-                            <img src="<%=ctsp.getSanPham().getHinhAnh()%>" alt=""/>
+                            <img src="/Content/@Model.Product.Picture" alt="image"/>
                         </a>
                         <div class="rating-post">
                             <h6>
-                                #
+                                @Model.Product.ProductName
                             </h6>
                             <h6>Đánh giá</h6>
                             <div id="rating">

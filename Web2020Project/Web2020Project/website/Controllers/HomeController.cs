@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
+using System.Web.WebPages;
 using Web2020Project.Dao;
 using Web2020Project.Model;
 using Web2020Project.Utils;
@@ -32,8 +34,8 @@ namespace Web2020Project.Controllers
 
         public ActionResult News()
         {
-            
-            return View();
+            List<News> listNews = NewsDAO.loadNews();
+            return View(listNews);
         }
 
         public ActionResult Cart()
@@ -56,7 +58,7 @@ namespace Web2020Project.Controllers
         public ActionResult Logout()
         {
             Session.Remove("memberLogin");
-            return View("Index");
+            return RedirectToAction("Index", "Home");
         }
         
         [HttpPost]
@@ -147,7 +149,10 @@ namespace Web2020Project.Controllers
             comment.Name = Request["name"];
             comment.ProductId = Convert.ToInt32(Request["productID"]);
             comment.Product = Request["product"];
-            if (comment.Content != null && comment.Name != null && comment.ProductId != null && comment.Product != null)
+
+
+            if (comment.Content.Length != 0 && comment.Name != null && comment.ProductId != null &&
+                comment.Product != null)
 
             {
                 bool result = CommentDAO.InsertCMT(comment);
@@ -155,17 +160,19 @@ namespace Web2020Project.Controllers
                 {
                     ProductDetail p_detail = CategoryDAO.getPrDetailByID(comment.ProductId);
                     List<Comment> comments = CommentDAO.LoadCMT(comment.ProductId);
-                    Session.Add("listcomments",comments);
-                    return View("Product_Detail",Product_Detail("p_detail"));
+                    Session.Add("listcomments", comments);
                     
-                }
-                else
-                {
-                    return RedirectToAction("Register", "Home");
+                    return RedirectToAction("Product_Detail", new RouteValueDictionary(
+                        new
+                        {
+                            controller = "Home", action = "Product_Detail", Id = comment.ProductId, Model = "p_detail"
+                        }));
                 }
             }
-
-             return RedirectToAction("Register", "Home");
+            Session.Add("messagecomment", "Nội dung không được bỏ trống");
+            return RedirectToAction( "Product_Detail", new RouteValueDictionary( 
+                    new { controller = "Home", action = "Product_Detail", Id = comment.ProductId, Model="p_detail" } ) );
+            
         }
        
             

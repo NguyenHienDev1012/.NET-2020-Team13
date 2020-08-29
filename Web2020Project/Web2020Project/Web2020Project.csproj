@@ -148,7 +148,6 @@
         <Compile Include="Website\Dao\CartDAO.cs" />
         <Compile Include="Website\Dao\CategoryDAO.cs" />
         <Compile Include="Website\Dao\CommentDAO.cs" />
-        <Compile Include="Website\Dao\ListModelProductDetail.cs" />
         <Compile Include="Website\Dao\MyViewModel.cs" />
         <Compile Include="Website\Dao\NewsDAO.cs" />
         <Compile Include="Website\Dao\ProductDAO.cs" />

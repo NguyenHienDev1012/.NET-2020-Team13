@@ -1,4 +1,6 @@
-﻿@{
+﻿@using Web2020Project.Model
+
+@{
     ViewBag.Title = "News";
     Layout = "~/Views/Shared/Home/_Header.cshtml";
 }
@@ -9,18 +11,28 @@
                 <div class="news-new">
                     <h5>TIN TỨC MỚI NHẤT</h5>
                     <div class="content-left">
-                        <div class="frame-content">
-                            <a href="#">
-                                <div class="img-news">
-                                    <img src="/Content/assets/img/news/news-sale/a22_800x450-300x200.jpg" alt="">
-                                </div>
-                                <div class="title-news">
-                                    <h6>Tiêu đề 1</h6>
-                                    <span class="date">10/06/2020</span>
-                                    <figure class="content-news-main">Mô tả...</figure>
-                                </div>
-                            </a>
-                        </div>
+                        @if (@Model != null)
+                        {
+                            foreach (News news in @Model)
+                            {
+                                if (news.Kind== 0)
+                                {
+                                    <div class="frame-content">
+                                        <a href="#">
+                                            <div class="img-news">
+                                                <img src="/Content/@news.Picture" alt="images">
+                                            </div>
+                                            <div class="title-news">
+                                                <h6>@news.Title</h6>
+                                                <span class="date">@news.DateOfWriting</span>
+                                                <figure class="content-news-main">@news.Description...</figure>
+                                            </div>
+                                        </a>
+                                    </div>
+                                }
+                            }
+                        }
+                        
                     </div>
                     <div class="justify-center see-plus-news">
                         <button class="see-btn-news" type="button">Xem thêm<i class="fa fa-plus" aria-hidden="true"></i>
@@ -30,18 +42,26 @@
                 <div class="sale-new">
                     <h5>TIN KHUYẾN MÃI MỚI NHẤT</h5>
                     <div class="content-right">
-                        <div class="news-text-img-subs">
-                            <a href="">
-                                <div class="img-news">
-                                    <img src="/Content/assets/img/news/news-sale/a22_800x450-300x200.jpg" alt=""/>
+                        @if (@Model != null)
+                        {
+                            foreach (News news in @Model)
+                            {
+                          
+                                <div class="news-text-img-subs">
+                                    <a href="">
+                                        <div class="img-news">
+                                            <img src="/Content/@news.Picture" alt="images"/>
+                                        </div>
+                                        <figure>
+                                            <div class="text-news">@news.Title</div>
+                                            <span class="date">@news.DateOfWriting</span>
+                                            <p class="content-sale">@news.Description</p>
+                                        </figure>
+                                    </a>
                                 </div>
-                                <figure>
-                                    <div class="text-news">Tiêu đề 1</div>
-                                    <span class="date">10/06/2020</span>
-                                    <p class="content-sale">Mô tả 1</p>
-                                </figure>
-                            </a>
-                        </div>
+                                      
+                            }
+                        }
                     </div>
                     <div class="justify-center see-plus-news">
                         <button class="see-btn-news" type="button">Xem thêm<i class="fa fa-plus" aria-hidden="true"></i>
