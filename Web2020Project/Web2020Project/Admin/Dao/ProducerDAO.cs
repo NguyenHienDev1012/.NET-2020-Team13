@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Web.UI.WebControls;
@@ -46,19 +46,19 @@ namespace Web2020Project.Admin.Dao
             }
         }
 
-        public bool AddProducer(Producer producer)
+        public static bool AddProducer(Producer producer)
         {
             MySqlConnection connection = null;
             MySqlCommand cmd = null;
             try
             {
-                string sql = "INSERT INTO NHACUNGCAP VALUES (@prID,@prName,@prAddress)";
+                string sql = "INSERT INTO NHACUNGCAP VALUES (@producerID,@producerName,@producerAddress)";
                 connection = DBConnection.getConnection();
                 connection.Open();
                 cmd = new MySqlCommand(sql, connection);
-                cmd.Parameters.AddWithValue("@prID", producer.ProducerId);
-                cmd.Parameters.AddWithValue("@prName", producer.ProducerName);
-                cmd.Parameters.AddWithValue("@prName", producer.ProducerAddress);
+                cmd.Parameters.AddWithValue("@producerID", producer.ProducerId);
+                cmd.Parameters.AddWithValue("@producerName", producer.ProducerName);
+                cmd.Parameters.AddWithValue("@producerAddress", producer.ProducerAddress);
                 return cmd.ExecuteNonQuery() > 0;
             }
             catch (SqlException e)
@@ -72,7 +72,7 @@ namespace Web2020Project.Admin.Dao
             }
         }
 
-        public bool EditProducer(Producer producer)
+        public static bool EditProducer(Producer producer)
         {
             MySqlConnection connection = null;
             MySqlCommand cmd = null;
@@ -98,7 +98,7 @@ namespace Web2020Project.Admin.Dao
             }
         }
 
-        public bool EditNewID(Producer producer, String pr_ID_Old)
+        public static bool EditNewID(Producer producer, String pr_ID_Old)
         {
             MySqlConnection connection = null;
             MySqlCommand cmd = null;
@@ -123,6 +123,45 @@ namespace Web2020Project.Admin.Dao
             finally
             {
                 ReleaseResources.Release(connection, null, cmd);
+            }
+        }
+
+        public static Producer GetProducer(string ProducerID)
+        {
+            MySqlDataReader reader = null;
+            MySqlConnection connection = null;
+            MySqlCommand cmd = null;
+            try
+            {
+                string sql =
+                    "SELECT MANHACUNGCAP,TENNHACUNGCAP,DIACHI FROM NHACUNGCAP WHERE MANHACUNGCAP=@MANHACUNGCAP";
+                connection = DBConnection.getConnection();
+                connection.Open();
+                cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@MANHACUNGCAP", ProducerID);
+                reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    if (reader.Read())
+                    {
+                        if (reader.Read()) return null; //Chi duoc ton tai 1 tai khoan
+                        string producerID = reader.GetString("MANHACUNGCAP");
+                        string producerName = reader.GetString("TENNHACUNGCAP");
+                        string producerAddress = reader.GetString("DIACHI");
+                        return new Producer(producerID, producerName, producerAddress);
+                    }
+                }
+
+                return null;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+            finally
+            {
+                ReleaseResources.Release(connection, reader, cmd);
             }
         }
     }

@@ -52,7 +52,7 @@ namespace Web2020Project.Website.Dao
             try
             {
                 String sql =
-                    "SELECT MASANPHAM,TENSANPHAM,GIADAGIAM,HINHDANH FROM SANPHAM WHERE TRANGTHAI>0 AND MASANPHAM=@msp";
+                    "SELECT MASANPHAM,TENSANPHAM,GIADAGIAM,HINHANH FROM SANPHAM WHERE TRANGTHAI>0 AND MASANPHAM=@msp";
                 connection = DBConnection.getConnection();
                 connection.Open();
                 cmd = new MySqlCommand(sql, connection);

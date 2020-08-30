@@ -1,4 +1,6 @@
-﻿using MySql.Data.MySqlClient;
+﻿using System.Collections.Generic;
+using MySql.Data.MySqlClient;
+using Web2020Project.Models;
 
 namespace Web2020Project.Model
 {
@@ -14,9 +16,15 @@ namespace Web2020Project.Model
         private string address;
         private int level;
         private string avatar;
+        private List<Role> roles;// quyền này cho từng user  thực thi action
 
         public Member()
         {
+        }
+
+        public Member(string username)
+        {
+            this.UserName = username;
         }
 
         
@@ -91,6 +99,12 @@ namespace Web2020Project.Model
             set => avatar = value;
         }
 
+        public List<Role> Roles
+        {
+            get => roles;
+            set => roles = value;
+        }
+
         public Member GetMember( MySqlDataReader reader)
         {
             UserName=reader.GetString("taikhoan");
@@ -103,6 +117,11 @@ namespace Web2020Project.Model
             Level=reader.GetInt32("level");
             // Avatar = reader.GetString("avatar");
             return this;
+        }
+
+        public override string ToString()
+        {
+            return userName;
         }
     }
 }

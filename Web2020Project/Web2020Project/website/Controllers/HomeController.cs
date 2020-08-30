@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.WebPages;
 using Web2020Project.Dao;
+using Web2020Project.DAO;
 using Web2020Project.Model;
 using Web2020Project.Utils;
 using Web2020Project.Website.Dao;
@@ -27,7 +28,7 @@ namespace Web2020Project.Controllers
             myViewModel.listProduct_new = listProduct_new;
             myViewModel.listProduct_sale = listProduct_sale;
             myViewModel.listProduct_hot = listProduct_hot;
-            
+           
             return View(myViewModel);
         }
  
@@ -77,12 +78,16 @@ namespace Web2020Project.Controllers
                 Member member = LoginDao.checkLogin(userName, password);
                 if (member != null)
                 {
+                    member.Roles = LogDao.loadRolesByUserName(userName);
+                    Console.WriteLine(member.Roles[0].Control);
                     Session.Add("memberLogin",member);
+                    LogDao.INFO("Tai khoan: "+member.UserName+", email: " +member.Email,"Action: Login => DONE");
                     return RedirectToAction("Index", "Home");
                 }
                 else
                 {
                     Session.Add("errLogin","Tên tài khoản hoặc mật khẩu không đúng");
+                    LogDao.FAILEDLOGIN("Tai khoan: "+ new Member(userName).ToString(), "Action: Login ==> FAILED");
                     return  RedirectToAction("Login", "Home");
                 }
             }

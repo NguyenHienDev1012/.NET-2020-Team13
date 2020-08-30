@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
@@ -79,7 +79,7 @@ namespace Web2020Project.Admin.Dao
             }
         }
 
-        public bool EditProducer(ProductDetail productDetail)
+        public static bool EditProduct(ProductDetail productDetail)
         {
             MySqlConnection connection = null;
             MySqlCommand cmd = null;
@@ -123,7 +123,7 @@ namespace Web2020Project.Admin.Dao
             }
         }
 
-        public bool add(ProductDetail productDetail)
+        public static bool add(ProductDetail productDetail)
         {
             MySqlConnection connection = null;
             MySqlCommand cmd = null;

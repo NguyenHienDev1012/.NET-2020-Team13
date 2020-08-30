@@ -125,17 +125,21 @@
         <Compile Include="App_Start\BundleConfig.cs" />
         <Compile Include="App_Start\FilterConfig.cs" />
         <Compile Include="App_Start\RouteConfig.cs" />
+        <Compile Include="DAO\LogDao.cs" />
         <Compile Include="DAO\LoginDao.cs" />
         <Compile Include="DAO\MemberDAO.cs" />
         <Compile Include="Global.asax.cs">
             <DependentUpon>Global.asax</DependentUpon>
         </Compile>
         <Compile Include="Models\Comment.cs" />
+        <Compile Include="Models\Level.cs" />
+        <Compile Include="Models\Log.cs" />
         <Compile Include="Models\ProductDetail.cs" />
         <Compile Include="Models\CartDB.cs" />
         <Compile Include="Models\Producer.cs" />
         <Compile Include="Models\Product.cs" />
         <Compile Include="Models\Member.cs" />
+        <Compile Include="Models\Role.cs" />
         <Compile Include="Models\Technical.cs" />
         <Compile Include="Models\News.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
