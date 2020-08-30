@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1a0e76a5-885f-4516-9bc8-ad5c720d6983" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Model/ThanhVien.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Dao/ObjectDao.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Admin/Controllers/AdminController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Dao/LoginDao.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Admin/Dao/ThanhVienDao.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Shared/Admin/_Frames.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/libs/DBConnection.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Model/BinhLuan.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Shared/Admin/_FramesFull.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Admin/Product_Manage.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Admin/Dao/BinhLuanDao.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Admin/Dao/TinTucDao.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Admin/Producer.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Home/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Admin/News_Manage.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Shared/Admin/_LayoutAdminFull.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Dao/SanPhamDao.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Admin/Comment_Manage.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Home/Product.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Model/NhaCungCap.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Model/SanPham.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Admin/Dao/NhaCungCapDao.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/website/Controllers/HomeController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Model/TinTuc.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Home/Register.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FormInput/ThanhVienModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Home/Login.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FormInput/LoginModel.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/libs/DBConnection.cs" />
+        <option value="$PROJECT_DIR$/Admin/Dao/ThanhVienDao.cs" />
+        <option value="$PROJECT_DIR$/Views/Home/Product.cshtml" />
+        <option value="$PROJECT_DIR$/website/Controllers/HomeController.cs" />
+        <option value="$PROJECT_DIR$/Dao/SanPhamDao.cs" />
+        <option value="$PROJECT_DIR$/Model/NhaCungCap.cs" />
+        <option value="$PROJECT_DIR$/Admin/Dao/NhaCungCapDao.cs" />
+        <option value="$PROJECT_DIR$/Views/Admin/Product_Manage.cshtml" />
+        <option value="$PROJECT_DIR$/Content/Admin/js/dataTables/dataTables.bootstrap.min.js" />
+        <option value="$PROJECT_DIR$/Model/TinTuc.cs" />
+        <option value="$PROJECT_DIR$/Admin/Dao/TinTucDao.cs" />
+        <option value="$PROJECT_DIR$/Views/Admin/News_Manage.cshtml" />
+        <option value="$PROJECT_DIR$/Model/BinhLuan.cs" />
+        <option value="$PROJECT_DIR$/Admin/Controllers/AdminController.cs" />
+        <option value="$PROJECT_DIR$/Views/Admin/Comment_Manage.cshtml" />
+        <option value="$PROJECT_DIR$/Admin/Dao/BinhLuanDao.cs" />
+        <option value="$PROJECT_DIR$/Views/Shared/Admin/_Frames.cshtml" />
+        <option value="$PROJECT_DIR$/Views/Shared/Admin/_LayoutAdminFull.cshtml" />
+        <option value="$PROJECT_DIR$/Views/Shared/Admin/_FramesFull.cshtml" />
+        <option value="$PROJECT_DIR$/Views/Admin/Producer.cshtml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1fAXQudgugYYCmYWQs246pwxWcD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunManager" selected=".NET Project.Web2020Project">
+    <configuration name="Web2020Project" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/Web2020Project.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="Web" />
+      <option name="PROJECT_TFM" value="" />
+      <browser url="http://localhost:5000/" start="true" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="dataTables.bootstrap.min.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Content/Admin/js/dataTables/dataTables.bootstrap.min.js" working-dir="$PROJECT_DIR$/Content/Admin/js/dataTables">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.dataTables.bootstrap.min.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1a0e76a5-885f-4516-9bc8-ad5c720d6983" name="Default Changelist" comment="" />
+      <created>1595661858699</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1595661858699</updated>
+      <workItem from="1595661875480" duration="7173000" />
+      <workItem from="1595695192355" duration="1885000" />
+      <workItem from="1595743178322" duration="3751000" />
+      <workItem from="1595746985200" duration="5421000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="387" y="22" key="#dataTables.bootstrap.min.js" timestamp="1595746890054">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="387" y="22" key="#dataTables.bootstrap.min.js/0.0.1366.738@0.0.1366.738" timestamp="1595746890054" />
+    <state width="1306" height="32" key="GridCell.Tab.0.bottom" timestamp="1595755999237">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1306" height="32" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1595755999237" />
+    <state width="1306" height="32" key="GridCell.Tab.0.center" timestamp="1595755999237">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1306" height="32" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1595755999237" />
+    <state width="1306" height="32" key="GridCell.Tab.0.left" timestamp="1595755999237">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1306" height="32" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1595755999237" />
+    <state width="1306" height="32" key="GridCell.Tab.0.right" timestamp="1595755999237">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1306" height="32" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1595755999237" />
+    <state x="450" y="243" key="LayersDialog" timestamp="1595751004976">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="450" y="243" key="LayersDialog/0.0.1366.738@0.0.1366.738" timestamp="1595751004976" />
+    <state x="393" y="0" key="RiderGenerateDialog" timestamp="1595748901247">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="393" y="0" key="RiderGenerateDialog/0.0.1366.738@0.0.1366.738" timestamp="1595748901247" />
+    <state x="184" y="0" key="SettingsEditor" timestamp="1595751195106">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="184" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1595751195106" />
+    <state x="92" y="92" width="1182" height="554" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1595666070205">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="92" y="92" width="1182" height="554" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.738@0.0.1366.738" timestamp="1595666070205" />
+    <state x="458" y="240" width="556" height="277" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1595750987267">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="458" y="240" width="556" height="277" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1366.738@0.0.1366.738" timestamp="1595750987267" />
+  </component>
+</project>

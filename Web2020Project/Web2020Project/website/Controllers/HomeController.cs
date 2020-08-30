@@ -3,19 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Web2020Project.Admin.Dao;
 using Web2020Project.Dao;
 using Web2020Project.FormInteract;
-using Web2020Project.libs;
 using Web2020Project.Model;
-using Web2020Project.Models.MODEL;
 using Web2020Project.Utils;
+using Web2020Project.Website.Dao;
 
 namespace Web2020Project.Controllers
 {
     public class HomeController : Controller
     {
-        ThanhVienDao thanhVienDao= new ThanhVienDao();
+        MemberDAO memberDao= new MemberDAO();
         public ActionResult Index()
         {
             return View();
@@ -23,7 +21,6 @@ namespace Web2020Project.Controllers
 
         public ActionResult News()
         {
-         
             return View();
         }
 
@@ -49,10 +46,9 @@ namespace Web2020Project.Controllers
         public ActionResult Login(LoginModel loginmodel)
         {
              
-            ThanhVien thanhvien = LoginDao.checkLogin(loginmodel.Usrname, loginmodel.Password);
+            Member thanhvien = LoginDao.checkLogin(loginmodel.Usrname, loginmodel.Password);
             if (thanhvien != null)
             {
-                Console.WriteLine(thanhvien.HoTen);
                 return RedirectToAction("Index", "Home");
             }
             else
@@ -68,11 +64,9 @@ namespace Web2020Project.Controllers
         }
 
         [HttpPost]
-        public ActionResult Register(ThanhVienModel thanhVienModel)
+        public ActionResult Register(MemberModel memberModel)
         {
-            ThanhVien thanhvien= new ThanhVien(thanhVienModel.UsrName, thanhVienModel.Password, thanhVienModel.FullName, thanhVienModel.Gender, 
-                thanhVienModel.Email, Convert.ToInt32(thanhVienModel.Sdt), thanhVienModel.Address, 0,  "" );
-            bool isOK = thanhVienDao.add(thanhVienModel);
+            bool isOK = false;
             if (isOK)
             {
                 return RedirectToAction("Index", "Home");
@@ -90,11 +84,7 @@ namespace Web2020Project.Controllers
 
         public ActionResult Product()
         {
-            List<SanPham> listProduct = SanPhamDao.getListProduct();
-            // List<SanPham> listProduct = new List<SanPham>();
-            // listProduct.Add(new SanPham(1, "asd", "asd", 100000, 10000000,
-            //     "/Content/assets/img/products/huawei/244.jpg", 3, 2, 1));
-            return View(listProduct);
+            return View();
         }
         public ActionResult Product_Detail()
         {

@@ -5,7 +5,7 @@ namespace Web2020Project.Utils
 {
     public class MD5
     {
-        public static string convertToMD5(string input)
+        public static string ConvertToMD5(string input)
         {
             StringBuilder hash = new StringBuilder();
             MD5CryptoServiceProvider md5provider = new MD5CryptoServiceProvider();

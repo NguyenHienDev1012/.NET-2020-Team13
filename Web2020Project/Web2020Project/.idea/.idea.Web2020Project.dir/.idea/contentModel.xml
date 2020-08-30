@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\17130_000\AppData\Local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\17130_000\AppData\Local\JetBrains\Rider2020.1\resharper-host\Local\Transient\ReSharperHost\v201\SolutionCaches\_.19.00" t="ExcludeRecursive" />
+    <e p="C:\Users\17130_000\AppData\Roaming\JetBrains\Rider2020.1\consoles\db" t="IncludeRecursive" />
+    <e p="D:\HK6 2019 - 2020\ASP.NET\Web2020Project\Web2020Project" t="IncludeRecursive">
+      <e p="Admin" t="Include">
+        <e p="Controllers" t="Include">
+          <e p="AdminController.cs" t="Include" />
+        </e>
+        <e p="Dao" t="Include">
+          <e p="BinhLuanDao.cs" t="Include" />
+          <e p="NhaCungCapDao.cs" t="Include" />
+          <e p="ThanhVienDao.cs" t="Include" />
+          <e p="TinTucDao.cs" t="Include" />
+        </e>
+        <e p="Model" t="Include" />
+      </e>
+      <e p="App_Data" t="Include" />
+      <e p="App_Start" t="Include">
+        <e p="BundleConfig.cs" t="Include" />
+        <e p="FilterConfig.cs" t="Include" />
+        <e p="RouteConfig.cs" t="Include" />
+      </e>
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="Content" t="Include">
+        <e p="Admin" t="Include">
+          <e p="css" t="Include">
+            <e p="bootstrap-social.css" t="Include" />
+            <e p="bootstrap-theme.min.css" t="Include" />
+            <e p="bootstrap.min.css" t="Include" />
+            <e p="dataTables" t="Include">
+              <e p="dataTables.bootstrap.css" t="Include" />
+              <e p="dataTables.responsive.css" t="Include" />
+            </e>
+            <e p="font-awesome.min.css" t="Include" />
+            <e p="form-style.css" t="Include" />
+            <e p="metisMenu.min.css" t="Include" />
+            <e p="startmin.css" t="Include" />
+            <e p="timeline.css" t="Include" />
+          </e>
+          <e p="fonts" t="Include">
+            <e p="fontawesome-webfont.eot" t="Include" />
+            <e p="fontawesome-webfont.svg" t="Include" />
+            <e p="fontawesome-webfont.ttf" t="Include" />
+            <e p="fontawesome-webfont.woff" t="Include" />
+            <e p="fontawesome-webfont.woff2" t="Include" />
+            <e p="FontAwesome.otf" t="Include" />
+            <e p="glyphicons-halflings-regular.eot" t="Include" />
+            <e p="glyphicons-halflings-regular.svg" t="Include" />
+            <e p="glyphicons-halflings-regular.ttf" t="Include" />
+            <e p="glyphicons-halflings-regular.woff" t="Include" />
+            <e p="glyphicons-halflings-regular.woff2" t="Include" />
+          </e>
+          <e p="img" t="Include">
+            <e p="logo-atm.png" t="Include" />
+          </e>
+          <e p="js" t="Include">
+            <e p="aos-animation" t="Include">
+              <e p="aos.css" t="Include" />
+              <e p="aos.js" t="Include" />
+              <e p="bs-animation.js" t="Include" />
+            </e>
+            <e p="bootstrap.min.js" t="Include" />
+            <e p="dataTables" t="Include">
+              <e p="dataTables.bootstrap.min.js" t="Include" />
+              <e p="jquery.dataTables.min.js" t="Include" />
+            </e>
+            <e p="form-style.js" t="Include" />
+            <e p="jquery.min.js" t="Include" />
+            <e p="metisMenu.min.js" t="Include" />
+            <e p="raphael.min.js" t="Include" />
+            <e p="startmin.js" t="Include" />
+            <e p="validation-form" t="Include">
+              <e p="vali-form.js" t="Include" />
+              <e p="vali-login.js" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="assets" t="Include">
+          <e p="bootstrap" t="Include">
+            <e p="css" t="Include">
+              <e p="bootstrap.min.css" t="Include" />
+            </e>
+            <e p="js" t="Include">
+              <e p="bootstrap.min.js" t="Include" />
+            </e>
+          </e>
+          <e p="css" t="Include">
+            <e p="body.css" t="Include" />
+            <e p="footer.css" t="Include" />
+            <e p="header.css" t="Include" />
+            <e p="popup-forget-pass.css" t="Include" />
+          </e>
+          <e p="fonts" t="Include">
+            <e p="font-awesome.min.css" t="Include" />
+            <e p="fontawesome-webfont.eot" t="Include" />
+            <e p="fontawesome-webfont.svg" t="Include" />
+            <e p="fontawesome-webfont.ttf" t="Include" />
+            <e p="fontawesome-webfont.woff" t="Include" />
+            <e p="fontawesome-webfont.woff2" t="Include" />
+            <e p="FontAwesome.otf" t="Include" />
+          </e>
+          <e p="img" t="Include">
+            <e p="banner" t="Include">
+              <e p="1200-75-1200x75.png" t="Include" />
+              <e p="637112425934634742_banner-OnlineFriday-H5-2X.jpg" t="Include" />
+              <e p="banner_huawei.png" t="Include" />
+              <e p="banner_iphone.png" t="Include" />
+              <e p="banner_oppo.png" t="Include" />
+              <e p="banner_samsung.png" t="Include" />
+              <e p="banner_vivo.png" t="Include" />
+              <e p="banner_xiaomi.png" t="Include" />
+              <e p="oppo-banner.png" t="Include" />
+              <e p="Thumbs.db" t="Include" />
+              <e p="xiaomi_1.png" t="Include" />
+            </e>
+            <e p="common" t="Include">
+              <e p="404.jpg" t="Include" />
+              <e p="avatar-user" t="Include">
+                <e p="avatar-admin.jpg" t="Include" />
+              </e>
+              <e p="back_body.jpg" t="Include" />
+              <e p="bg_menu.png" t="Include" />
+              <e p="logo-atm.png" t="Include" />
+              <e p="logo-nsx" t="Include">
+                <e p="Huawei42-b_30.jpg" t="Include" />
+                <e p="iPhone-(Apple)42-b_16.jpg" t="Include" />
+                <e p="OPPO42-b_57.jpg" t="Include" />
+                <e p="Samsung42-b_25.jpg" t="Include" />
+                <e p="Vivo42-b_50.jpg" t="Include" />
+                <e p="Xiaomi42-b_31.png" t="Include" />
+              </e>
+              <e p="pattern_142.png" t="Include" />
+            </e>
+            <e p="news" t="Include">
+              <e p="asus-xiaomi.jpg" t="Include" />
+              <e p="aus-rog.jpg" t="Include" />
+              <e p="galaxy-s10.jpg" t="Include" />
+              <e p="ipad-2019.jpg" t="Include" />
+              <e p="new-img-2.png" t="Include" />
+              <e p="news-img-1.png" t="Include" />
+              <e p="news-new" t="Include">
+                <e p="637112647268385454_zombie-4.jpg" t="Include" />
+                <e p="637112684358340588_redmi-k30-blue-face.jpg" t="Include" />
+                <e p="637112976583705857_chip-3nm-se-san-sang-cho-iphone-2022-cover.jpg" t="Include" />
+                <e p="637113144250854079_thong-tin-kirin-1020-cover.jpg" t="Include" />
+                <e p="huawei-gpu-turbo-fptshop-02.jpg" t="Include" />
+                <e p="huawei-kirin-1020.png" t="Include" />
+                <e p="samsungspen1-800x450-jpg_800x450.jpg" t="Include" />
+                <e p="ten-goi-iPhone-9-1.jpg" t="Include" />
+                <e p="vivou106of24_800x450-300x200.jpg" t="Include" />
+                <e p="xiaomi-mi-cc9-pro-1200x675.jpg" t="Include" />
+                <e p="Xiaomi-mi-cc9-pro-sanh-ngang-huawei-mate-30-pro-voi-121-diem-dxomark-1.jpg" t="Include" />
+              </e>
+              <e p="news-sale" t="Include">
+                <e p="a22_800x450-300x200.jpg" t="Include" />
+                <e p="dsc01927_800x450.jpg" t="Include" />
+                <e p="huaweigt2da13of31-800x450_800x450-300x200.jpg" t="Include" />
+                <e p="img_2529-copy-800x450_800x450-300x200.png" t="Include" />
+                <e p="loat-smartphone-samsung-giam-gia-cuc-soc.jpg" t="Include" />
+                <e p="oppo-a7-4_800x450-300x200.jpg" t="Include" />
+                <e p="opporeno_800x450-300x200.jpg" t="Include" />
+                <e p="samsung-galaxy-note-10-plus-aura-blue-back-in-hand_800x450-300x200.jpg" t="Include" />
+                <e p="so-sanh-toc-do-iOS-13-2-va-iOS-13-1-3-1.jpg" t="Include" />
+                <e p="vivo-y91c-1_800x450-300x200.jpg" t="Include" />
+                <e p="vivou106of24_800x450.jpg" t="Include" />
+              </e>
+              <e p="question-img" t="Include">
+                <e p="1.jpg" t="Include" />
+                <e p="2.jpg" t="Include" />
+                <e p="3.jpg" t="Include" />
+                <e p="4.jpg" t="Include" />
+                <e p="5.jpg" t="Include" />
+                <e p="note-10-pluss.jpg" t="Include" />
+                <e p="p3o-pro-1.jpg" t="Include" />
+                <e p="s10-plus-1.jpg" t="Include" />
+              </e>
+              <e p="redmi-note8.jpg" t="Include" />
+              <e p="vivo-y11.jpg" t="Include" />
+            </e>
+            <e p="products" t="Include">
+              <e p="huawei" t="Include">
+                <e p="231.png" t="Include" />
+                <e p="232.png" t="Include" />
+                <e p="233.jpg" t="Include" />
+                <e p="234.png" t="Include" />
+                <e p="235.jpg" t="Include" />
+                <e p="236.png" t="Include" />
+                <e p="237.jpg" t="Include" />
+                <e p="238.jpg" t="Include" />
+                <e p="239.jpg" t="Include" />
+                <e p="240.png" t="Include" />
+                <e p="241.png" t="Include" />
+                <e p="242.jpg" t="Include" />
+                <e p="243.jpg" t="Include" />
+                <e p="244.jpg" t="Include" />
+                <e p="245.jpg" t="Include" />
+                <e p="246.jpg" t="Include" />
+                <e p="247.png" t="Include" />
+                <e p="248.jpg" t="Include" />
+                <e p="249.png" t="Include" />
+                <e p="250.jpg" t="Include" />
+                <e p="251.png" t="Include" />
+                <e p="252.png" t="Include" />
+                <e p="253.jpg" t="Include" />
+                <e p="254.jpg" t="Include" />
+                <e p="255.png" t="Include" />
+                <e p="256.jpg" t="Include" />
+                <e p="257.jpg" t="Include" />
+                <e p="258.png" t="Include" />
+                <e p="259.png" t="Include" />
+                <e p="260.jpg" t="Include" />
+                <e p="261.png" t="Include" />
+                <e p="262.jpg" t="Include" />
+                <e p="vinhhalong-bg.jpg" t="Include" />
+              </e>
+              <e p="iphone" t="Include">
+                <e p="1.jpg" t="Include" />
+                <e p="10.jpg" t="Include" />
+                <e p="11.jpg" t="Include" />
+                <e p="12.png" t="Include" />
+                <e p="13.jpg" t="Include" />
+                <e p="14.jpg" t="Include" />
+                <e p="15.png" t="Include" />
+                <e p="16.jpg" t="Include" />
+                <e p="17.jpg" t="Include" />
+                <e p="18.png" t="Include" />
+                <e p="19.png" t="Include" />
+                <e p="2.jpg" t="Include" />
+                <e p="20.jpg" t="Include" />
+                <e p="21.png" t="Include" />
+                <e p="22.jpg" t="Include" />
+                <e p="23.jpg" t="Include" />
+                <e p="24.png" t="Include" />
+                <e p="25.jpg" t="Include" />
+                <e p="26.jpg" t="Include" />
+                <e p="27.jpg" t="Include" />
+                <e p="28.jpg" t="Include" />
+                <e p="29.jpg" t="Include" />
+                <e p="3.jpg" t="Include" />
+                <e p="30.jpg" t="Include" />
+                <e p="31.jpg" t="Include" />
+                <e p="32.jpg" t="Include" />
+                <e p="33.png" t="Include" />
+                <e p="4.png" t="Include" />
+                <e p="5.jpg" t="Include" />
+                <e p="6.jpg" t="Include" />
+                <e p="7.jpg" t="Include" />
+                <e p="8.jpg" t="Include" />
+                <e p="9.jpg" t="Include" />
+                <e p="dalat-suongmu.jpg" t="Include" />
+              </e>
+              <e p="oppo" t="Include">
+                <e p="191.jpg" t="Include" />
+                <e p="192.jpg" t="Include" />
+                <e p="193.png" t="Include" />
+                <e p="194.jpg" t="Include" />
+                <e p="195.jpg" t="Include" />
+                <e p="196.jpg" t="Include" />
+                <e p="197.jpg" t="Include" />
+                <e p="198.jpg" t="Include" />
+                <e p="199.jpg" t="Include" />
+                <e p="200.jpg" t="Include" />
+                <e p="201.jpg" t="Include" />
+                <e p="202.jpg" t="Include" />
+                <e p="203.png" t="Include" />
+                <e p="204.jpg" t="Include" />
+                <e p="205.png" t="Include" />
+                <e p="206.jpg" t="Include" />
+                <e p="207.png" t="Include" />
+                <e p="208.jpg" t="Include" />
+                <e p="209.jpeg" t="Include" />
+                <e p="210.png" t="Include" />
+                <e p="211.jpg" t="Include" />
+                <e p="212.png" t="Include" />
+                <e p="213.png" t="Include" />
+                <e p="214.png" t="Include" />
+                <e p="215.png" t="Include" />
+                <e p="216.png" t="Include" />
+                <e p="217.png" t="Include" />
+                <e p="218.png" t="Include" />
+                <e p="219.png" t="Include" />
+                <e p="220.jpg" t="Include" />
+                <e p="221.png" t="Include" />
+                <e p="dalat-doicohoahong2.jpg" t="Include" />
+                <e p="sapa-laocai1.jpg" t="Include" />
+              </e>
+              <e p="samsung" t="Include">
+                <e p="41.jpg" t="Include" />
+                <e p="42.jpg" t="Include" />
+                <e p="43.jpg" t="Include" />
+                <e p="44.jpg" t="Include" />
+                <e p="45.jpg" t="Include" />
+                <e p="46.jpg" t="Include" />
+                <e p="47.jpg" t="Include" />
+                <e p="48.jpg" t="Include" />
+                <e p="49.jpg" t="Include" />
+                <e p="50.jpg" t="Include" />
+                <e p="51.jpg" t="Include" />
+                <e p="52.png" t="Include" />
+                <e p="53.png" t="Include" />
+                <e p="54.jpg" t="Include" />
+                <e p="55.png" t="Include" />
+                <e p="56.jpg" t="Include" />
+                <e p="57.jpg" t="Include" />
+                <e p="58.png" t="Include" />
+                <e p="59.jpg" t="Include" />
+                <e p="60.jpg" t="Include" />
+                <e p="61.jpg" t="Include" />
+                <e p="62.jpg" t="Include" />
+                <e p="63.png" t="Include" />
+                <e p="64.jpg" t="Include" />
+                <e p="65.png" t="Include" />
+                <e p="66.jpg" t="Include" />
+                <e p="67.png" t="Include" />
+                <e p="68.jpg" t="Include" />
+                <e p="69.jpg" t="Include" />
+                <e p="70.jpg" t="Include" />
+                <e p="71.png" t="Include" />
+                <e p="72.jpg" t="Include" />
+                <e p="73.jpg" t="Include" />
+                <e p="74.jpg" t="Include" />
+                <e p="75.png" t="Include" />
+                <e p="76.jpg" t="Include" />
+                <e p="77.jpg" t="Include" />
+                <e p="78.jpg" t="Include" />
+                <e p="79.png" t="Include" />
+                <e p="80.jpg" t="Include" />
+                <e p="81.png" t="Include" />
+                <e p="82.png" t="Include" />
+                <e p="83.jpg" t="Include" />
+                <e p="84.png" t="Include" />
+                <e p="85.jpg" t="Include" />
+                <e p="86.jpg" t="Include" />
+                <e p="87.png" t="Include" />
+                <e p="dalat-suongmu.jpg" t="Include" />
+              </e>
+              <e p="vivo" t="Include">
+                <e p="151.jpg" t="Include" />
+                <e p="152.jpg" t="Include" />
+                <e p="153.png" t="Include" />
+                <e p="154.jpg" t="Include" />
+                <e p="155.jpg" t="Include" />
+                <e p="156.png" t="Include" />
+                <e p="157.jpg" t="Include" />
+                <e p="158.png" t="Include" />
+                <e p="159.png" t="Include" />
+                <e p="160.jpg" t="Include" />
+                <e p="161.jpg" t="Include" />
+                <e p="162.jpg" t="Include" />
+                <e p="163.png" t="Include" />
+                <e p="164.png" t="Include" />
+                <e p="165.png" t="Include" />
+                <e p="166.png" t="Include" />
+                <e p="167.jpg" t="Include" />
+                <e p="168.jpg" t="Include" />
+                <e p="169.jpg" t="Include" />
+                <e p="170.jpg" t="Include" />
+                <e p="171.png" t="Include" />
+                <e p="172.png" t="Include" />
+                <e p="173.jpg" t="Include" />
+                <e p="174.jpg" t="Include" />
+                <e p="175.jpg" t="Include" />
+                <e p="176.png" t="Include" />
+                <e p="177.jpg" t="Include" />
+                <e p="178.jpg" t="Include" />
+                <e p="backgroud-login.png" t="Include" />
+                <e p="logoo.PNG" t="Include" />
+              </e>
+              <e p="xiaomi" t="Include">
+                <e p="100.jpg" t="Include" />
+                <e p="101.jpg" t="Include" />
+                <e p="102.png" t="Include" />
+                <e p="103.png" t="Include" />
+                <e p="104.png" t="Include" />
+                <e p="105.jpg" t="Include" />
+                <e p="106.jpg" t="Include" />
+                <e p="107.jpg" t="Include" />
+                <e p="108.png" t="Include" />
+                <e p="109.png" t="Include" />
+                <e p="110.jpg" t="Include" />
+                <e p="111.png" t="Include" />
+                <e p="112.png" t="Include" />
+                <e p="113.jpg" t="Include" />
+                <e p="114.jpg" t="Include" />
+                <e p="115.png" t="Include" />
+                <e p="116.png" t="Include" />
+                <e p="117.png" t="Include" />
+                <e p="118.jpg" t="Include" />
+                <e p="119.png" t="Include" />
+                <e p="120.png" t="Include" />
+                <e p="121.jpg" t="Include" />
+                <e p="122.jpg" t="Include" />
+                <e p="123.png" t="Include" />
+                <e p="124.png" t="Include" />
+                <e p="125.png" t="Include" />
+                <e p="126.png" t="Include" />
+                <e p="127.png" t="Include" />
+                <e p="128.jpg" t="Include" />
+                <e p="129.png" t="Include" />
+                <e p="130.png" t="Include" />
+                <e p="131.jpg" t="Include" />
+                <e p="132.png" t="Include" />
+                <e p="133.jpg" t="Include" />
+                <e p="134.png" t="Include" />
+                <e p="135.jpg" t="Include" />
+                <e p="136.png" t="Include" />
+                <e p="137.png" t="Include" />
+                <e p="138.jpg" t="Include" />
+                <e p="139.png" t="Include" />
+                <e p="140.jpg" t="Include" />
+                <e p="91.png" t="Include" />
+                <e p="92.jpg" t="Include" />
+                <e p="93.png" t="Include" />
+                <e p="94.jpg" t="Include" />
+                <e p="95.png" t="Include" />
+                <e p="96.jpg" t="Include" />
+                <e p="97.png" t="Include" />
+                <e p="98.jpg" t="Include" />
+                <e p="99.jpg" t="Include" />
+              </e>
+            </e>
+            <e p="slider" t="Include">
+              <e p="1.png" t="Include" />
+              <e p="2.jpg" t="Include" />
+              <e p="3.png" t="Include" />
+              <e p="4.png" t="Include" />
+              <e p="5.jpg" t="Include" />
+              <e p="6.png" t="Include" />
+            </e>
+          </e>
+          <e p="js" t="Include">
+            <e p="addToCart_AJAX.js" t="Include" />
+            <e p="back-to-top.js" t="Include" />
+            <e p="bs-animation.js" t="Include" />
+            <e p="cart.js" t="Include" />
+            <e p="jquery-2.2.4.min.js" t="Include" />
+            <e p="jquery.min.js" t="Include" />
+            <e p="pagination" t="Include">
+              <e p="bootstrap4.0.0-alpha.min.js" t="Include" />
+              <e p="jquery.twbsPagination.min.js" t="Include" />
+            </e>
+            <e p="profile-user.js" t="Include" />
+            <e p="search_key.js" t="Include" />
+            <e p="see-plus.js" t="Include" />
+            <e p="slides-banner.js" t="Include" />
+            <e p="sub-user.js" t="Include" />
+            <e p="validation-form" t="Include">
+              <e p="vali-chang-pass.js" t="Include" />
+              <e p="vali-forget.js" t="Include" />
+              <e p="vali-form.js" t="Include" />
+              <e p="vali-login.js" t="Include" />
+            </e>
+          </e>
+          <e p="libs" t="Include">
+            <e p="aos-animation" t="Include">
+              <e p="aos.css" t="Include" />
+              <e p="aos.js" t="Include" />
+            </e>
+            <e p="slick" t="Include">
+              <e p="ajax-loader.gif" t="Include" />
+              <e p="config.rb" t="Include" />
+              <e p="fonts" t="Include">
+                <e p="slick.eot" t="Include" />
+                <e p="slick.svg" t="Include" />
+                <e p="slick.ttf" t="Include" />
+                <e p="slick.woff" t="Include" />
+              </e>
+              <e p="slick-theme.css" t="Include" />
+              <e p="slick-theme.less" t="Include" />
+              <e p="slick-theme.scss" t="Include" />
+              <e p="slick-types.js" t="Include" />
+              <e p="slick.css" t="Include" />
+              <e p="slick.js" t="Include" />
+              <e p="slick.less" t="Include" />
+              <e p="slick.min.js" t="Include" />
+              <e p="slick.scss" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="bootstrap-theme.css" t="Include" />
+        <e p="bootstrap-theme.css.map" t="Include" />
+        <e p="bootstrap-theme.min.css" t="Include" />
+        <e p="bootstrap-theme.min.css.map" t="Include" />
+        <e p="bootstrap.css" t="Include" />
+        <e p="bootstrap.css.map" t="Include" />
+        <e p="bootstrap.min.css" t="Include" />
+        <e p="bootstrap.min.css.map" t="Include" />
+        <e p="Site.css" t="Include" />
+      </e>
+      <e p="Dao" t="Include">
+        <e p="LoginDao.cs" t="Include" />
+        <e p="ObjectDao.cs" t="Include" />
+        <e p="SanPhamDao.cs" t="Include" />
+      </e>
+      <e p="favicon.ico" t="Include" />
+      <e p="fonts" t="Include">
+        <e p="glyphicons-halflings-regular.eot" t="Include" />
+        <e p="glyphicons-halflings-regular.svg" t="Include" />
+        <e p="glyphicons-halflings-regular.ttf" t="Include" />
+        <e p="glyphicons-halflings-regular.woff" t="Include" />
+        <e p="glyphicons-halflings-regular.woff2" t="Include" />
+      </e>
+      <e p="FormInput" t="Include">
+        <e p="LoginModel.cs" t="Include" />
+        <e p="ThanhVienModel.cs" t="Include" />
+      </e>
+      <e p="Global.asax" t="Include" />
+      <e p="Global.asax.cs" t="Include" />
+      <e p="libs" t="Include">
+        <e p="DBConnection.cs" t="Include" />
+      </e>
+      <e p="Model" t="Include">
+        <e p="BinhLuan.cs" t="Include" />
+        <e p="ChiTietSanPham.cs" t="Include" />
+        <e p="GioHang_DB.cs" t="Include" />
+        <e p="NhaCungCap.cs" t="Include" />
+        <e p="SanPham.cs" t="Include" />
+        <e p="ThanhVien.cs" t="Include" />
+        <e p="ThongSoKyThuat.cs" t="Include" />
+        <e p="TinTuc.cs" t="Include" />
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="packages.config" t="Include" />
+      <e p="Properties" t="Include">
+        <e p="AssemblyInfo.cs" t="Include" />
+      </e>
+      <e p="Scripts" t="Include">
+        <e p="bootstrap.js" t="Include" />
+        <e p="bootstrap.min.js" t="Include" />
+        <e p="jquery-3.3.1.intellisense.js" t="Include" />
+        <e p="jquery-3.3.1.js" t="Include" />
+        <e p="jquery-3.3.1.min.js" t="Include" />
+        <e p="jquery-3.3.1.min.map" t="Include" />
+        <e p="jquery-3.3.1.slim.js" t="Include" />
+        <e p="jquery-3.3.1.slim.min.js" t="Include" />
+        <e p="jquery-3.3.1.slim.min.map" t="Include" />
+        <e p="jquery.validate-vsdoc.js" t="Include" />
+        <e p="jquery.validate.js" t="Include" />
+        <e p="jquery.validate.min.js" t="Include" />
+        <e p="jquery.validate.unobtrusive.js" t="Include" />
+        <e p="jquery.validate.unobtrusive.min.js" t="Include" />
+        <e p="modernizr-2.8.3.js" t="Include" />
+      </e>
+      <e p="Utils" t="Include">
+        <e p="MD5.cs" t="Include" />
+      </e>
+      <e p="Views" t="Include">
+        <e p="_ViewStart.cshtml" t="Include" />
+        <e p="Admin" t="Include">
+          <e p="Account_Manage.cshtml" t="Include" />
+          <e p="Account_Update.cshtml" t="Include" />
+          <e p="Comment_Manage.cshtml" t="Include" />
+          <e p="Comment_Update.cshtml" t="Include" />
+          <e p="Index_Admin.cshtml" t="Include" />
+          <e p="Member.cshtml" t="Include" />
+          <e p="Member_Update.cshtml" t="Include" />
+          <e p="News_Manage.cshtml" t="Include" />
+          <e p="News_Update.cshtml" t="Include" />
+          <e p="Order_Manage.cshtml" t="Include" />
+          <e p="Producer.cshtml" t="Include" />
+          <e p="Producer_Update.cshtml" t="Include" />
+          <e p="Product_Manage.cshtml" t="Include" />
+          <e p="Product_Update.cshtml" t="Include" />
+          <e p="Revenue.cshtml" t="Include" />
+        </e>
+        <e p="Home" t="Include">
+          <e p="Cart.cshtml" t="Include" />
+          <e p="Error404.cshtml" t="Include" />
+          <e p="Guarentee.cshtml" t="Include" />
+          <e p="Index.cshtml" t="Include" />
+          <e p="Login.cshtml" t="Include" />
+          <e p="New_Detail.cshtml" t="Include" />
+          <e p="News.cshtml" t="Include" />
+          <e p="Product.cshtml" t="Include" />
+          <e p="Product_Detail.cshtml" t="Include" />
+          <e p="Profile_User.cshtml" t="Include" />
+          <e p="Question.cshtml" t="Include" />
+          <e p="Register.cshtml" t="Include" />
+          <e p="Reset_Password.cshtml" t="Include" />
+        </e>
+        <e p="Shared" t="Include">
+          <e p="_Header.cshtml" t="Include" />
+          <e p="_HeaderHome.cshtml" t="Include" />
+          <e p="_HeaderSimple.cshtml" t="Include" />
+          <e p="_Layout.cshtml" t="Include" />
+          <e p="Admin" t="Include">
+            <e p="_Frames.cshtml" t="Include" />
+            <e p="_FramesFull.cshtml" t="Include" />
+          </e>
+          <e p="Error.cshtml" t="Include" />
+        </e>
+        <e p="Web.config" t="Include" />
+      </e>
+      <e p="Web.config" t="Include" />
+      <e p="Web.Debug.config" t="Include" />
+      <e p="Web.Release.config" t="Include" />
+      <e p="Web2020Project.csproj" t="IncludeRecursive" />
+      <e p="website" t="Include">
+        <e p="Controllers" t="Include">
+          <e p="HomeController.cs" t="Include" />
+        </e>
+        <e p="Dao" t="Include" />
+        <e p="Model" t="Include" />
+      </e>
+    </e>
+  </component>
+</project>

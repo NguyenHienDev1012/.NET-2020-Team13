@@ -1,4 +1,5 @@
-﻿
+﻿@model Web2020Project.Model.ProductDetail
+
 @{
     ViewBag.Title = "Product Update";
     Layout = "~/Views/Shared/Admin/_FramesFull.cshtml";
@@ -41,34 +42,39 @@
                         <div class="panel-body">
                             <div id="update" class="like-form">
                                 <form id="form-validate" class="form-style"
-                                      action="#">
-                                    <input type="hidden" name="action" value="xulysua">
-                                    <input type="hidden" name="id-product"
+                                      action="/Admin/Product_Update" method="post">
+                                    <input type="hidden" name="action" value="edit">
+                                    <input type="hidden" name="productID"
                                            value="#">
                                     <ul class="row">
                                         <li class="row">
                                             <div class="col-sm-4 col-xs-6">
-                                                <input type="text" id="name-product" name="name-product"
-                                                       value="#">
-                                                <label for="name-product">Tên sản phẩm<span>*</span></label>
+                                                <input type="text" id="productName" name="productName"
+                                                       value="@Model.Product.ProductName">
+                                                <label for="productName">Tên sản phẩm<span>*</span></label>
                                             </div>
                                             <div class="col-sm-4 col-xs-6">
-                                                <select id="type" name="type">
-                                                    @* <%if (ctsp.getSanPham().getLoai() == 0) {%> *@
-                                                    <option value="0">Sản phẩm Mới</option>
-                                                    <option value="1">Sản phẩm Hot</option>
-                                                    <option value="2">Sản phẩm khuyến mãi</option>
-                                                    @* <%} else if (ctsp.getSanPham().getLoai() == 1) {%> *@
-                                                    @* <option value="1">Sản phẩm Hot</option> *@
-                                                    @* <option value="2">Sản phẩm khuyến mãi</option> *@
-                                                    @* <option value="0">Sản phẩm Mới</option> *@
-                                                    @* <%} else {%> *@
-                                                    @* <option value="2">Sản phẩm khuyến mãi</option> *@
-                                                    @* <option value="1">Sản phẩm Hot</option> *@
-                                                    @* <option value="0">Sản phẩm Mới</option> *@
-                                                    @* <%}%> *@
+                                                <select id="kind" name="kind">
+                                                    @if (@Model.Product.Kind == 0)
+                                                    {
+                                                        <option value="0">Sản phẩm Mới</option>
+                                                        <option value="1">Sản phẩm Hot</option>
+                                                        <option value="2">Sản phẩm khuyến mãi</option>
+                                                    }
+                                                    else if ( @Model.Product.Kind == 1)
+                                                    {
+                                                        <option value="1">Sản phẩm Hot</option>
+                                                        <option value="2">Sản phẩm khuyến mãi</option>
+                                                        <option value="0">Sản phẩm Mới</option>
+                                                    }
+                                                    else
+                                                    {
+                                                        <option value="2">Sản phẩm khuyến mãi</option>
+                                                        <option value="1">Sản phẩm Hot</option>
+                                                        <option value="0">Sản phẩm Mới</option>  
+                                                    }
                                                 </select>
-                                                <label for="type" class="level-span">Loại</label>
+                                                <label for="kind" class="level-span">Loại</label>
                                             </div>
                                             <div class="col-sm-4 col-xs-6">
                                                 <select id="producer" name="producer">
@@ -96,9 +102,9 @@
 @* <!--                                                cấp<span>*</span></label>--> *@
                                         <li class="row">
                                             <div class="col-sm-3 col-xs-6">
-                                                <input type="number" id="sale-price" name="sale-price"
+                                                <input type="number" id="salePrice" name="salePrice"
                                                        value="#">
-                                                <label for="sale-price">Giá đã giảm</label>
+                                                <label for="salePrice">Giá đã giảm</label>
                                             </div>
                                             <div class="col-sm-3 col-xs-6">
                                                 <input type="number" id="price" name="price"
@@ -106,14 +112,14 @@
                                                 <label for="price">Giá bán</label>
                                             </div>
                                             <div class="col-sm-2 col-xs-6">
-                                                <input type="number" id="count-product" name="count-product"
+                                                <input type="number" id="amount" name="amount"
                                                        value="<#">
-                                                <label for="count-product">Số lượng<span>*</span></label>
+                                                <label for="amount">Số lượng<span>*</span></label>
                                             </div>
                                             <div class="col-sm-2 col-xs-6">
-                                                <input type="text" id="link-img" name="link-img"
+                                                <input type="text" id="picture" name="picture"
                                                        value="#">
-                                                <label for="link-img">Hình ảnh</label>
+                                                <label for="picture">Hình ảnh</label>
                                             </div>
                                             <div class="col-sm-2 col-xs-6">
                                                 <select id="status" name="status">
@@ -153,31 +159,31 @@
                                                 <label for="screen">Màn hình</label>
                                             </div>
                                             <div class="col-sm-6 col-xs-6">
-                                                <input type="text" id="hdh" name="hdh"
+                                                <input type="text" id="operatingSystem" name="operatingSystem"
                                                        value="#">
-                                                <label for="hdh">Hệ điều hành</label>
+                                                <label for="operatingSystem">Hệ điều hành</label>
                                             </div>
                                         </li>
                                         <li class="row">
                                             <div class="col-sm-6 col-xs-6">
-                                                <input type="text" id="cpu" name="cpu"
+                                                <input type="text" id="CPU" name="CPU"
                                                        value="#">
-                                                <label for="cpu">CPU</label>
+                                                <label for="CPU">CPU</label>
                                             </div>
                                             <div class="col-sm-6 col-xs-6">
-                                                <input type="text" id="ram" name="ram"
+                                                <input type="text" id="RAM" name="RAM"
                                                        value="#">
-                                                <label for="ram">RAM</label>
+                                                <label for="RAM">RAM</label>
                                             </div>
                                         </li>
                                         <li class="row">
                                             <div class="col-sm-6 col-xs-6">
-                                                <input type="text" id="camera" name="camera"
+                                                <input type="text" id="CAMERA" name="CAMERA"
                                                        value="#">
-                                                <label for="camera">CAMERA</label>
+                                                <label for="CAMERA">CAMERA</label>
                                             </div>
                                             <div class="col-sm-6 col-xs-6">
-                                                <input type="text" id="pin" name="pin"
+                                                <input type="text" id="PIN" name="PIN"
                                                        value="#">
                                                 <label for="pin">PIN</label>
                                             </div>

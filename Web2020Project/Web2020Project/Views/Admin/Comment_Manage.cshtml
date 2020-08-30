@@ -1,5 +1,5 @@
-﻿@using Web2020Project.Models.MODEL
-@model List<Web2020Project.Models.MODEL.BinhLuan>
+﻿
+
 @{
     ViewBag.Title = "Comment Manage";
     Layout = "~/Views/Shared/Admin/_FramesFull.cshtml";
@@ -47,35 +47,31 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach (BinhLuan bl in Model)
-                                    {
-
-                                        <tr class="odd gradeX">
-                                            <td>@bl.MaSanPham</td>
-                                            <td>@bl.HoTen</td>
-                                            <td>@bl.MaSanPham</td>
-                                            <td>@bl.SanPham</td>
-                                            <td>@bl.NgayBinhLuan</td>
-                                            <td style="text-align: center">
-                                                <a data-toggle="modal" data-target="demo1"
-                                                   class="btn default btn-xs black btn-delete"><i class="fa fa-trash-o"></i></a>
-                                                <div id="demo1" class="modal fade modal-confirm" role="dialog">
-                                                    <div class="modal-dialog modal-sm">
-                                                        <!-- Modal content-->
-                                                        <div class="modal-content">
-                                                            <div class="modal-body">
-                                                                <p class="text-content">Xác nhận xóa bình luận</p>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" onclick="return location.href='#'" class="btn-cf">Xác nhận</button>
-                                                                <button type="button" class="tbn-cancle" data-dismiss="modal">Hủy</button>
-                                                            </div>
+                                    <tr class="odd gradeX">
+                                        <td>1</td>
+                                        <td>Vo XXXXXX</td>
+                                        <td>XXXXXXXXXXXXXXXXXXXXXXXXX</td>
+                                        <td>Huawei XXXXXXXXXX</td>
+                                        <td>00/00/2020</td>
+                                        <td style="text-align: center">
+                                            <a data-toggle="modal" data-target="demo1"
+                                               class="btn default btn-xs black btn-delete"><i class="fa fa-trash-o"></i></a>
+                                            <div id="demo1" class="modal fade modal-confirm" role="dialog">
+                                                <div class="modal-dialog modal-sm">
+                                                    <!-- Modal content-->
+                                                    <div class="modal-content">
+                                                        <div class="modal-body">
+                                                            <p class="text-content">Xác nhận xóa bình luận</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" onclick="return location.href='#'" class="btn-cf">Xác nhận</button>
+                                                            <button type="button" class="tbn-cancle" data-dismiss="modal">Hủy</button>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </td>
-                                        </tr>
-                                    }
+                                            </div>
+                                        </td>
+                                    </tr>
                                     </tbody>
                                 </table>
                             </div>

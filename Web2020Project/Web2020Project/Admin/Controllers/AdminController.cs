@@ -113,7 +113,8 @@ namespace Web2020Project.Controllers.Admin
 
         public ActionResult Comment_Manage()
         {
-            return View();
+            List<News> listNews = NewsDAO.LoadNews();
+            return View(listNews);
         }
 
         public ActionResult Comment_Update()
