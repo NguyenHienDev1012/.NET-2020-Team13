@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using System.Web.Mvc;
 using Web2020Project.Admin.Dao;
-using Web2020Project.Model;
+ using Web2020Project.DAO;
+ using Web2020Project.Model;
 using Web2020Project.Utils;
 using Web2020Project.Website.Dao;
 using NewsDAO = Web2020Project.Admin.Dao.NewsDAO;
 
 namespace Web2020Project.Controllers.Admin
 {
-    public class AdminController : Controller
+    public class AdminController : PhoneController
     {
+        
         public const string USER_TABLE = "THANHVIEN";
         public const string USER_AC = "TAIKHOAN";
         public const string USER_EMAIL = "EMAIL";
@@ -25,6 +27,11 @@ namespace Web2020Project.Controllers.Admin
 
         public const string NEWS_TABLE = "TINTUC";
         public const string ID_NEWS = "ID";
+
+        public AdminController()
+        {
+            this.level = 1;
+        }
         // GET
 
         #region Index
@@ -49,6 +56,7 @@ namespace Web2020Project.Controllers.Admin
         {
             if (RemoveObj.Remove(USER_TABLE, USER_AC, userName, false))
             {
+                LogDao.ALERT("Đã xóa => Tài khoản: "+userName,"Action: Account_Delete - Controller: Admin");
                 Session.Add("dia-log", "sucXóa Thành Công");
             }
 
@@ -79,6 +87,7 @@ namespace Web2020Project.Controllers.Admin
                     else if (MemberDAO.EditMember(member))
                     {
                         Session.Add("dia-log", "sucSửa Thành Công");
+                        LogDao.WARNING("Đã sửa =>"+ member.ToString(),"Action: Account_Manage(Edit) - Controller: Admin - Model: Member");
                     }
                 }
                 else if (action.Equals("add"))
@@ -89,6 +98,8 @@ namespace Web2020Project.Controllers.Admin
                         if (MemberDAO.AddMember(member))
                         {
                             Session.Add("dia-log", "sucThêm mới tài khoản thành Công");
+                            LogDao.WARNING("Đã thêm =>"+member.ToString(),"Action: Account_Manage(Add) - Controller: Admin - Model: Member");
+
                         }
                     }
                     else
@@ -178,6 +189,7 @@ namespace Web2020Project.Controllers.Admin
                     }
                     else if (MemberDAO.EditMember(member))
                     {
+                        LogDao.WARNING("","");
                         Session.Add("dia-log", "sucSửa Thành Công");
                     }
                 }

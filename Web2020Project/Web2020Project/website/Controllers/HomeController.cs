@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.WebPages;
+using Web2020Project.Controllers.Admin;
 using Web2020Project.Dao;
 using Web2020Project.DAO;
 using Web2020Project.Model;
@@ -14,8 +15,12 @@ using Web2020Project.Website.Dao;
 
 namespace Web2020Project.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : PhoneController
     {
+        public HomeController()
+        {
+            this.level = 0;
+        }
         public ActionResult Index()
         {
             List<News> listNews = NewsDAO.loadNews();
@@ -87,7 +92,7 @@ namespace Web2020Project.Controllers
                 else
                 {
                     Session.Add("errLogin","Tên tài khoản hoặc mật khẩu không đúng");
-                    LogDao.FAILEDLOGIN("Tai khoan: "+ new Member(userName).ToString(), "Action: Login ==> FAILED");
+                    LogDao.FAILEDLOGIN("Tai khoan: "+ userName, "Action: Login ==> FAILED");
                     return  RedirectToAction("Login", "Home");
                 }
             }

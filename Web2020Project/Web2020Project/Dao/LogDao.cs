@@ -118,6 +118,11 @@ namespace Web2020Project.DAO
             log.Level = Level.WARNING.ToString();
             LogBase(log, message, address);
         }
-
+        public static void ALERT(string message, string address)
+        {
+            Log log= new Log();
+            log.Level = Level.ALERT.ToString();
+            LogBase(log, message, address);
+        }
     }
 }

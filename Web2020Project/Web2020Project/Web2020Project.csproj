@@ -117,6 +117,7 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Admin\Controllers\AdminController.cs" />
+        <Compile Include="Admin\Controllers\PhoneController.cs" />
         <Compile Include="Admin\Dao\DashboardDAO.cs" />
         <Compile Include="Admin\Dao\NewsDAO.cs" />
         <Compile Include="Admin\Dao\OdersDAO.cs" />
@@ -134,6 +135,7 @@
         <Compile Include="Models\Comment.cs" />
         <Compile Include="Models\Level.cs" />
         <Compile Include="Models\Log.cs" />
+        <Compile Include="Models\MemberFilter.cs" />
         <Compile Include="Models\ProductDetail.cs" />
         <Compile Include="Models\CartDB.cs" />
         <Compile Include="Models\Producer.cs" />

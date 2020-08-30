@@ -121,7 +121,7 @@ namespace Web2020Project.Model
 
         public override string ToString()
         {
-            return userName;
+            return "Tai khoan: "+userName+ ", ten: "+ name+ ", gioi tinh: "+gender+", email: "+ email+ ", sdt: "+phone+ ", dia chi: "+address+ ", level: "+ level;
         }
     }
 }

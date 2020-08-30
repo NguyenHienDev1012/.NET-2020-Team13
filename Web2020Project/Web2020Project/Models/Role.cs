@@ -44,5 +44,11 @@
             get => level;
             set => level = value;
         }
+
+        public bool containsInRole(string actionName, string controllerName)
+        {
+            return this.action.ToLower().Equals(actionName.ToLower()) &&
+                   this.control.ToLower().Equals(controllerName.ToLower());
+        }
     }
 }
