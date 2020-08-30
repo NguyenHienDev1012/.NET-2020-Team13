@@ -1,70 +1,76 @@
-﻿
+﻿@using Web2020Project.Model
+@model List<Comment>
 
 @{
-    ViewBag.Title = "Comment Manage";
+    @ViewBag.Title
     Layout = "~/Views/Shared/Admin/_FramesFull.cshtml";
 }
 
-  <div id="page-wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="page-bar page-header">
-                        <ul class="page-breadcrumb">
-                            <li>
-                                <i class="fa fa-home"></i>
-                                <a href="/Admin/Index_Admin">Home</a>
-                                <i class="fa fa-angle-right"></i>
-                            </li>
-                            <li>
-                                <a href="#">Danh mục</a>
-                                <i class="fa fa-angle-right"></i>
-                            </li>
-                            <li>
-                                <a href="/Admin/Comment_Manage">Quản lý bình luận</a>
-                            </li>
-                        </ul>
-                    </div>
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="page-bar page-header">
+                    <ul class="page-breadcrumb">
+                        <li>
+                            <i class="fa fa-home"></i>
+                            <a href="/Admin/Index_Admin">Home</a>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <a href="#">Danh mục</a>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <a href="/Admin/Comment_Manage">Quản lý bình luận</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading"><i class="fa fa-comments"></i>
-                            Quản lý bình luận
-                        </div>
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                    <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Tên khách hàng</th>
-                                        <th>Nội dung</th>
-                                        <th>Sản phẩm</th>
-                                        <th>Ngày bình luận</th>
-                                        <th class="remove" style="text-align: center">Xóa</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><i class="fa fa-comments"></i>
+                        Quản lý bình luận
+                    </div>
+                    <div class="panel-body">
+                        @RenderPage("~/Views/Shared/Admin/_Dialog.cshtml")
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Tên khách hàng</th>
+                                    <th>Nội dung</th>
+                                    <th>Sản phẩm</th>
+                                    <th>Ngày bình luận</th>
+                                    <th class="remove" style="text-align: center">Xóa</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach (Comment cmt in Model)
+                                {
+
                                     <tr class="odd gradeX">
-                                        <td>1</td>
-                                        <td>Vo XXXXXX</td>
-                                        <td>XXXXXXXXXXXXXXXXXXXXXXXXX</td>
-                                        <td>Huawei XXXXXXXXXX</td>
-                                        <td>00/00/2020</td>
+                                        <td>@cmt.Id</td>
+                                        <td>@cmt.Name</td>
+                                        <td>@cmt.Content</td>
+                                        <td>@cmt.Product</td>
+                                        <td>@cmt.CommentDate</td>
                                         <td style="text-align: center">
-                                            <a data-toggle="modal" data-target="demo1"
+                                            <a data-toggle="modal" data-target="@("#" + cmt.Id)"
                                                class="btn default btn-xs black btn-delete"><i class="fa fa-trash-o"></i></a>
-                                            <div id="demo1" class="modal fade modal-confirm" role="dialog">
+                                            <div id="@cmt.Id" class="modal fade modal-confirm" role="dialog">
                                                 <div class="modal-dialog modal-sm">
                                                     <!-- Modal content-->
                                                     <div class="modal-content">
                                                         <div class="modal-body">
-                                                            <p class="text-content">Xác nhận xóa bình luận</p>
+                                                            <p class="text-content">Xác nhận xóa bình luận <em>@cmt.Id</em>
+                                                                </p>
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <button type="button" onclick="return location.href='#'" class="btn-cf">Xác nhận</button>
+                                                            <button type="button" onclick="return location.href='/Admin/Delete_Comment?id=@cmt.Id'" class="btn-cf">Xác nhận</button>
                                                             <button type="button" class="tbn-cancle" data-dismiss="modal">Hủy</button>
                                                         </div>
                                                     </div>
@@ -72,16 +78,17 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <!-- /.table-responsive -->
+                                }
+                                </tbody>
+                            </table>
                         </div>
-                        <!-- /.panel-body -->
+                        <!-- /.table-responsive -->
                     </div>
-                    <!-- /.panel -->
+                    <!-- /.panel-body -->
                 </div>
-                <!-- /.col-lg-12 -->
+                <!-- /.panel -->
             </div>
+            <!-- /.col-lg-12 -->
         </div>
     </div>
+</div>

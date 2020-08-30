@@ -1,8 +1,7 @@
 ﻿@using Web2020Project.Model
-@model List<Web2020Project.Model.News>
 
 @{
-    ViewBag.Title = "News Manage";
+    @ViewBag.Title
     Layout = "~/Views/Shared/Admin/_FramesFull.cshtml";
 }
 
@@ -55,12 +54,15 @@
                                     </div>
                                     <div class="modal-body">
                                         <div id="update-info" class="like-form">
-                                            <form id="form-validate" class="form-style" action="#" method="POST" enctype="multipart/form-data">
-                                                <input type="hidden" name="action" value="them">
+                                            <form id="form-validate" class="form-style" action="/Admin/News_Manage"
+                                                  method="post" enctype="multipart/form-data">
+                                                <input type="hidden" name="action" value="add">
                                                 <ul class="row">
                                                     <li class="row">
+                                                        @{ News news_ss = Session["news"] as News;}
                                                         <div class="col-sm-12 col-xs-6">
-                                                            <input type="text" id="title" name="title" value="" minlength="1" required>
+                                                            <input type="text" id="title" name="title" value="@(news_ss!=null?news_ss.Title:"")" 
+                                                                   minlength="1" required>
                                                             <label for="title">Tiêu đề<span>*</span></label>
                                                         </div>
                                                     </li>
@@ -75,8 +77,16 @@
                                                     <li class="row">
                                                         <div class="col-sm-4 col-xs-6">
                                                             <select id="kind" name="kind">
-                                                                <option value="0">Tin tức mới</option>
-                                                                <option value="1">Tin tức KM</option>
+                                                                @if (news_ss != null && news_ss.Kind.Equals("Tin tức mới"))
+                                                                {
+                                                                    <option value="0">Tin tức mới</option>
+                                                                    <option value="1">Tin tức KM</option>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <option value="1">Tin tức KM</option>
+                                                                    <option value="0">Tin tức mới</option>
+                                                                }
                                                             </select>
                                                             <label for="kind" class="level-span">Type</label>
                                                         </div>
@@ -151,7 +161,7 @@
                                         </td>
                                         <td class="center">
                                             <a
-                                                href="#"
+                                                href="/Admin/News_Update?newsID=@news.NewsId"
                                                 class="btn default btn-xs purple btn-edit">
                                                 <i class="fa fa-edit"></i>
                                             </a>

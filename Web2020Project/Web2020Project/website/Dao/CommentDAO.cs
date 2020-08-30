@@ -10,6 +10,39 @@ namespace Web2020Project.Website.Dao
 {
     public class CommentDAO
     {
+        public static List<Comment> LoadComment()
+        {
+            MySqlConnection connection = null;
+            MySqlCommand cmd = null;
+            MySqlDataReader reader = null;
+            List<Comment> listComment = new List<Comment>();
+            try
+            {
+                string sql = "SELECT * FROM BINHLUAN";
+                connection = DBConnection.getConnection();
+                connection.Open();
+                cmd = new MySqlCommand(sql, connection);
+                reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        listComment.Add(new Comment().GetComment(reader));
+                    }
+                }
+
+                return listComment.Count != 0 ? listComment : null;
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+            finally
+            {
+                ReleaseResources.Release(connection, reader, cmd);
+            }
+        }
         public static bool InsertCMT(Comment comment)
         {
             MySqlConnection connection = null;

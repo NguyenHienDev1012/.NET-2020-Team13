@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using Web2020Project.Website.Dao;
 using Web2020Project.Admin.Dao;
 using Web2020Project.Model;
 using Web2020Project.Utils;
@@ -25,12 +26,16 @@ namespace Web2020Project.Controllers.Admin
 
         public const string NEWS_TABLE = "TINTUC";
         public const string ID_NEWS = "ID";
+
+        public const string COMMENT_TABLE = "BINHLUAN";
+        public const string ID_COMMENT = "ID";
         // GET
 
         #region Index
 
         public ActionResult Index_Admin()
         {
+            ViewBag.Title = "Thống kê";
             return View();
         }
 
@@ -40,6 +45,7 @@ namespace Web2020Project.Controllers.Admin
 
         public ActionResult Account_Manage()
         {
+            ViewBag.Title = "Quản lí tài khoản";
             List<Member> members = MemberDAO.LoadMember();
             return View(members);
         }
@@ -113,8 +119,9 @@ namespace Web2020Project.Controllers.Admin
 
         public ActionResult Comment_Manage()
         {
-            List<News> listNews = NewsDAO.LoadNews();
-            return View(listNews);
+            ViewBag.Title = "Quản lí bình luận";
+            List<Comment> listComment = CommentDAO.LoadComment();
+            return View(listComment);
         }
 
         public ActionResult Comment_Update()
@@ -122,12 +129,23 @@ namespace Web2020Project.Controllers.Admin
             return View();
         }
 
+        [ActionName("Delete_Comment")]
+        public ActionResult Comment_Manage(string id)
+        {
+            if (RemoveObj.Remove(COMMENT_TABLE, ID_COMMENT, id, true))
+            {
+                Session.Add("dia-log", "sucXóa Thành Công");
+            }
+
+            return RedirectToAction("Comment_Manage");
+        }
         #endregion
 
         #region Member
 
         public ActionResult Member()
         {
+            ViewBag.Title = "Thành Viên";
             return View();
         }
 
@@ -142,7 +160,8 @@ namespace Web2020Project.Controllers.Admin
 
         public ActionResult News_Manage()
         {
-            List<News> listNews = NewsDAO.LoadNews();
+            List<News> listNews = NewsDAO.loadNews();
+            Console.WriteLine(listNews.Count);
             return View(listNews);
         }
 
@@ -163,45 +182,30 @@ namespace Web2020Project.Controllers.Admin
             return View(news);
         }
         [HttpPost] //Phần này thêm, sửa thành viên nè
-        public ActionResult News_Update(Member member)
+        public ActionResult News_Manage(News news)
         {
             if (ModelState.IsValid)
             {
                 string action = Request["action"];
+                string id = Request["id"];
                 if (action.Equals("edit"))
                 {
-                    string email_temp = Request["email_temp"];
-                    if (!email_temp.Equals(member.Email) &&
-                        CheckObjExists.IsExist(USER_TABLE, USER_EMAIL, member.Email))
-                    {
-                        Session.Add("dia-log", "errThất Bại! Email " + member.Email + " đã tồn tại.");
-                    }
-                    else if (MemberDAO.EditMember(member))
-                    {
+                    news.NewsId = Int32.Parse(id);
+                    if(NewsDAO.EditNews(news))
+                        
+                        Console.WriteLine(news.Title + "123213213");
                         Session.Add("dia-log", "sucSửa Thành Công");
-                    }
                 }
                 else if (action.Equals("add"))
                 {
-                    if (!CheckObjExists.IsExist(USER_TABLE, USER_AC, member.UserName) &&
-                        !CheckObjExists.IsExist(USER_TABLE, USER_EMAIL, member.Email))
-                    {
-                        if (MemberDAO.AddMember(member))
+                  
+                        if (NewsDAO.AddNews(news))
                         {
                             Session.Add("dia-log", "sucThêm mới tài khoản thành Công");
                         }
                     }
-                    else
-                    {
-                        Session.Add("member", member);
-                        if (CheckObjExists.IsExist(USER_TABLE, USER_AC, member.UserName))
-                        {
-                            Session.Add("dia-log", "errThất Bại! Tài khoản " + member.UserName + " đã tồn tại.");
-                        }
-                        else
-                            Session.Add("dia-log", "errThất Bại! Email " + member.Email + " đã tồn tại.");
-                    }
-                }
+                 
+                
             }
 
             return RedirectToAction("News_Manage");
@@ -212,6 +216,7 @@ namespace Web2020Project.Controllers.Admin
 
         public ActionResult Order_Manage()
         {
+            ViewBag.Title = "Quản lí đơn hàng";
             return View();
         }
 
@@ -221,6 +226,7 @@ namespace Web2020Project.Controllers.Admin
 
         public ActionResult Producer()
         {
+            ViewBag.Title = "Nhà cung cấp";
             List<Producer> listProducer = ProducerDAO.LoadProducer();
             return View(listProducer);
         }
@@ -309,6 +315,7 @@ namespace Web2020Project.Controllers.Admin
 
         public ActionResult Product_Manage()
         {
+            ViewBag.Title = "Quản lí sản phẩm";
             List<Product> listProducts = ProductsDAO.LoadProducts();
             return View(listProducts);
         }
@@ -326,9 +333,9 @@ namespace Web2020Project.Controllers.Admin
         }
 
         [HttpGet] //Phần này dùng để lấy ra đối tượng member để gán giá trị trong form update member nè
-        public ActionResult Product_Update(string IDProduct)
+        public ActionResult Product_Update(string IDProducts)
         {
-            Product productDetail = ProductDAO.getProductID(Int32.Parse(IDProduct));
+            // Product products = ProductsDAO.;
             return View();
         }
 

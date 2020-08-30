@@ -5,6 +5,7 @@ namespace Web2020Project.Model
 {
     public class Comment
     {
+        private int id;
         private String name;
         private String content;
         private int productID;
@@ -15,15 +16,20 @@ namespace Web2020Project.Model
         {
         }
 
-        public Comment(string name, string content, int productId, string product, string commentDate)
+        public Comment(int id, string name, string content, int productId, string product, string commentDate)
         {
+            this.id = id;
             this.name = name;
             this.content = content;
             productID = productId;
             this.product = product;
             this.commentDate = commentDate;
         }
-
+        public int Id
+        {
+            get => id;
+            set => id = value;
+        }
         public string Name
         {
             get => name;
@@ -56,6 +62,7 @@ namespace Web2020Project.Model
 
         public Comment GetComment(MySqlDataReader reader)
         {
+            Id = reader.GetInt32("id");
             Name = reader.GetString("hoten");
             Content = reader.GetString("noidung");
             Product = reader.GetString("sanpham");

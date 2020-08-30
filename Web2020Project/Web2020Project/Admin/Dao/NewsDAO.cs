@@ -11,7 +11,7 @@ namespace Web2020Project.Admin.Dao
 {
     public class NewsDAO
     {
-        public static List<News> LoadNews()
+        public static List<News> loadNews()
         {
             MySqlConnection connection = null;
             MySqlCommand cmd = null;
@@ -19,7 +19,7 @@ namespace Web2020Project.Admin.Dao
             List<News> newses = new List<News>();
             try
             {
-                string sql = "SELECT ID,TIEUDE,NGAYVIET,LOAI FROM TINTUC";
+                string sql = "SELECT * FROM TINTUC";
                 connection = DBConnection.getConnection();
                 connection.Open();
                 cmd = new MySqlCommand(sql, connection);
@@ -28,17 +28,13 @@ namespace Web2020Project.Admin.Dao
                 {
                     while (reader.Read())
                     {
-                        int newsID = reader.GetInt16("id");
-                        string title = reader.GetString("tieude");
-                        string dateOfWriting = reader.GetString("ngayviet");
-                        int kind = reader.GetInt16("loai");
-                        newses.Add(new News(newsID, title, dateOfWriting, kind));
+                        newses.Add(new News().GetNews(reader));
                     }
                 }
 
                 return newses.Count != 0 ? newses : null;
             }
-            catch (Exception e)
+            catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
                 return null;
@@ -144,7 +140,7 @@ namespace Web2020Project.Admin.Dao
             try
             {
                 string sql =
-                    "UPDATE TINTUC SET tieude=@title, anhmota=@picture,mota=@description,ngayviet=dateOfWrite,noidung=@content,loai=@kind WHERE id=@idNews";
+                    "UPDATE TINTUC SET tieude=@title, anhmota=@picture,mota=@description,ngayviet=@dateOfWrite,noidung=@content,loai=@kind WHERE id=@id";
                 connection = DBConnection.getConnection();
                 connection.Open();
                 cmd = new MySqlCommand(sql, connection);
@@ -154,7 +150,7 @@ namespace Web2020Project.Admin.Dao
                 cmd.Parameters.AddWithValue("@dateOfWrite", news.DateOfWriting);
                 cmd.Parameters.AddWithValue("@content", news.Content);
                 cmd.Parameters.AddWithValue("@kind", news.Kind);
-                cmd.Parameters.AddWithValue("@idNews", news.NewsId);
+                cmd.Parameters.AddWithValue("@id", news.NewsId);
                 return cmd.ExecuteNonQuery() > 0;
             }
             catch (SqlException e)

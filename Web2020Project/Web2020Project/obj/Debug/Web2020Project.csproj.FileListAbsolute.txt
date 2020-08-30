@@ -85,7 +85,6 @@ C:\Users\VõThanh\Desktop\COURSES\NET\GitHub\Web2020Project\Web2020Project\obj\D
 C:\Users\VõThanh\Desktop\COURSES\NET\GitHub\Web2020Project\Web2020Project\obj\Debug\Web2020Project.csproj.CopyComplete
 C:\Users\VõThanh\Desktop\COURSES\NET\GitHub\Web2020Project\Web2020Project\obj\Debug\Web2020Project.dll
 C:\Users\VõThanh\Desktop\COURSES\NET\GitHub\Web2020Project\Web2020Project\obj\Debug\Web2020Project.pdb
-D:\HK6 2019 - 2020\ASP.NET\Web2020Project\Web2020Project\bin\Web2020Project.dll.config
 D:\HK6 2019 - 2020\ASP.NET\Web2020Project\Web2020Project\bin\Web2020Project.dll
 D:\HK6 2019 - 2020\ASP.NET\Web2020Project\Web2020Project\bin\Web2020Project.pdb
 D:\HK6 2019 - 2020\ASP.NET\Web2020Project\Web2020Project\bin\roslyn\csc.exe

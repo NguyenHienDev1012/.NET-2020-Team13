@@ -69,7 +69,7 @@ namespace Web2020Project.Model
 
         public News GetNews(MySqlDataReader reader)
         {
-            NewsId = reader.GetInt16("id");
+            NewsId = reader.GetInt32("id");
             Title = reader.GetString("tieude");
             Picture = reader.GetString("anhmota");
             Description = reader.GetString("mota");
