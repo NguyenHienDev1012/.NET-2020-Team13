@@ -5,7 +5,7 @@ namespace Web2020Project.Website.Model
 {
     public class Item
     {
-        private String itemID;
+        private int itemID;
         private Product product;
         private int amount;
         private double price;
@@ -14,7 +14,7 @@ namespace Web2020Project.Website.Model
         {
         }
 
-        public Item(string itemId, Product product, int amount, double price)
+        public Item(int itemId, Product product, int amount, double price)
         {
             itemID = itemId;
             this.product = product;
@@ -22,7 +22,7 @@ namespace Web2020Project.Website.Model
             this.price = price;
         }
 
-        public string ItemId
+        public int ItemId
         {
             get => itemID;
             set => itemID = value;

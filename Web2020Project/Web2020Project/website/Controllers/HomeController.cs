@@ -11,6 +11,7 @@ using Web2020Project.DAO;
 using Web2020Project.Model;
 using Web2020Project.Utils;
 using Web2020Project.Website.Dao;
+using Web2020Project.Website.Model;
 
 
 namespace Web2020Project.Controllers
@@ -155,6 +156,84 @@ namespace Web2020Project.Controllers
         }
 
         [HttpPost]
+        public ActionResult Cart_Process()
+        {
+            string id = Request["id"];
+            int soluong = 1;
+            string update = Request["update"];
+            Console.WriteLine(update+"MMMM");
+            String msp;
+        if (id!= null) {
+            msp = id;
+            Product sp = null;
+            try {
+                sp = ProductDAO.getProductID(Convert.ToInt32(msp.Trim()));
+            } catch (Exception e) {
+              Console.WriteLine(e.Message);
+            }
+            if (sp != null)
+            {
+                Cart gh = (Cart) Session["giohang"];
+                
+                if (Convert.ToInt32(Request["soluong"]) != null) {
+                    soluong = Convert.ToInt32(soluong);
+                    if (soluong < 1) soluong = 1;
+                    if (gh == null) {
+                        gh = new Cart();
+                        gh.CartStatus = 1;
+                        List<Item> items = new List<Item>();
+                        Item item = new Item();
+                        item.Price = sp.SalePrice;
+                        item.Product = sp;
+                        item.Amount =soluong;
+                        item.ItemId = sp.ProductId;
+                        items.Add(item);
+                        gh.Item = items;
+                    } else
+                    {
+                        List<Item> items = gh.Item;
+                        bool check = false;
+
+                        foreach(Item i in items) {
+                            if (i.Product.ProductId==sp.ProductId) {
+                                if ( update == null) {
+                                    i.Amount=(i.Amount+soluong);
+                                } else
+                                {
+                                    i.Amount = soluong;
+                                }
+                                check = true;
+                            }
+                        }
+                        if (!check) {
+                            Item item = new Item();
+                            item.Price = sp.SalePrice;
+                            item.Product = sp;
+                            item.Amount = soluong;
+                            item.ItemId = sp.ProductId;
+                            items.Add(item);
+                        }
+                    }
+                } else { //xoa 1 item ra gio hang
+                    List<Item> items = gh.Item;
+                    foreach(Item item in items) {
+                        if (item.Product.ProductId==sp.ProductId)
+                        {
+                            items.Remove(item);
+                            break;
+                        }
+                    }
+                }
+                Session.Add("giohang", gh);
+                Cart gh_respone = (Cart) Session["giohang"];
+                HttpContext.Response.Write(gh_respone.TotalItem()+ "-"+ string.Format("{0:0,0}", gh_respone.TotalPrice()) + "đ");
+ 
+            }
+        }
+
+        return null;
+        }
+        [HttpPost]
         public ActionResult CommentUser()
         {
             Comment comment = new Comment();
@@ -189,7 +268,7 @@ namespace Web2020Project.Controllers
             
         }
        
-            
+        
         public ActionResult Profile_User()
         {
             return View();

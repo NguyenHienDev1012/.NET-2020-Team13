@@ -20,6 +20,10 @@ namespace Web2020Project.Website.Model
             this.cartStatus = cartStatus;
             this.dayOfPayment = dayOfPayment;
         }
+        public Cart()
+        {
+             
+        }
 
         public string CartId
         {

@@ -1,4 +1,6 @@
-﻿@{
+﻿@using Web2020Project.Model
+@using Web2020Project.Website.Model
+@{
     ViewBag.Title = "Cart";
     Layout = "~/Views/Shared/Home/_HeaderSimple.cshtml";
 }
@@ -7,32 +9,41 @@
         <div class="container d-flex">
             <div id="info-product">
                 <div class="title-top space-between">
+                    @{
+                        Cart gh= Session["giohang"] as Cart;
+                    }
                     <div class="title-ic">
                         <span><i class="fa fa-shopping-cart"></i>Giỏ hàng của bạn(có</span>
-                        <span id="count-pro">0 sản phẩm)</span>
+                        <span id="count-pro">@(gh != null ?gh.TotalItem(): 0 ) sản phẩm)</span>
                     </div>
                     <a href="/Home/Index">Tiếp tục mua hàng</a>
                 </div>
                 <div class="contain-product">
                     <ul>
-                        <li class="item-cart">
+                        @{
+                            if (gh !=null && gh.Item.Count > 0)
+                            {
+                                foreach (Item item in gh.Item)
+                                {
+                                    <li class="item-cart">
                             <div class="d-flex">
-                                <div class="img-pro"><a
-                                                         href="/Home/Product">
-                                        <img src="/Content/assets/img/products/huawei/231.png" alt="hinh-minh-hoa"/>
+                                <div class="img-pro">
+                                    <a
+                                        href="/Home/Product">
+                                        <img src="/Content/@(item.Product.Picture)" alt="hinh-minh-hoa"/>
                                     </a>
                                 </div>
                                 <div class="tit-cou">
-                                    <h5>Huawei XXX</h5>
+                                    <h5>@item.Product.ProductName</h5>
                                     <div class="d-flex align-i-center">
                                         <span class="count">Số lượng:</span>
                                         <div class="frame-num d-flex">
                                             <button class="subject">-</button>
-                                            <input type="number" class="number-pro" value="1"
+                                            <input type="number" class="number-pro" value="@(item.Amount)"
                                                    min="1" required>
                                             <button class="plus">+</button>
                                             <input type="hidden" class="msp"
-                                                   value="code C#">
+                                                   value="@(item.Product.ProductId)">
                                         </div>
                                         <span class="upgrade"><i class="fa fa-upload" aria-hidden="true"></i></span>
                                     </div>
@@ -40,37 +51,60 @@
                             </div>
                             <div class="price-pro flex-direction-col">
                                 <div class="flex-direction-col">
-                                    <span class="price">20.000.000d</span>
+                                    <span class="price"> @string.Format("{0:0,0}", item.Price)  đ</span>
                                     <span>(Giá đã bao gồm VAT)</span>
                                 </div>
-                                <input type="hidden" class="msp-trash" value="getmsp">
-                                <input type="hidden" class="tensp-trash" value="getmsp">
+                                <input type="hidden" class="msp-trash" value="@(item.Product.ProductId)">
+                                <input type="hidden" class="tensp-trash" value="@(item.Product.ProductName)">
                                 <span class="trash"><i class="fa fa-trash" aria-hidden="true"></i></span>
                             </div>
                         </li>
+                                }
+                            }
+                            else
+                            {
+                                <div class="cart-empty">Không có gì trong giỏ hàng.</div>
+                            }
+                        }
+                        
                     </ul>
                 </div>
                 <div class="payment space-between">
                     <div class="total d-flex align-i-center">
-                        <h5>TỔNG CỘNG</h5>
-                        <span id="total">20.000.000d</span>
+                        @if (gh.Item.Count > 0)
+                        {
+                            <h5>TỔNG CỘNG</h5>
+                            <span id="total"> @string.Format("{0:0,0}", gh.TotalPrice())  đ</span>
+                        }
                     </div>
-                    <!--                    <button onclick="return location.href='thanhtoan'" id="btn-submit">ĐẶT HÀNG</button>-->
-                    <button data-toggle="modal" data-target="#checkout" id="btn-submit">ĐẶT HÀNG</button>
-                    <div id="checkout" class="modal fade modal-confirm" role="dialog">
-                        <div class="modal-dialog modal-sm">
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-body">
-                                    <p class="text-content">Đăng nhập để thực hiện đặt hàng!</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" onclick="return location.href='/Home/Login'" class="btn-cf">Đăng nhập</button>
-                                    <button type="button" class="tbn-cancle" data-dismiss="modal">Hủy</button>
+                    @if (gh != null && gh.Item.Count > 0)
+                    {
+                        Member member = Session["memberLogin"] as Member;
+                        if (member != null)
+                        {
+                            <button onclick="return location.href='thanhtoan'" id="btn-submit">ĐẶT HÀNG</button>
+                        }
+                        else
+                        {
+                            <button data-toggle="modal" data-target="#checkout" id="btn-submit">ĐẶT HÀNG</button>
+                            <div id="checkout" class="modal fade modal-confirm" role="dialog">
+                                <div class="modal-dialog modal-sm">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <p class="text-content">Đăng nhập để thực hiện đặt hàng!</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" onclick="return location.href='/Home/Login'" class="btn-cf">Đăng nhập</button>
+                                            <button type="button" class="tbn-cancle" data-dismiss="modal">Hủy</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        }
+                    }
+                    
+                    
                 </div>
             </div>
             <div id="info-user">
@@ -80,21 +114,24 @@
                 <div class="form-info form-cart">
                     <form id="form-validate" class="form-style" action="#">
                         <div>
+                            @{
+                                Member members = Session["memberLogin"] as Member;
+                            }
                             <span>Họ và Tên:</span>
-                            <input type="text" id="name" name="name" value="Name XXX"
+                            <input type="text" id="name" name="name" value="@(members !=null? members.Name:"")"
                                    disabled>
                         </div>
                         <div>
                             <span>Số điện thoại:</span>
-                            <input name="phone" id="phone" type="number" value="xxx.xxx.xxx" disabled>
+                            <input name="phone" id="phone" type="number" value="@(members !=null? members.Phone:"")" disabled>
                         </div>
                         <div>
                             <span>Địa chỉ Email:</span>
-                            <input type="text" id="email" name="email" value="xxx@gmail.com" disabled>
+                            <input type="text" id="email" name="email" value="@(members !=null? members.Email:"")" disabled>
                         </div>
                         <div>
                             <span>Địa chỉ:</span>
-                            <input type="text" id="address-oder" name="address-oder" value="xxxxxxxxxxxxxxxxxx"
+                            <input type="text" id="address-oder" name="address-oder" value="@(members !=null? members.Address:"")"
                                    disabled>
                         </div>
                     </form>
@@ -102,5 +139,5 @@
             </div>
         </div>
     </div>
-    <script src="/Content/assets/js/cart.js"></script>
+    <script src="/Content/assets/js/cart2.js"></script>
 </section>

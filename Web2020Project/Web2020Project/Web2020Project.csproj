@@ -509,10 +509,10 @@
         <Content Include="Content\assets\img\slider\4.png" />
         <Content Include="Content\assets\img\slider\5.jpg" />
         <Content Include="Content\assets\img\slider\6.png" />
-        <Content Include="Content\assets\js\addToCart_AJAX.js" />
+        <Content Include="Content\assets\js\addToCart_AJAX2.js" />
         <Content Include="Content\assets\js\back-to-top.js" />
         <Content Include="Content\assets\js\bs-animation.js" />
-        <Content Include="Content\assets\js\cart.js" />
+        <Content Include="Content\assets\js\cart2.js" />
         <Content Include="Content\assets\js\jquery-2.2.4.min.js" />
         <Content Include="Content\assets\js\jquery.min.js" />
         <Content Include="Content\assets\js\pagination\bootstrap4.0.0-alpha.min.js" />
