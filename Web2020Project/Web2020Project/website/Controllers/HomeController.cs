@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
@@ -267,7 +268,75 @@ namespace Web2020Project.Controllers
                     new { controller = "Home", action = "Product_Detail", Id = comment.ProductId, Model="p_detail" } ) );
             
         }
-       
+
+        [HttpPost]
+        public void Search(string key)
+        {
+        if (key != null) {
+            try {
+                List<ProductDetail> dsct_sp = SearchDAO.SearchKey(key);
+                Session.Add("category", dsct_sp);
+                int count_sear = 0;
+                if (dsct_sp != null) {
+                    count_sear = dsct_sp.Count;
+                }
+                Session.Add("count_sear", count_sear);
+                Session.Add("key", key);
+                 
+            } catch (Exception e) {
+               Console.WriteLine(e.Message);
+            }
+        } else {
+            string input = Request["input"];
+            StringBuilder resp = new StringBuilder();
+            String giaBan;
+            if (input != null && !input.Equals("")) {
+                try {
+                    List<Product> dssp = SearchDAO.Search(input);
+                    if (dssp != null) {
+                        foreach (Product sp in dssp) {
+                            if (sp.SalePrice != 0) {
+                                giaBan=string.Format("{0:0,0}", sp.SalePrice)+ "đ";
+                            } else {
+                                giaBan = "";
+                            }
+                            resp.Append("<li><a href='/chi-tiet-san-pham?id=").Append(sp.ProductId).Append("'").Append(">").Append("<img src='").Append(sp.Picture).Append("' alt=''>").Append("<h3>").Append(sp.ProductName).Append("</h3>").Append("<span class='price'>").Append(string.Format("{0:0,0}", sp.Price)).Append("đ").Append("</span>").Append("<cite>").Append(giaBan).Append("</cite>").Append("</a></li>");
+                        }
+                        HttpContext.Response.Write(resp);
+                    } else {
+                        HttpContext.Response.Write("empty");
+                    }
+                } catch (Exception e) {
+                    Console.WriteLine(e.Message);
+                }
+            } else {
+                  HttpContext.Response.Write("empty");
+            }
+        }
+
+        }
+        
+
+        public ActionResult PaymentController()
+        {
+            Website.Model.Cart gh= Session["giohang"] as Cart;
+            Member member = Session["memberLogin"] as Member;
+            if(gh!=null){
+                if(member!=null){
+                    gh.Member=member;
+                    gh.CartId= member.UserName;
+                }
+                try {
+                    if(new CartDAO().InsertCart(gh)){
+                        gh.Item.Clear();
+                        Session.Add("giohang", gh);
+                    }
+                } catch (Exception e) {
+                   Console.WriteLine(e.Message);
+                }
+            }
+            return View("Cart");
+        }
         
         public ActionResult Profile_User()
         {

@@ -48,7 +48,10 @@
                     </a>
                     <form id="serach-form" action="" method="post">
                         <div class="search">
-                            <input type="text" placeholder="Bạn cần tìm gì?" id="search" name="search" value="" autocomplete="off">
+                            @{
+                                string key = Session["key"] as string;
+                            }
+                            <input type="text" placeholder="Bạn cần tìm gì?" id="search" name="search" value="@(key!=null ?key:"")" autocomplete="off">
                             <button type="submit" id="icon-search"><i class="fa fa-search" aria-hidden="true"></i>
                             </button>
                             <ul class="wrap-suggestion"></ul>
@@ -115,7 +118,7 @@
             } else {
                 $.ajax({
                     method: 'POST',
-                    url: 'search',
+                    url: '/Home/Search',
                     data: {input: input},
                     success: function (result) {
                         if (result === "empty") {

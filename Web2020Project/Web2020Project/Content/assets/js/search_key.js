@@ -7,7 +7,7 @@ $(document).ready(function () {
         if (value === '') {
             flag = false;
         } else {
-            page = 'timkiem?key=' + value;
+            page = '/Home/Search?key=' + value;
             $(this).attr('action', page);
             flag = true;
         }
