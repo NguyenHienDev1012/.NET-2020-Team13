@@ -116,7 +116,7 @@ namespace Web2020Project.Website.Dao
             List<ProductDetail> productDetails = new List<ProductDetail>();
             String sql;
             StringBuilder str_builder = new StringBuilder(
-                "SELECT * FROM SANPHAM AS SP JOIN CHITIETSANPHAM AS CT on SP.MASANPHAM=CT.MASANPHAM WHERE SP.TRANTHAI>0  AND SP.NHACUNGCAP=");
+                "SELECT * FROM SANPHAM AS SP JOIN CHITIETSANPHAM AS CT on SP.MASANPHAM=CT.MASANPHAM WHERE SP.TRANGTHAI>0  AND SP.NHACUNGCAP=");
             try
             {
                 connection = DBConnection.getConnection();

@@ -16,12 +16,14 @@
                         <div class="content-post">
                             <h5 id="title-news">@Model.Title</h5>
                             <span class="date">@Model.DateOfWriting</span>
-                            <div class="content-left">@Model.Content
-                                <div class="author"><b>Theo: </b><span>ATM</span></div>
+                            <div class="content-left" id="contents">@(Html.Raw(Model.Content))
+                                <div class="author">
+                                    <b>Theo: </b><span>ATM</span>
+                                </div>
                             </div>
 
+                            
                         </div>
-                        
                     }
                     else
                     {
@@ -33,32 +35,30 @@
                         <h5>BÀI VIẾT NỔI BẬT</h5>
                         <div class="content-right">
                             @{
-                                
-                                    if (Session["listNews"] != null)
+                                if (Session["listNews"] != null)
+                                {
+                                    List<News> listNews = Session["listNews"] as List<News>;
+                                    for (int i = 0; i < 16; i++)
                                     {
-                                        List<News> listNews = Session["listNews"] as List<News>;
-                                        for (int i = 0; i < 16; i++)
-                                        {
-                                            News news = listNews[i];
-                                            <div class="news-text-img-subs">
-                                                <a href="/Home/New_Detail?idNew=@news.NewsId">
-                                                    <div class="img-news">
-                                                        <img src="/Content/@news.Picture" alt="images"/>
-                                                    </div>
-                                                    <figure>
-                                                        <div class="text-news">@news.Title</div>
-                                                        <span class="date">@news.DateOfWriting</span>
-                                                        <p class="content-sale">@news.Description</p>
-                                                    </figure>
-                                                </a>
-                                            </div>
-                            
-                                        }
+                                        News news = listNews[i];
+                                        <div class="news-text-img-subs">
+                                            <a href="/Home/New_Detail?idNew=@news.NewsId">
+                                                <div class="img-news">
+                                                    <img src="/Content/@news.Picture" alt="images"/>
+                                                </div>
+                                                <figure>
+                                                    <div class="text-news">@news.Title</div>
+                                                    <span class="date">@news.DateOfWriting</span>
+                                                    <p class="content-sale">@news.Description</p>
+                                                </figure>
+                                            </a>
+                                        </div>
                                     }
-                                
+                                }
+
                             }
-                            
-                            
+
+
                         </div>
                     </div>
                     <div class="social">
@@ -80,3 +80,4 @@
         </div>
     </div>
 </section>
+                   

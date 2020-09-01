@@ -7,7 +7,7 @@ $(document).ready(function () {
         if (value === '') {
             flag = false;
         } else {
-            page = '/Home/Search?key=' + value;
+            page = '/Home/SearchKey?key=' + value;
             $(this).attr('action', page);
             flag = true;
         }
