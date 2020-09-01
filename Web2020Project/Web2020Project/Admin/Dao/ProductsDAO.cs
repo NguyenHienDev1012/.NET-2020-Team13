@@ -45,7 +45,7 @@ namespace Web2020Project.Admin.Dao
         }
 
 
-        public static List<ProductDetail> LoadProductDetail()
+        public static ProductDetail LoadProductDetail(string IDProducts)
         {
             MySqlConnection connection = null;
             MySqlCommand cmd = null;
@@ -54,20 +54,23 @@ namespace Web2020Project.Admin.Dao
             List<ProductDetail> productDetails = new List<ProductDetail>();
             try
             {
-                string sql = "SELECT * FROM sanpham as sp JOIN chitietsanpham as ct on sp.masanpham=ct.masanpham";
+                string sql =
+                    "SELECT * FROM sanpham as sp JOIN chitietsanpham as ct on sp.masanpham=ct.masanpham where sp.masanpham=@IDProducts";
                 connection = DBConnection.getConnection();
                 connection.Open();
                 cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@IDProducts", IDProducts);
                 reader = cmd.ExecuteReader();
                 if (reader.HasRows)
                 {
-                    while (reader.Read())
+                    if (reader.Read())
                     {
-                        productDetails.Add(new ProductDetail().GetProductDetail(reader));
+                        // return new News().GetNews(reader);
+                        return new ProductDetail().GetProductDetail(reader);
                     }
                 }
 
-                return productDetails.Count != 0 ? productDetails : null;
+                return null;
             }
             catch (SqlException e)
             {
@@ -85,31 +88,26 @@ namespace Web2020Project.Admin.Dao
             MySqlCommand cmd = null;
             try
             {
-                string sql1 =
-                    "UPDATE SANPHAM SET TENSANPHAM=@prName,GIADAGIAM=@salePrice,GIABAN=@price,SOLUONG=@amount,HINHANH=@picture,TRANGTHAI=@status,LOAISANPHAM=@kind WHERE MASANPHAM=@prID";
+                string sql =
+                    "UPDATE SANPHAM AS SP JOIN CHITIETSANPHAM AS CTSP ON SP.MASANPHAM = CTSP.MASANPHAM SET SP.TENSANPHAM=@productName,SP.GIADAGIAM=@salePrice,SP.GIABAN=@price,SP.SOLUONG=@amount,SP.HINHANH=@picture,SP.TRANGTHAI=@status,SP.LOAISANPHAM=@kind, CTSP.QUATANG=@gift,CTSP.MANHINH=@screen,CTSP.HEDIEUHANH=@OperatingSystem,CTSP.CPU=@CPU,CTSP.RAM=@RAM,CTSP.CAMERA=@CAMERA,CTSP.PIN=@PIN WHERE SP.MASANPHAM=@productID";
                 connection = DBConnection.getConnection();
                 connection.Open();
-                cmd = new MySqlCommand(sql1, connection);
-                cmd.Parameters.AddWithValue("@prName", productDetail.Product.ProductName);
+                cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@productName", productDetail.Product.ProductName);
                 cmd.Parameters.AddWithValue("@salePrice", productDetail.Product.SalePrice);
                 cmd.Parameters.AddWithValue("@price", productDetail.Product.Price);
                 cmd.Parameters.AddWithValue("@amount", productDetail.Product.Amount);
                 cmd.Parameters.AddWithValue("@picture", productDetail.Product.Picture);
                 cmd.Parameters.AddWithValue("@status", productDetail.Product.Status);
                 cmd.Parameters.AddWithValue("@kind", productDetail.Product.Kind);
-                cmd.Parameters.AddWithValue("@prID", productDetail.Product.ProductId);
-                if (cmd.ExecuteNonQuery() < 0) return false;
-                string sql2 =
-                    "UPDATE CHITIETSANPHAM SET  QUATANG=@gift,MANHINH=@screen,HEDIEUHANH=@os,CPU=@cpu,RAM=@ram,CAMERA=@cam,PIN=@pin WHERE MASANPHAM=@prID";
-                cmd = new MySqlCommand(sql1, connection);
                 cmd.Parameters.AddWithValue("@gift", productDetail.Gift);
                 cmd.Parameters.AddWithValue("@screen", productDetail.Technical.Screen);
-                cmd.Parameters.AddWithValue("@os", productDetail.Technical.OperatingSystem);
-                cmd.Parameters.AddWithValue("@cpu", productDetail.Technical.Cpu);
-                cmd.Parameters.AddWithValue("@ram", productDetail.Technical.Ram);
-                cmd.Parameters.AddWithValue("@cam", productDetail.Technical.Camera);
-                cmd.Parameters.AddWithValue("@pin", productDetail.Technical.Pin);
-                cmd.Parameters.AddWithValue("@prID", productDetail.Product.ProductId);
+                cmd.Parameters.AddWithValue("@OperatingSystem", productDetail.Technical.OperatingSystem);
+                cmd.Parameters.AddWithValue("@CPU", productDetail.Technical.Cpu);
+                cmd.Parameters.AddWithValue("@RAM", productDetail.Technical.Ram);
+                cmd.Parameters.AddWithValue("@CAMERA", productDetail.Technical.Camera);
+                cmd.Parameters.AddWithValue("@PIN", productDetail.Technical.Pin);
+                cmd.Parameters.AddWithValue("@productID", productDetail.Product.ProductId);
                 return cmd.ExecuteNonQuery() > 0;
             }
             catch (SqlException e)
@@ -144,8 +142,8 @@ namespace Web2020Project.Admin.Dao
                 cmd.Parameters.AddWithValue("@kind", productDetail.Product.Kind);
                 if (cmd.ExecuteNonQuery() < 0) return false;
                 string sql2 =
-                    "INSERT INTO CHITIETSANPHAM(QUATANG,MAHINH,HEDIEUHANH,CPU,RAM,CAMERA,PIN) values (@gift,@screen,@os,@cpu,@ram,@cam,@pin)";
-                cmd = new MySqlCommand(sql1, connection);
+                    "INSERT INTO CHITIETSANPHAM(QUATANG,MANHINH,HEDIEUHANH,CPU,RAM,CAMERA,PIN) values (@gift,@screen,@os,@cpu,@ram,@cam,@pin)";
+                cmd = new MySqlCommand(sql2, connection);
                 cmd.Parameters.AddWithValue("@gift", productDetail.Gift);
                 cmd.Parameters.AddWithValue("@screen", productDetail.Technical.Screen);
                 cmd.Parameters.AddWithValue("@os", productDetail.Technical.OperatingSystem);

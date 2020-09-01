@@ -8,11 +8,18 @@ namespace Web2020Project.Model
         private Product product;
         private int rate;
         private double rank;
-        private String gift;
+        private string gift;
         private Technical technical;
 
         public ProductDetail()
         {
+        }
+
+        public ProductDetail(Product product, string gift, Technical technical)
+        {
+            this.product = product;
+            this.gift = gift;
+            this.technical = technical;
         }
 
         public ProductDetail(Product product, int rate, double rank, string gift, Technical technical)

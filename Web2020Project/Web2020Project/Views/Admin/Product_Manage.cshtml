@@ -54,7 +54,7 @@
                 <div class="modal-body">
                     <div id="update-info" class="like-form">
                         <form id="form-validate" class="form-style"
-                              action="/Admin/Product_Manage" method="POST"
+                              action="/Admin/Product_Update" method="POST"
                               enctype="multipart/form-data">
                                 <input type="hidden" name="action" value="add">
                             <ul class="row">
@@ -62,7 +62,7 @@
                                 @{ ProductDetail productDetail_ss = Session["productDetail"] as ProductDetail; }
                                 <div class="col-sm-4 col-xs-6">
                                     <input type="text" id="productName"
-                                           name="productName_tmp"
+                                           name="productName"
                                            value="@(productDetail_ss!=null?productDetail_ss.Product.ProductName:"")">
                                     <label for="productName">Tên sản phẩm<span>*</span></label>
                                 </div>
@@ -76,15 +76,21 @@
                                 </div>
                                 <div class="col-sm-4 col-xs-6">
                                     <select id="producer" name="producer">
-                                        @* <!--                                                                    <%try {%>--> *@
-                                        @* <!--                                                                    <%List<NhaCungCap> ds_ncc = ProducerDAO.findAll();%>--> *@
-                                        @* <!--                                                                    <%if (ds_ncc != null) {%>--> *@
-                                        @* <!--                                                                    <%for (NhaCungCap ncc : ds_ncc) {%>--> *@
-                                        <option value="#">#</option>
-                                        @* <!--                                                                    <%}%>--> *@
-                                        @* <!--                                                                    <%}%>--> *@
-                                        @* <!--                                                                    <%} catch (SQLException e) {%>--> *@
-                                        @* <!--                                                                    <%}%>--> *@
+                                        @try
+                                        {
+                                            List<Producer> list = ViewBag.ListProducer;
+                                            if (list != null)
+                                            {
+                                                foreach (Producer prod in list)
+                                                {
+                                                    <option value="@prod.ProducerName">@prod.ProducerName</option>
+                                                }
+                                            }
+                                        }
+                                        catch (Exception e)
+                                        {
+                                            
+                                        }
                                     </select>
                                     <label for="producer" class="level-span">
                                         Nhà cung
@@ -267,7 +273,7 @@
                     </td>
                     <td style="text-align: center">
                         <a
-                            href="/Admin/Product_Update?IDProduct=@prod.ProductId"
+                            href="/Admin/Product_Update?productID=@prod.ProductId"
                             class="btn default btn-xs purple btn-edit">
                             <i class="fa fa-edit"></i>
                         </a>

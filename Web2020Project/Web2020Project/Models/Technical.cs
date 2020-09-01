@@ -5,12 +5,12 @@ namespace Web2020Project.Model
 {
     public class Technical
     {
-        private String screen;
-        private String operatingSystem;
-        private String CPU;
-        private String RAM;
-        private String CAMERA;
-        private String PIN;
+        private string screen;
+        private string operatingSystem;
+        private string CPU;
+        private string RAM;
+        private string CAMERA;
+        private string PIN;
 
         public Technical()
         {

@@ -20,6 +20,18 @@ namespace Web2020Project.Model
         {
         }
 
+        public Product(string productName, string producer, double salePrice, double price, string picture, int amount, int status, int kind)
+        {
+            this.productName = productName;
+            this.producer = producer;
+            this.salePrice = salePrice;
+            this.price = price;
+            this.picture = picture;
+            this.amount = amount;
+            this.status = status;
+            this.kind = kind;
+        }
+
         public Product(int productId, string productName, string producer, double salePrice, double price, string picture, int amount, int status, int kind)
         {
             productID = productId;
