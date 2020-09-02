@@ -10,6 +10,7 @@
     string sort = Session["active"] != null ? Session["active"] as string : "";
     string pages = Session["page"] != null ? Session["page"] as string : "";
     string producers = Session["producer"] != null ? Session["producer"] as string : "";
+    int countPages= Session["countPages"] !=null ? Convert.ToInt32(Session["countPages"]): 0;
 }
 
 <section id="body">
@@ -148,10 +149,10 @@
                             <div class="container pagina">
                                 <div class="pagination" id="pagination"></div>
                             </div>
-                            <input type="hidden" id="countPages" value="44">
-                            <input type="hidden" id="producer" value="samsung">
-                            <input type="hidden" id="page" value="1">
-                            <input type="hidden" id="sort" value="0">
+                            <input type="hidden" id="countPages" value="@(countPages)">
+                            <input type="hidden" id="producer" value="@producers">
+                            <input type="hidden" id="page" value="@(pages)">
+                            <input type="hidden" id="sort" value="@(sort)">
                         }
                     }
                 </div>
@@ -178,9 +179,9 @@
                 onPageClick: function (event, page) {
                     if (page !== pages) {
                         if (sort === "") {
-                            return location.href = "http://localhost:8080/DienThoai?cate=" + producer + "&page=" + page;
+                            return location.href = "/Home/Category?cate=" + producer + "&page=" + page;
                         } else {
-                            return location.href = "http://localhost:8080/DienThoai?cate=" + producer + "&type=" + sort + "&page=" + page;
+                            return location.href = "/Home/Category?cate=" + producer + "&type=" + sort + "&page=" + page;
                         }
                     }
                 }

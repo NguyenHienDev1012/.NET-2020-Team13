@@ -108,7 +108,6 @@ $(document).ready(function () {
             notEmpty(address_oder, 'Vui lòng nhập Địa chỉ giao hàng', null);
             flag = false;
         }
-        alert(flag);
         return flag;
     });
 

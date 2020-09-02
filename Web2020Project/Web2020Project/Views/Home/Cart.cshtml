@@ -71,7 +71,7 @@
                 </div>
                 <div class="payment space-between">
                     <div class="total d-flex align-i-center">
-                        @if (gh.Item.Count > 0)
+                        @if (gh !=null && gh.Item.Count > 0)
                         {
                             <h5>TỔNG CỘNG</h5>
                             <span id="total"> @string.Format("{0:0,0}", gh.TotalPrice())  đ</span>

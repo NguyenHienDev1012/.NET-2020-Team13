@@ -171,7 +171,6 @@ namespace Web2020Project.Controllers
                         Session.Add("category",
                             CategoryDAO.findCateByProducer(category, null, Convert.ToInt32(page)));
                         Session.Add("producer", category);
-                        Console.WriteLine("Cate" + category +"Sort" + sort);
                         Session.Add("active", null);
                         Session.Add("countPages", CategoryDAO.countOfCate(category));
                         Session.Add("page", page);
@@ -203,7 +202,6 @@ namespace Web2020Project.Controllers
         public ActionResult Product_Detail(string id)
         {
             int idProduct = Convert.ToInt32(id);
-            Console.WriteLine(idProduct);
             ProductDetail p_detail = CategoryDAO.getPrDetailByID(idProduct);
             List<Comment> comments = CommentDAO.LoadCMT(idProduct);
             Session.Add("listcomments", comments);
