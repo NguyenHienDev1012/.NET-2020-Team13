@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Web;
 using System.Web.Mvc;
+using MySqlX.XDevAPI;
 using Web2020Project.Controllers.Admin;
 using Web2020Project.Model;
 
@@ -19,20 +20,25 @@ namespace Web2020Project.Models
                 {
                     string actionName = filterContext.ActionDescriptor.ActionName;
                     string controllerName = filterContext.ActionDescriptor.ControllerDescriptor.ControllerName;
-                    foreach (Role role in member.Roles)
+                   
+                    if (member.Level == 1)
                     {
-                      //  if (role.containsInRole(actionName, controllerName)) isOK = true;
-                      if (member.Level == 1)
-                      {
-                          isOK = true;
-                      }
+                        foreach (Role role in member.Roles)
+                        {
+                            if (role.containsInRole(actionName, controllerName)) isOK = true;
+                        }
                     }
+
+                    if (isOK == false)
+                    {
+                        
+                        HttpContext.Current.Session.Add("messageFilter","Bạn không thể thực hiện chức năng này.");
+                        phoneController.HttpContext.Response.Redirect("/Admin/Index_Admin");
+                    }
+                    
                 }
 
-                if (isOK == false)
-                {
-                    phoneController.HttpContext.Response.Redirect("/");
-                }
+                if (isOK == false && member.Level !=1) phoneController.HttpContext.Response.Redirect("/");
             }
             
             base.OnActionExecuting(filterContext);

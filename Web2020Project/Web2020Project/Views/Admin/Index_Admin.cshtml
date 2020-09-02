@@ -1,4 +1,4 @@
-﻿﻿@{
+﻿@{
     @ViewBag.Title
     Layout = "~/Views/Shared/Admin/_Frames.cshtml";
 }
@@ -15,6 +15,9 @@
                         </li>
                         <li>
                             <a href="index.html">Thống kê</a>
+                        </li>
+                        <li style="text-align: center">
+                            <p style="color: red; text-align: center; font-size: 18px; margin-left: 20px">@(Session["messageFilter"] != null ?  Session["messageFilter"] as string : "")</p>
                         </li>
                     </ul>
                 </div>

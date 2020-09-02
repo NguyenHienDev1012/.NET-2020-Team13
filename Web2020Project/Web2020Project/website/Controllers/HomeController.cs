@@ -91,7 +91,6 @@ namespace Web2020Project.Controllers
                 if (member != null)
                 {
                     member.Roles = LogDao.loadRolesByUserName(userName);
-                    Console.WriteLine(member.Roles[0].Control);
                     Session.Add("memberLogin", member);
                     LogDao.INFO("Tai khoan: " + member.UserName + ", email: " + member.Email, "Action: Login => DONE");
                     return RedirectToAction("Index", "Home");
@@ -214,7 +213,6 @@ namespace Web2020Project.Controllers
             string id = Request["id"];
             int soluong = 1;
             string update = Request["update"];
-            Console.WriteLine(update + "MMMM");
             String msp;
             if (id != null)
             {

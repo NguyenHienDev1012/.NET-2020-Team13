@@ -71,7 +71,7 @@ namespace Web2020Project.DAO
                         roles.Add(new Role(reader.GetString("control"), reader.GetString("action")));
                     }
                 }
-                return roles.Count!=0? roles: null;
+                return roles;
             }
             
             catch (Exception e)

@@ -1,4 +1,7 @@
-﻿namespace Web2020Project.Models
+﻿using System;
+using System.Web.WebPages;
+
+namespace Web2020Project.Models
 {
     public class Role
     {
@@ -47,8 +50,12 @@
 
         public bool containsInRole(string actionName, string controllerName)
         {
-            return this.action.ToLower().Equals(actionName.ToLower()) &&
-                   this.control.ToLower().Equals(controllerName.ToLower());
+            if (this.action.ToLower().Equals(actionName.ToLower()) &&
+                this.control.ToLower().Equals(controllerName.ToLower()) || this.action.IsEmpty() || this.control.IsEmpty())
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
