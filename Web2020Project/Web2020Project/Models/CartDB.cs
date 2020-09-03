@@ -1,4 +1,5 @@
 ﻿using System;
+using MySql.Data.MySqlClient;
 
 namespace Web2020Project.Model
 {
@@ -103,6 +104,17 @@ namespace Web2020Project.Model
         {
             get => picture;
             set => picture = value;
+        }
+
+        public CartDB GetOrder(MySqlDataReader reader)
+        {
+            CartId = reader.GetString("MAGIOHANG");
+            Name = reader.GetString("HOTEN");
+            Email = reader.GetString("EMAIL");
+            Phone = reader.GetString("SODIENTHOAI");
+            Address = reader.GetString("SODIENTHOAI");
+            DateOfpayment = reader.GetString("NGAYTHANHTOAN");
+            return this;
         }
     }
 }

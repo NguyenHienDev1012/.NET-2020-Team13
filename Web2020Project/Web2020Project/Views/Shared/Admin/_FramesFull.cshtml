@@ -92,32 +92,32 @@
                     <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Danh mục<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="/Admin/Producer"><i class="fa  fa-home fa-fw"></i>Nhà cung cấp</a>
+                            <a href="/Producer/Producer"><i class="fa  fa-home fa-fw"></i>Nhà cung cấp</a>
                         </li>
                         <li>
-                            <a href="/Admin/Product_Manage"><i class="fa  fa-pencil-square-o fa-fw"></i>Quản lý sản
+                            <a href="/Product/Product_Manage"><i class="fa  fa-pencil-square-o fa-fw"></i>Quản lý sản
                                 phẩm</a>
                         </li>
                         <li>
-                            <a href="/Admin/Comment_Manage"><i class="fa  fa-comments fa-fw"></i>Quản lý bình
+                            <a href="/Comment/Comment_Manage"><i class="fa  fa-comments fa-fw"></i>Quản lý bình
                                 luận</a>
                         </li>
                         <li>
-                            <a href="/Admin/News_Manage"><i class="fa  fa-newspaper-o fa-fw"></i>Quản lý tin tức</a>
+                            <a href="/News/News_Manage"><i class="fa  fa-newspaper-o fa-fw"></i>Quản lý tin tức</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="/Admin/Revenue"><i class="fa fa-table fa-fw"></i>Doanh thu</a>
+                    <a href="/Revenue/Revenue"><i class="fa fa-table fa-fw"></i>Doanh thu</a>
                 </li>
                 <li>
-                    <a href="/Admin/Order_Manage"><i class="fa  fa-shopping-cart fa-fw"></i> Quản lý đơn hàng</a>
+                    <a href="/Order/Order_Manage"><i class="fa  fa-shopping-cart fa-fw"></i> Quản lý đơn hàng</a>
                 </li>
                 <li>
-                    <a href="/Admin/Account_Manage"><i class="fa  fa-user fa-fw"></i>Quản lý tài khoản</a>
+                    <a href="/Account/Account_Manage"><i class="fa  fa-user fa-fw"></i>Quản lý tài khoản</a>
                 </li>
                 <li>
-                    <a href="/Admin/Member"><i class="fa fa-users fa-fw"></i>Thành viên</a>
+                    <a href="/Member/Member"><i class="fa fa-users fa-fw"></i>Thành viên</a>
                 </li>
             </ul>
         </div>
@@ -127,7 +127,7 @@
 @RenderBody()
 <div class="page-footer">
     <div class="page-footer-inner">
-        Môn Học: Lập Trình .NET - Đồ Án: Website Bán Điện Thoại - Giáo Viên: Phan Đình Long
+        Môn Học: Lập Trình .NET - Đồ Án: Website Bán Điện Thoại - Giảng Viên: Phan Đình Long
     </div>
 </div>
 
@@ -148,8 +148,11 @@
         });
     });
 </script>
-
+<script src="/Content/assets/ckfinder/ckfinder.js"></script>
+<script src="/Content/assets/ckeditor/ckeditor.js"></script>
 <!-- Custom Theme JavaScript -->
 <script src="/Content/Admin/js/form-style.js"></script>
 <script src="/Content/Admin/js/validation-form/vali-form.js"></script>
+@RenderSection("jsFooter", required: false)
+
 </html>

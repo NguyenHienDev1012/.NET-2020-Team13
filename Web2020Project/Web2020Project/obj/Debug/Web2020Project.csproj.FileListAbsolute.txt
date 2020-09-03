@@ -174,3 +174,4 @@ D:\HK6 2019 - 2020\ASP.NET\Web2020Project\Web2020Project\obj\Debug\Web2020Projec
 D:\HK6 2019 - 2020\ASP.NET\Web2020Project\Web2020Project\obj\Debug\Web2020Project.dll
 D:\HK6 2019 - 2020\ASP.NET\Web2020Project\Web2020Project\obj\Debug\Web2020Project.pdb
 D:\HK6 2019 - 2020\ASP.NET\Web2020Project\Web2020Project\bin\MySql.Data.dll
+D:\HK6 2019 - 2020\ASP.NET\Web2020Project\Web2020Project\bin\CKFinder.dll
