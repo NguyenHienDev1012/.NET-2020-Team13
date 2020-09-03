@@ -1,0 +1,171 @@
+﻿@using Web2020Project.Model
+@model IDictionary<CartDB, List<CartDB>>
+
+@{
+    @ViewBag.Title
+    Layout = "~/Views/Shared/Admin/_FramesFull.cshtml";
+}
+
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="page-bar page-header">
+                    <ul class="page-breadcrumb">
+                        <li>
+                            <i class="fa fa-home"></i>
+                            <a href="/Admin/Index_Admin">Home</a>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <a href="/Order/Order_Manage">Quản lý đơn hàng</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i class="fa fa-shopping-cart"></i>
+                        Đơn hàng
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        @RenderPage("~/Views/Shared/Admin/_Dialog.cshtml")
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <thead>
+                                <tr>
+                                    <th>Mã đơn hàng</th>
+                                    <th>Tên khách hàng</th>
+                                    <th>Email</th>
+                                    <th>Số điện thoại</th>
+                                    <th>Địa chỉ</th>
+                                    <th>Ngày tạo</th>
+                                    <th class="remove" style="text-align: center">Xem chi tiết</th>
+                                    <th class="remove" style="text-align: center">Trạng thái</th>
+                                    <th class="remove" style="text-align: center">Xóa</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @try
+                                {
+                                    if (@Model != null)
+                                    {
+                                        foreach (KeyValuePair<CartDB, List<CartDB>> cart in Model)
+                                        {
+                                            <tr class="odd gradeX">
+                                                <td>@cart.Key.CartId</td>
+                                                <td>@cart.Key.Name</td>
+                                                <td>@cart.Key.Email</td>
+                                                <td>@cart.Key.Phone</td>
+                                                <td>@cart.Key.Address</td>
+                                                <td>@cart.Key.DateOfpayment</td>
+                                                <td style="text-align: center">
+                                                    <button data-toggle="modal" data-target="@("#" + @cart.Key.CartId)"
+                                                            class="label label-success" style="border: none">
+                                                        Xem chi tiết
+                                                    </button>
+                                                </td>
+                                                <td style="text-align: center">
+                                                    <span class="label label-warning">Chờ xác nhận</span>
+                                                </td>
+                                                <td style="text-align: center">
+                                                    <a data-toggle="modal" data-target="@("#1" + cart.Key.CartId)"
+                                                       class="btn default btn-xs black btn-delete">
+                                                        <i class="fa fa-trash-o"></i>
+                                                    </a>
+                                                    <div id="@("1" + cart.Key.CartId)" class="modal fade modal-confirm" role="dialog">
+                                                        <div class="modal-dialog modal-sm">
+                                                            <div class="modal-content">
+                                                                <div class="modal-body">
+                                                                    <p class="text-content">Xác nhận xóa đơn hàng <em>@cart.Key.CartId</em></p>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" onclick="return location.href='/Order/Delete_Order?cartID=@cart.Key.CartId'"
+                                                                            class="btn-cf">
+                                                                        Xác nhận
+                                                                    </button>
+                                                                    <button type="button" class="tbn-cancle" data-dismiss="modal">Hủy</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <div id="@cart.Key.CartId" class="modal fade" tabindex="-1" role="dialog">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                            <h4 class="modal-title">CHI TIẾT ĐƠN HÀNG</h4>
+                                                        </div>
+                                                        <div class="modal-body modal-ctdh">
+                                                            <div class="form-ctdh">
+                                                                <div class="title-top">
+                                                                    <ul class="row">
+                                                                        <li class="col-sm-1">#</li>
+                                                                        <li class="col-sm-4">Tên sản phẩm</li>
+                                                                        <li class="col-sm-2">Số lượng</li>
+                                                                        <li class="col-sm-2">Số tiền</li>
+                                                                        <li class="col-sm-3">Hình ảnh</li>
+                                                                    </ul>
+                                                                </div>
+                                                                <ul class="">
+                                                                    @{
+                                                                        double total = 0;
+                                                                        int count = 0;
+                                                                        foreach (CartDB cartDetail in cart.Value)
+                                                                        {
+                                                                            total += cartDetail.TotalMoney;
+                                                                            count++;
+                                                                            <li class="row">
+                                                                                <div class="col-sm-1">@count</div>
+                                                                                <div class="col-sm-4">@cartDetail.ProductName</div>
+                                                                                <div class="col-sm-2">@cartDetail.Amount</div>
+                                                                                <div class="col-sm-2">@String.Format("{0:0,0}", cartDetail.TotalMoney)đ</div>
+                                                                                <div class="col-sm-3">
+                                                                                    <img src="@cartDetail.Picture" alt="" width="80">
+                                                                                </div>
+                                                                            </li>
+                                                                        }
+                                                                    }
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="total">
+                                                            <h4>Tổng cộng:</h4>
+                                                            <span>@String.Format("{0:0,0}", total)đ</span>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn tbn-cancle"
+                                                                    data-dismiss="modal">
+                                                                Đóng
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+                                }
+                                catch (Exception e)
+                                {
+                                }
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,76 @@
+﻿@model Web2020Project.Model.Producer
+
+@{
+    @ViewBag.Title
+    Layout = "~/Views/Shared/Admin/_FramesFull.cshtml";
+
+}
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="page-bar page-header">
+                    <ul class="page-breadcrumb">
+                        <li>
+                            <i class="fa fa-home"></i>
+                            <a href="/Admin/Index_Admin">Home</a>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <a href="#">Danh mục</a>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <a href="/Producer/Producer">Nhà cung cấp</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading  d-flex">
+                        <div>
+                            <i class="fa  fa-home fa-fw"></i>
+                            Cập nhật nhà cung cấp
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div id="update" class="like-form">
+                            <form id="form-validate" class="form-style" action="/Producer/Producer_Update"
+                                  method="post">
+                                <input type="hidden" name="action" value="edit">
+                                <ul class="row">
+                                    @* <!--                                        <%  String ma_ncc = request.getParameter("id-producer");--> *@
+                                    @* <!--                                            String ten_ncc = request.getParameter("name-producer");--> *@
+                                    @* <!--                                            String diachi_ncc = request.getParameter("producerAddress");%>--> *@
+                                    <li class="row">
+                                        <div class="col-sm-4 col-xs-6">
+                                            <input type="text" id="producerID" name="producerID" value="@Model.ProducerId">
+                                            <input type="hidden" name="producerID_temp" value="@Model.ProducerId">
+                                            <label for="producerID">Mã nhà cung cấp<span>*</span></label>
+                                        </div>
+                                        <div class="col-sm-4 col-xs-6">
+                                            <input type="text" id="producerName" name="producerName" value="@Model.ProducerName">-
+                                            <input type="hidden" name="producerName_temp" value="@Model.ProducerName">
+                                            <label for="producerName">Tên nhà cung cấp<span>*</span></label>
+                                        </div>
+                                        <div class="col-sm-4 col-xs-6">
+                                            <input type="text" id="producerAddress" name="producerAddress" value="@Model.ProducerAddress">
+                                            <label for="producerAddress">Địa chỉ<span>*</span></label>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="btn-submit">
+                                    <a href="/Producer/Producer" class="btn default btn-xs black go-to-back">Trở lại</a>
+                                    <button type="submit" id="update-btn"><i class="fa fa-pencil-square-o fa-fw" aria-hidden="true"></i>Cập nhật</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

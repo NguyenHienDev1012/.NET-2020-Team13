@@ -1,0 +1,140 @@
+﻿@model Web2020Project.Model.News
+
+@{
+    @ViewBag.Title
+    Layout = "~/Views/Shared/Admin/_FramesFull.cshtml";
+}
+
+@section jsFooter{
+    <script>
+                $('#picture').on('click', function(e){
+                    e.preventDefault();
+                    var finder = new CKFinder();
+                    finder.selectActionFunction = function(url){
+                         $('#picture').val(url);
+                    };
+                finder.popup();
+                });
+                 var editor = CKEDITOR.replace('content',{
+                                    customConfig: '/Content/assets/ckeditor/config.js'
+                                })
+    </script>
+}
+
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="page-bar page-header">
+                    <ul class="page-breadcrumb">
+                        <li>
+                            <i class="fa fa-home"></i>
+                            <a href="/Admin/Index_Admin">Home</a>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <a href="#">Danh mục</a>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <a href="/News/News_Manage">Quản lý tin tức</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading  d-flex">
+                        <div>
+                            <i class="fa  fa-newspaper-o fa-fw"></i>
+                            Cập nhật tin tức
+                        </div>
+                    </div>
+
+                    <div class="panel-body">
+                        <div id="update" class="like-form">
+                            <form id="form-validate" class="form-style"
+                                  action="/News/News_Manage" method="post"
+                                  enctype="multipart/form-data">
+                                <input type="hidden" name="action" value="edit">
+                                <input type="hidden" name="id" value="@Model.NewsId">
+                                <ul class="row">
+                                    <li class="row">
+                                        <div class="col-sm-12 col-xs-6">
+                                            <input type="text" id="title" name="title"
+                                                   value="@Model.Title">
+                                            <label for="title">Tiêu đề<span>*</span></label>
+                                        </div>
+                                    </li>
+                                    <li class="row">
+                                        <div class="col-sm-12 col-xs-6">
+                                            <textarea id="description" name="description"
+                                                                          placeholder="Nhập nội dung..." maxlength="190"
+                                                                          required>@Model.Description</textarea>
+                                            <label for="description" class="mg-area">Mô tả</label>
+                                        </div>
+                                    </li>
+                                    <li class="row">
+                                        <div class="col-sm-4 col-xs-6">
+                                            <select id="kind" name="kind">
+                                                @if (Model.Kind == 0)
+                                                {
+                                                    <option value="0">Tin tức mới</option>
+                                                    <option value="1">Tin tức KM</option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="1">Tin tức KM</option>
+                                                    <option value="0">Tin tức mới</option>
+                                                }
+                                                <!--   
+                                                <option value="1">Tin tức KM</option>
+                                                <option value="0">Tin tức mới</option>
+                                                -->
+                                            </select>
+                                            <label for="kind" class="level-span">Type</label>
+                                        </div>
+                                        <input type="hidden" name="change-img" value="">
+                                        <div class="col-sm-4 col-xs-6">
+                                            <input type="text" id="picture" name="picture" placeholder="Chọn ảnh..." value="@Model.Picture">
+                                            <label for="picture">Ảnh mô tả</label>
+                                        </div>
+                                        <div class="col-sm-4 col-xs-6">
+                                            <input type="date" id="dateOfWriting"
+                                                   name="dateOfWriting"
+                                                   value="@Model.DateOfWriting">
+                                            <label for="dateOfWriting" class="level-span">
+                                                Ngày
+                                                viết
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="row">
+                                        <div class="col-sm-12 col-xs-6">
+                                            <textarea id="content"
+                                                          name="content">@Model.Content</textarea>
+                                            <label for="content" class="mg-area">Nội dung</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="btn-submit">
+                                    <a href="/News/News_Manage" class="btn default btn-xs black go-to-back">
+                                        Trở
+                                        lại
+                                    </a>
+                                    <button type="submit" id="update-btn">
+                                        <i class="fa fa-pencil-square-o fa-fw"
+                                           aria-hidden="true">
+                                        </i>Cập nhật
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

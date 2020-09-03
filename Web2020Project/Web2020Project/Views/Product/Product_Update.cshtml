@@ -1,0 +1,242 @@
+﻿@using Web2020Project.Model
+@model Web2020Project.Model.ProductDetail
+
+@{
+    @ViewBag.Title
+    Layout = "~/Views/Shared/Admin/_FramesFull.cshtml";
+}
+@section jsFooter{
+    <script>
+                $('#picture').on('click', function(e){
+                    e.preventDefault();
+                    var finder = new CKFinder();
+                    finder.selectActionFunction = function(url){
+                         $('#picture').val(url);
+                    };
+                finder.popup();
+                });
+    </script>
+}
+<div id="page-wrapper">
+<div class="container-fluid">
+<div class="row">
+    <div class="col-lg-12">
+        <div class="page-bar page-header">
+            <ul class="page-breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Admin/Index_Admin">Home</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li>
+                    <a href="#">Danh mục</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li>
+                    <a href="/Product/Product_Manage">Quản lý sản phẩm</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading  d-flex">
+                <div>
+                    <i class="fa  fa-pencil-square-o fa-fw"></i>
+                    Cập nhật sản phẩm
+                </div>
+            </div>
+            @* <!--                        <%--> *@
+            @* <!--                            ChiTietSanPham ctsp = (ChiTietSanPham) request.getAttribute("ctsp");--> *@
+            @* <!--                            assert ctsp != null;--> *@
+            @* <!--                        %>--> *@
+            <div class="panel-body">
+                <div id="update" class="like-form">
+                    <form id="form-validate" class="form-style"
+                          action="/Product/Product_Update" method="post">
+                        <input type="hidden" name="action" value="edit">
+                        <input type="hidden" name="productID"
+                               value="@Model.Product.ProductId">
+                        <ul class="row">
+                            <li class="row">
+                            <div class="col-sm-4 col-xs-6">
+                                <input type="text" id="productName" name="productName"
+                                       value="@Model.Product.ProductName">
+                                <label for="productName">Tên sản phẩm<span>*</span></label>
+                            </div>
+                            <div class="col-sm-4 col-xs-6">
+                                <select id="kind" name="kind">
+                                    @if (@Model.Product.Kind == 0)
+                                    {
+                                        <option value="0">Sản phẩm Mới</option>
+                                        <option value="1">Sản phẩm Hot</option>
+                                        <option value="2">Sản phẩm khuyến mãi</option>
+                                    }
+                                    else if (@Model.Product.Kind == 1)
+                                    {
+                                        <option value="1">Sản phẩm Hot</option>
+                                        <option value="2">Sản phẩm khuyến mãi</option>
+                                        <option value="0">Sản phẩm Mới</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="2">Sản phẩm khuyến mãi</option>
+                                        <option value="1">Sản phẩm Hot</option>
+                                        <option value="0">Sản phẩm Mới</option>
+                                    }
+                                </select>
+                                <label for="kind" class="level-span">Loại</label>
+                            </div>
+                            <div class="col-sm-4 col-xs-6">
+                                <select id="producer" name="producer">
+                                    @try
+                                    {
+                                        List<Producer> list = ViewBag.ListProducer;
+                                        if (list != null)
+                                        {
+                                            foreach (Producer prod in list)
+                                            {
+                                                if (prod.ProducerName.Equals(@Model.Product.Producer))
+                                                {
+                                                    <option value="@prod.ProducerName"
+                                                            selected="selected">
+                                                        @prod.ProducerName
+                                                    </option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="@prod.ProducerName">
+                                                        <div id="">@prod.ProducerName</div>
+                                                    </option>
+                                                }
+                                            }
+                                        }
+                                    }
+                                    catch (Exception e)
+                                    {
+                                    }
+                                </select>
+                                <label for="producer" class="level-span">
+                                    Nhà cung
+                                    cấp<span>*</span>
+                                </label>
+                            </div>
+                            <!--                                            <label for="producer" class="level-span">Nhà cung-->
+                            <!--                                                cấp<span>*</span></label>-->
+                            <li class="row">
+                                <div class="col-sm-3 col-xs-6">
+                                    <input type="number" id="salePrice" name="salePrice"
+                                           value="@Model.Product.SalePrice">
+                                    <label for="salePrice">Giá đã giảm</label>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <input type="number" id="price" name="price"
+                                           value="@Model.Product.Price">
+                                    <label for="price">Giá bán</label>
+                                </div>
+                                <div class="col-sm-2 col-xs-6">
+                                    <input type="number" id="amount" name="amount"
+                                           value="@Model.Product.Amount">
+                                    <label for="amount">Số lượng<span>*</span></label>
+                                </div>
+                                <div class="col-sm-2 col-xs-6">
+                                    <input type="text" id="picture" name="picture" placeholder="Chọn ảnh..."
+                                           value="@Model.Product.Picture">
+                                    <label for="picture">Hình ảnh</label>
+                                </div>
+                                <div class="col-sm-2 col-xs-6">
+                                    <select id="status" name="status">
+                                        @* <%if (ctsp.getSanPham().getTrangTHai() == 0) {%> *@
+                                        @if (Model.Product.Status == 0)
+                                        {
+                                            <option value="0">Ẩn</option>
+                                            <option value="1">Gần hết hàng</option>
+                                            <option value="2">Mở bán</option>
+                                        }
+                                        else if (Model.Product.Status == 1)
+                                        {
+                                            <option value="1">Gần hết hàng</option>
+                                            <option value="0">Ẩn</option>
+                                            <option value="2">Mở bán</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="2">Mở bán</option>
+                                            <option value="1">Gần hết hàng</option>
+                                            <option value="0">Ẩn</option>
+                                        }
+                                    </select>
+                                    <label for="status" class="level-span">Trạng thái</label>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="row">
+                            <h3 class="col-sm-12"
+                                style="text-align: center;margin-bottom: 20px;color: #215862;font-weight: 600">
+                                Chi tiết sản phẩm
+                            </h3>
+                            <li class="row">
+                                <div class="col-sm-12 col-xs-6">
+                                    <input type="text" id="gift" name="gift"
+                                           value="@Model.Gift">
+                                    <label for="gift">Quà tặng</label>
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-sm-6 col-xs-6">
+                                    <input type="text" id="screen" name="screen"
+                                           value="@Model.Technical.Screen">
+                                    <label for="screen">Màn hình</label>
+                                </div>
+                                <div class="col-sm-6 col-xs-6">
+                                    <input type="text" id="operatingSystem" name="operatingSystem"
+                                           value="@Model.Technical.OperatingSystem">
+                                    <label for="operatingSystem">Hệ điều hành</label>
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-sm-6 col-xs-6">
+                                    <input type="text" id="CPU" name="CPU"
+                                           value="@Model.Technical.Cpu">
+                                    <label for="CPU">CPU</label>
+                                </div>
+                                <div class="col-sm-6 col-xs-6">
+                                    <input type="text" id="RAM" name="RAM"
+                                           value="@Model.Technical.Ram">
+                                    <label for="RAM">RAM</label>
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-sm-6 col-xs-6">
+                                    <input type="text" id="CAMERA" name="CAMERA"
+                                           value="@Model.Technical.Camera">
+                                    <label for="CAMERA">CAMERA</label>
+                                </div>
+                                <div class="col-sm-6 col-xs-6">
+                                    <input type="text" id="PIN" name="PIN"
+                                           value="@Model.Technical.Pin">
+                                    <label for="pin">PIN</label>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="btn-submit">
+                            <a href="/Product/Product_Manage" class="btn default btn-xs black go-to-back">
+                                Trở
+                                lại
+                            </a>
+                            <button type="submit" id="update-btn">
+                                <i class="fa fa-pencil-square-o fa-fw"
+                                   aria-hidden="true">
+                                </i>Cập nhật
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>

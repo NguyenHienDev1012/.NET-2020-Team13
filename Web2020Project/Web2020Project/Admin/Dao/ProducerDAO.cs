@@ -109,7 +109,7 @@ namespace Web2020Project.Admin.Dao
                 connection = DBConnection.getConnection();
                 connection.Open();
                 cmd = new MySqlCommand(sql, connection);
-                cmd.Parameters.AddWithValue("@prID", producer.ProducerName);
+                cmd.Parameters.AddWithValue("@prID", producer.ProducerId);
                 cmd.Parameters.AddWithValue("@prName", producer.ProducerName);
                 cmd.Parameters.AddWithValue("@prAddress", producer.ProducerAddress);
                 cmd.Parameters.AddWithValue("@prIDOld", pr_ID_Old);
